@@ -1,0 +1,129 @@
+.top-bar {
+    font-size: 12px;
+    padding: 3px 100px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    position: relative;
+}
+
+.top-bar i {
+    position: absolute;
+    right: 100px;
+    cursor: pointer;
+}
+
+.nav {
+    padding: 8px 0px;
+    position: sticky;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    top: 0;
+    z-index: 1;
+    background-color: var(--white-color);
+    overflow: hidden;
+}
+
+.nav .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav img {
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.nav .nav-options {
+    display: flex;
+    width: 150px;
+    justify-content: space-between; 
+    font-weight: 700; 
+    font-size: 14px 
+}
+
+.nav .nav-navigate {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.nav .nav-navigate div {
+    border: 1px solid var(--gray);
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 10px;
+    background-color: var(--gray-light);
+}
+
+.nav .nav-navigate div input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    font-size: 12px;
+    background-color: var(--gray-light);
+}
+
+.nav .nav-navigate i {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .nav .nav-options {
+        width: 100px;
+    }
+}
+
+@media (max-width: 700px) {
+    .top-bar {
+        padding: 3px 30px;
+    }
+
+    .top-bar i {
+        right: 30px;
+    }
+
+    .nav img {
+        width: 60px;
+        height: 25px;
+    }
+
+    .nav .nav-options {
+        width: 100px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .nav .nav-navigate {
+        width: 40px;
+    }
+
+    .nav .nav-navigate div {
+        display: none;
+    }
+
+    .search-bar {
+        display: block;
+        border: 1px solid var(--gray);
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 10px;
+        margin: 5px 40px;
+        background-color: var(--gray-light);
+    }
+
+    .search-bar input {
+        border: none;
+        outline: none;
+        margin-left: 10px;
+        font-size: 12px;
+        background-color: var(--gray-light);
+    }
+}
