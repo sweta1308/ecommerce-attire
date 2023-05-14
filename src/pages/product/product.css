@@ -1,0 +1,24 @@
+.product {
+    padding: 30px 120px;
+}
+.text {
+    font-size: 13px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray);
+}
+.text span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.products {
+    display: flex;
+}
+.products .product-list {
+    padding: 0 50px;
+    width: 100%;
+    border: 1px solid var(--gray);
+}
