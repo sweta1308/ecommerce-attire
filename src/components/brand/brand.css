@@ -1,0 +1,30 @@
+.brand {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: var(--primary-lightest);
+    padding: 30px 0;
+    border-radius: 10px;
+}
+
+.brand img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(148, 147, 147, 0.3);
+    cursor: pointer;
+}
+
+.brand img:hover {
+    border-radius: 25%;
+}
+
+@media (max-width: 700px) {
+    .brand img {
+        width: 40px;
+        height: 40px;
+    }
+}
