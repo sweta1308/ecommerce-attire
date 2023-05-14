@@ -1,0 +1,22 @@
+.filters {
+    border: 1px solid var(--gray-lighter);
+    border-radius: 10px;
+    padding: 10px 20px 20px;
+}
+
+.filters div {
+    font-size: 12px;
+    color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
+    padding: 7px 17px;
+}
+
+.filters div label {
+    cursor: pointer;
+}
+
+.filters h4 {
+    color: var(--gray-dark);
+}
