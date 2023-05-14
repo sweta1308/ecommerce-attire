@@ -38,3 +38,9 @@
     border-radius: 5px;
     border: 1px solid var(--primary-color);
 }
+
+@media (max-width: 1200px) {
+    .cart h1 {
+        text-align: center;
+    }
+}
