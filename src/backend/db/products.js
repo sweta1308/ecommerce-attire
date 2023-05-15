@@ -142,6 +142,21 @@ export const products = [
 		outOfStock: false,
 		quantity: 0
 	},
+	{
+		_id: uuid(),
+		title: 'Striped Zari Kurta with Pyjamas & Dupatta',
+		image: ethnic6,
+		brand: "Indya",
+		price: "5698",
+		originalPrice: "6299",
+		ratings: {
+			value: "3.9",
+			count: "1.2k"
+		},
+		categoryName: "Ethnic",
+		outOfStock: false,
+		quantity: 0
+	},
   {
 		_id: uuid(),
 		title: 'Simplicity Wide Leg Jeans',
@@ -232,6 +247,21 @@ export const products = [
 		outOfStock: true,
 		quantity: 0
 	},
+  {
+		_id: uuid(),
+		title: 'Women Blue Pure Cotton Jogger High-Rise Non-Stretchable Clean Look Jeans',
+		image: bottom8,
+		brand: "Zara",
+		price: "2399",
+		originalPrice: "2879",
+		ratings: {
+			value: "4.3",
+			count: "2.9k"
+		},
+		categoryName: "Bottoms",
+		outOfStock: false,
+		quantity: 0
+	},
 	{
 		_id: uuid(),
 		title: 'Positioning Printing Pullover T-shirt',
@@ -277,6 +307,36 @@ export const products = [
 		outOfStock: false,
 		quantity: 0
 	},
+  {
+		_id: uuid(),
+		title: 'Women Black Ethnic Motifs Printed Pure Cotton Kurta with Palazzos & With Dupatta',
+		image: ethnic4,
+		brand: "Libas",
+		price: "1649",
+		originalPrice: "2499",
+		ratings: {
+			value: "3.2",
+			count: "1.4k"
+		},
+		categoryName: "Ethnic",
+		outOfStock: true,
+		quantity: 0
+	},
+  {
+		_id: uuid(),
+		title: 'Black & Beige Floral Printed Accordion Pleated Wrap Dress With Belt',
+		image: dress6,
+		brand: "Zara",
+		price: "2875",
+		originalPrice: "3200",
+		ratings: {
+			value: "4.6",
+			count: "1.3k"
+		},
+		categoryName: "Dresses",
+		outOfStock: false,
+		quantity: 0
+	},
 	{
 		_id: uuid(),
 		title: 'Pocket Straight Leg Pants',
@@ -307,6 +367,21 @@ export const products = [
 		outOfStock: false,
 		quantity: 0
 	},
+  {
+		_id: uuid(),
+		title: 'Ethnic Motifs Embroidered Sequinned Kurta with Trousers',
+		image: ethnic7,
+		brand: "Indya",
+		price: "6999",
+		originalPrice: "7599",
+		ratings: {
+			value: "4.7",
+			count: "876"
+		},
+		categoryName: "Ethnic",
+		outOfStock: false,
+		quantity: 0
+	},
 	{
 		_id: uuid(),
 		title: 'Women Solid Pure Cotton Track Pants',
@@ -322,21 +397,22 @@ export const products = [
 		outOfStock: false,
 		quantity: 0
 	},
-	{
+  {
 		_id: uuid(),
-		title: 'Women Blue Pure Cotton Jogger High-Rise Non-Stretchable Clean Look Jeans',
-		image: bottom8,
-		brand: "Zara",
-		price: "2399",
-		originalPrice: "2879",
+		title: 'Ethnic Motifs Embroidered Sequined Kurta with Palazzos & Dupatta',
+		image: ethnic3,
+		brand: "Sassafras",
+		price: "1873",
+		originalPrice: "2490",
 		ratings: {
 			value: "4.3",
-			count: "2.9k"
+			count: "2.3k"
 		},
-		categoryName: "Bottoms",
+		categoryName: "Ethnic",
 		outOfStock: false,
 		quantity: 0
 	},
+	
 	{
 		_id: uuid(),
 		title: 'Shirred A-Line Dress',
@@ -350,21 +426,6 @@ export const products = [
 		},
 		categoryName: "Dresses",
 		outOfStock: true,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Black & Beige Floral Printed Accordion Pleated Wrap Dress With Belt',
-		image: dress6,
-		brand: "Zara",
-		price: "2875",
-		originalPrice: "3200",
-		ratings: {
-			value: "4.6",
-			count: "1.3k"
-		},
-		categoryName: "Dresses",
-		outOfStock: false,
 		quantity: 0
 	},
 	{
@@ -392,67 +453,6 @@ export const products = [
 		ratings: {
 			value: "4.5",
 			count: "1k"
-		},
-		categoryName: "Ethnic",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Ethnic Motifs Embroidered Sequined Kurta with Palazzos & Dupatta',
-		image: ethnic3,
-		brand: "Sassafras",
-		price: "1873",
-		originalPrice: "2490",
-		ratings: {
-			value: "4.3",
-			count: "2.3k"
-		},
-		categoryName: "Ethnic",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Women Black Ethnic Motifs Printed Pure Cotton Kurta with Palazzos & With Dupatta',
-		image: ethnic4,
-		brand: "Libas",
-		price: "1649",
-		originalPrice: "2499",
-		ratings: {
-			value: "3.2",
-			count: "1.4k"
-		},
-		categoryName: "Ethnic",
-		outOfStock: true,
-		quantity: 0
-	},
-	
-	{
-		_id: uuid(),
-		title: 'Striped Zari Kurta with Pyjamas & Dupatta',
-		image: ethnic6,
-		brand: "Indya",
-		price: "5698",
-		originalPrice: "6299",
-		ratings: {
-			value: "3.9",
-			count: "1.2k"
-		},
-		categoryName: "Ethnic",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Ethnic Motifs Embroidered Sequinned Kurta with Trousers',
-		image: ethnic7,
-		brand: "Indya",
-		price: "6999",
-		originalPrice: "7599",
-		ratings: {
-			value: "4.7",
-			count: "876"
 		},
 		categoryName: "Ethnic",
 		outOfStock: false,
