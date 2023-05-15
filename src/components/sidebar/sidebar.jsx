@@ -4,9 +4,12 @@ export const SideBar = () => {
     return (
         <>
             <div className="filters">
-                <h4>Rating</h4>
+                <button>Clear Filters</button>
+                <h2>Filters</h2>
+
+                <h4>Price</h4>
                 <div className="rating-filter">
-                    <input type="range" />
+                    <input type="range" className='slider' />
                 </div>
 
                 <h4>Category</h4>
@@ -20,13 +23,21 @@ export const SideBar = () => {
                 <h4>Brands</h4>
                 <div className="brand-filter">
                     <label><input type="checkbox" /> H&M</label>
-                    <label><input type="checkbox" /> Louis Vitton</label>
+                    <label><input type="checkbox" /> Sassafras</label>
                     <label><input type="checkbox" /> Levis</label>
-                    <label><input type="checkbox" /> Prada</label>
+                    <label><input type="checkbox" /> Urbanic</label>
                     <label><input type="checkbox" /> Zara</label>
-                    <label><input type="checkbox" /> Gucci</label>
+                    <label><input type="checkbox" /> Roadster</label>
                     <label><input type="checkbox" /> Dolce & Gabbana</label>
-                    <label><input type="checkbox" /> Calvin Klein</label>
+                    <label><input type="checkbox" /> Tokyo Talkies</label>
+                </div>
+
+                <h4>Ratings</h4>
+                <div className="price-filter">
+                    <label><input type="radio" name="rating" /> 4⭐ and above</label>
+                    <label><input type="radio" name="rating" /> 3⭐ and above</label>
+                    <label><input type="radio" name="rating" /> 2⭐ and above</label>
+                    <label><input type="radio" name="rating" /> 1⭐ and above</label>
                 </div>
 
                 <h4>Sort By Price:</h4>
