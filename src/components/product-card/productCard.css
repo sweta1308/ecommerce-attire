@@ -8,7 +8,9 @@
 
 .product-card:hover {
     transform: scale(1.07);
-    transition: transform 0.5s
+    transition: transform 0.5s;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+    border-radius: 10px;
 }
 
 .product-card img {
@@ -45,6 +47,7 @@
     color: var(--gray-dark);
     line-height: 13px;
     font-size: 11px;
+    padding: 0 10px;
 }
 
 .product-card .price-rating {
@@ -52,6 +55,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px;
+    align-items: baseline;
+}
+
+.product-card .price-rating p {
+    color: var(--gray-dark);
 }
 
 .product-card .price {

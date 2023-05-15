@@ -22,6 +22,36 @@ export const products = [
 		outOfStock: false,
 		quantity: 0
 	},
+  {
+		_id: uuid(),
+		title: 'Women Black Solid Trouser',
+		image: bottom2,
+		brand: "Levis",
+		price: "1999",
+		originalPrice: "2599",
+		ratings: {
+			value: "3.9",
+			count: "870"
+		},
+		categoryName: "Bottoms",
+		outOfStock: true,
+		quantity: 0
+	},
+  {
+		_id: uuid(),
+		title: 'Ethnic Motifs Printed Thread Work Georgette Kurti With Sharara',
+		image: ethnic5,
+		brand: "Indya",
+		price: "3900",
+		originalPrice: "4598",
+		ratings: {
+			value: "4.6",
+			count: "902"
+		},
+		categoryName: "Ethnic",
+		outOfStock: false,
+		quantity: 0
+	},
 	{
 		_id: uuid(),
 		title: 'Ethnic Motifs Top',
@@ -34,6 +64,21 @@ export const products = [
 			count: "1.9k"
 		},
 		categoryName: "Tops",
+		outOfStock: false,
+		quantity: 0
+	},
+  {
+		_id: uuid(),
+		title: 'Women Black Solid Shirt Dress',
+		image: dress4,
+		brand: "H&M",
+		price: "3549",
+		originalPrice: "3999",
+		ratings: {
+			value: "4.9",
+			count: "691"
+		},
+		categoryName: "Dresses",
 		outOfStock: false,
 		quantity: 0
 	},
@@ -52,6 +97,21 @@ export const products = [
 		outOfStock: true,
 		quantity: 0
 	},
+  {
+		_id: uuid(),
+		title: 'Women Brown Track Pants',
+		image: bottom4,
+		brand: "Sassafras",
+		price: "699",
+		originalPrice: "942",
+		ratings: {
+			value: "3.1",
+			count: "346"
+		},
+		categoryName: "Bottoms",
+		outOfStock: false,
+		quantity: 0
+	},
 	{
 		_id: uuid(),
 		title: 'Burgundy Hooded Solid Blouson Crop Top',
@@ -67,6 +127,66 @@ export const products = [
 		outOfStock: false,
 		quantity: 0
 	},
+  {
+		_id: uuid(),
+		title: 'Smocked Cotton Dress',
+		image: dress3,
+		brand: "Zara",
+		price: "2099",
+		originalPrice: "2499",
+		ratings: {
+			value: '4',
+			count: '2.4k'
+		},
+		categoryName: "Dresses",
+		outOfStock: false,
+		quantity: 0
+	},
+  {
+		_id: uuid(),
+		title: 'Simplicity Wide Leg Jeans',
+		image: bottom1,
+		brand: "Urbanic",
+		price: "1390",
+		originalPrice: "1999",
+		ratings: {
+			value: "4.8",
+			count: "1.3k"
+		},
+		categoryName: "Bottoms",
+		outOfStock: false,
+		quantity: 0
+	},
+  {
+		_id: uuid(),
+		title: 'Black Accordion Pleats Empire Dress',
+		image: dress2,
+		brand: "Tokyo Talkies",
+		price: "769",
+		originalPrice: "1199",
+		ratings: {
+			value: "3.7",
+			count: "213"
+		},
+		categoryName: "Dresses",
+		outOfStock: false,
+		quantity: 0
+	},
+  {
+		_id: uuid(),
+		title: 'Women Navy Blue Straight Screen Print Pure Cotton Kurta & Palazzos With Dupatta',
+		image: ethnic2,
+		brand: "Tokyo Talkies",
+		price: "1499",
+		originalPrice: "1979",
+		ratings: {
+			value: "4",
+			count: "496"
+		},
+		categoryName: "Ethnic",
+		outOfStock: false,
+		quantity: 0
+	},
 	{
 		_id: uuid(),
 		title: 'Olive Green & Beige Floral Georgette Blouson Top',
@@ -79,6 +199,21 @@ export const products = [
 			count: "4k"
 		},
 		categoryName: "Tops",
+		outOfStock: false,
+		quantity: 0
+	},
+  {
+		_id: uuid(),
+		title: 'Boning A-line Dress',
+		image: dress1,
+		brand: "Urbanic",
+		price: "1890",
+		originalPrice: "2180",
+		ratings: {
+			value: "4.4",
+			count: "1.2k"
+		},
+		categoryName: "Dresses",
 		outOfStock: false,
 		quantity: 0
 	},
@@ -129,36 +264,6 @@ export const products = [
 	},
 	{
 		_id: uuid(),
-		title: 'Simplicity Wide Leg Jeans',
-		image: bottom1,
-		brand: "Urbanic",
-		price: "1390",
-		originalPrice: "1999",
-		ratings: {
-			value: "4.8",
-			count: "1.3k"
-		},
-		categoryName: "Bottoms",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Women Black Solid Trouser',
-		image: bottom2,
-		brand: "Levis",
-		price: "1999",
-		originalPrice: "2599",
-		ratings: {
-			value: "3.9",
-			count: "870"
-		},
-		categoryName: "Bottoms",
-		outOfStock: true,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
 		title: 'Women Wide Twill Trousers',
 		image: bottom3,
 		brand: "H&M",
@@ -167,21 +272,6 @@ export const products = [
 		ratings: {
 			value: "4.4",
 			count: "1.7k"
-		},
-		categoryName: "Bottoms",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Women Brown Track Pants',
-		image: bottom4,
-		brand: "Sassafras",
-		price: "699",
-		originalPrice: "942",
-		ratings: {
-			value: "3.1",
-			count: "346"
 		},
 		categoryName: "Bottoms",
 		outOfStock: false,
@@ -249,66 +339,6 @@ export const products = [
 	},
 	{
 		_id: uuid(),
-		title: 'Boning A-line Dress',
-		image: dress1,
-		brand: "Urbanic",
-		price: "1890",
-		originalPrice: "2180",
-		ratings: {
-			value: "4.4",
-			count: "1.2k"
-		},
-		categoryName: "Dresses",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Black Accordion Pleats Empire Dress',
-		image: dress2,
-		brand: "Tokyo Talkies",
-		price: "769",
-		originalPrice: "1199",
-		ratings: {
-			value: "3.7",
-			count: "213"
-		},
-		categoryName: "Dresses",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Smocked Cotton Dress',
-		image: dress3,
-		brand: "Zara",
-		price: "2099",
-		originalPrice: "2499",
-		ratings: {
-			value: '4',
-			count: '2.4k'
-		},
-		categoryName: "Dresses",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
-		title: 'Women Black Solid Shirt Dress',
-		image: dress4,
-		brand: "H&M",
-		price: "3549",
-		originalPrice: "3999",
-		ratings: {
-			value: "4.9",
-			count: "691"
-		},
-		categoryName: "Dresses",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
 		title: 'Shirred A-Line Dress',
 		image: dress5,
 		brand: "Levis",
@@ -369,21 +399,6 @@ export const products = [
 	},
 	{
 		_id: uuid(),
-		title: 'Women Navy Blue Straight Screen Print Pure Cotton Kurta & Palazzos With Dupatta',
-		image: ethnic2,
-		brand: "Tokyo Talkies",
-		price: "1499",
-		originalPrice: "1979",
-		ratings: {
-			value: "4",
-			count: "496"
-		},
-		categoryName: "Ethnic",
-		outOfStock: false,
-		quantity: 0
-	},
-	{
-		_id: uuid(),
 		title: 'Ethnic Motifs Embroidered Sequined Kurta with Palazzos & Dupatta',
 		image: ethnic3,
 		brand: "Sassafras",
@@ -412,21 +427,7 @@ export const products = [
 		outOfStock: true,
 		quantity: 0
 	},
-	{
-		_id: uuid(),
-		title: 'Ethnic Motifs Printed Thread Work Georgette Kurti With Sharara',
-		image: ethnic5,
-		brand: "Indya",
-		price: "3900",
-		originalPrice: "4598",
-		ratings: {
-			value: "4.6",
-			count: "902"
-		},
-		categoryName: "Ethnic",
-		outOfStock: false,
-		quantity: 0
-	},
+	
 	{
 		_id: uuid(),
 		title: 'Striped Zari Kurta with Pyjamas & Dupatta',
