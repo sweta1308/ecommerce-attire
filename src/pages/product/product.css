@@ -20,5 +20,13 @@
 .products .product-list {
     padding: 10px 50px;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 30px;
     /* border: 1px solid var(--gray); */
+}
+
+.product-list li {
+    list-style: none;
+    
 }

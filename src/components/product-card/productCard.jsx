@@ -1,22 +1,6 @@
-import { top1 } from "../../assets";
 import './productCard.css'
 
-export const ProductCard = () => {
-    const data = 	{
-		_id: 1,
-		title: 'High Necked Crop Top',
-		image: top1,
-		brand: "Zara",
-		price: "499",
-		originalPrice: "999",
-		ratings: {
-			value: "4.5",
-			count: "2k"
-		},
-		categoryName: "Tops",
-		outOfStock: false,
-		quantity: 0
-	}
+export const ProductCard = ({image, title, brand, price, originalPrice, ratings}) => {
     return (
         <>
             <div className="product-card">
@@ -30,15 +14,15 @@ export const ProductCard = () => {
                     <p>{data.ratings.value} ⭐</p>
                     <p>₹{data.originalPrice}</p>
                 </div>  */}
-                <img src={data.image} alt={data.title} />
-                <h3>{data.brand}</h3>
-                <p>{data.title}</p>
+                <img src={image} alt={title} />
+                <h3>{brand}</h3>
+                <p className='product-title'>{title}</p>
                 <div className="price-rating">
                     <div className="price">
-                        <h3>₹{data.price}</h3>
-                        <p>₹{data.originalPrice}</p>
+                        <h3>₹{price}</h3>
+                        <p>₹{originalPrice}</p>
                     </div>
-                    <p>{data.ratings.value} ⭐</p>
+                    <p>{ratings?.value} ⭐</p>
                 </div>
                 
             </div>

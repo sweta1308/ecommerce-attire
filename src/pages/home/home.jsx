@@ -6,7 +6,6 @@ import { header } from "../../assets";
 import './home.css';
 
 export const Home = () => {
-
     return (
         <>
             <div className="hero">
