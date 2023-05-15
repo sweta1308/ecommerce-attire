@@ -31,6 +31,12 @@ const bottom6 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v168409
 const botttom7 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684091725/52e37168-d484-47c9-8dbe-e4343b81ff101670320930434-DressBerry-Women-Solid-Track-Pants-7231670320929805-1_bjfvjy.jpg';
 const dress1 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684091889/fcdd1e3b39bd401bacebb8534ca9d896_w1000_q90_tymves.webp';
 const dress2 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684092039/1b9df8fd-214e-4e8c-a0b6-759a9167e1e61564379559418-SASSAFRAS-Women-Black-A-Line-Dress-291564379558115-1_atp5ur.jpg';
+const dress3 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684128859/85f3abf6-7d83-411a-98ed-55d0df5baca01678936175312Smockedcottondress1_jhbjhv.jpg';
+const dress4 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684129074/5d57995c-bec8-4d78-a636-2a7730ff1f231619163764942-Levis-Women-Dresses-8421619163764080-1_gffxqu.jpg';
+const dress5 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684129275/b4cd144397c34c02806fdb5956b79adaUR_w1000_q90_r6woxj.webp';
+const ethnic1 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684129502/ee1763b7-12ea-45de-aee7-7bab95c3fa081648041870508NayoWomenGreyEthnicMotifsPrintedEmpirePureCottonKurtawithPal1_qnw1fa.jpg';
+const ethnic2 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684132475/2d941a96-a140-4707-8cee-bc3b2c26744b1643937538871NayoWomenNavyBlueStraightScreenPrintPureCottonKurtaPalazzosW1_ry9q83.jpg';
+const ethnic3 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684134234/986d6f97-fe9b-487a-9c64-f577e0a32c491677314970316KhushalKwomenEmbroideryKurtaandpalazzowithdupattaset7_t6xzte.jpg';
 
 export {logo, header, hm, louis, gucci, levis, zara, dolce, prada, calvin, tops, bottom, dresses, ethnic, cartEmpty};
-export {top1, top2, top3, top4, top5, top6, top7, top8, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, botttom7, dress1, dress2}
+export {top1, top2, top3, top4, top5, top6, top7, top8, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, botttom7, dress1, dress2, dress3, dress4, dress5, ethnic1, ethnic2, ethnic3}
