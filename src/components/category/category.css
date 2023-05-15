@@ -7,6 +7,12 @@
 .category div {
     width: 180px;
     position: relative;
+    cursor: pointer;
+}
+
+.category div:hover {
+    transform: scale(1.1);
+    transition: transform 0.4s;
 }
 
 .category div img {

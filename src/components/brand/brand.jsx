@@ -1,4 +1,4 @@
-import { hm, louis, levis, prada, zara, dolce, gucci, calvin } from "../../assets";
+import { hm, sassafras, levis, urbanic, zara, dolce, roadster, tokyoTalkies } from "../../assets";
 import './brand.css';
 
 export const Brand = () => {
@@ -7,13 +7,13 @@ export const Brand = () => {
             <h2>Brands ✨</h2>
             <div className="brand">
                 <img src={hm} alt="hm" />
-                <img src={louis} alt="louis" />
+                <img src={sassafras} alt="sassafras" />
                 <img src={levis} alt="levis" />
-                <img src={prada} alt="prada" />
+                <img src={urbanic} alt="urbanic" />
                 <img src={zara} alt="zara" />
                 <img src={dolce} alt="dolce" />
-                <img src={gucci} alt="gucci" />
-                <img src={calvin} alt="calvin" />
+                <img src={roadster} alt="roadster" />
+                <img src={tokyoTalkies} alt="tokyoTalkies" />
             </div>
         </>
     )

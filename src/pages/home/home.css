@@ -131,6 +131,7 @@ footer .footer-div {
 
 .footer-div a:hover {
     color: var(--primary-light);
+    transform: scale(1.2);
 }
 
 footer p {

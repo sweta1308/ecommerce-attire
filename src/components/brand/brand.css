@@ -10,8 +10,8 @@
 }
 
 .brand img {
-    width: 65px;
-    height: 65px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(148, 147, 147, 0.3);
@@ -19,7 +19,9 @@
 }
 
 .brand img:hover {
-    border-radius: 25%;
+    border-radius: 20%;
+    transform: scale(1.07);
+    transition: transform 0.1s;
 }
 
 @media (max-width: 700px) {
