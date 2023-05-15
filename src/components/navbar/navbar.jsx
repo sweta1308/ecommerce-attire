@@ -30,7 +30,9 @@ export const NavBar = () => {
                             <input placeholder="Search" />
                         </div>
                         <i onClick={() => navigate('/cart')} class="fa-solid fa-cart-shopping"></i>
+                        <i onClick={() => navigate('/wishlist')}  class="fa-solid fa-heart"></i>
                         <i class="fa-regular fa-user"></i>
+
                     </div>
                 </div>
 
