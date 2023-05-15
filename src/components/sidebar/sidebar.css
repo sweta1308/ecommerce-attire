@@ -36,7 +36,7 @@
     cursor: pointer;
 }
 
-.slider {
+.slider, .filters input[type="checkbox"], .filters input[type="radio"] {
     accent-color: var(--primary-color);
 }
 
