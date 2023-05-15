@@ -37,6 +37,10 @@ const dress5 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684129
 const ethnic1 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684129502/ee1763b7-12ea-45de-aee7-7bab95c3fa081648041870508NayoWomenGreyEthnicMotifsPrintedEmpirePureCottonKurtawithPal1_qnw1fa.jpg';
 const ethnic2 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684132475/2d941a96-a140-4707-8cee-bc3b2c26744b1643937538871NayoWomenNavyBlueStraightScreenPrintPureCottonKurtaPalazzosW1_ry9q83.jpg';
 const ethnic3 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684134234/986d6f97-fe9b-487a-9c64-f577e0a32c491677314970316KhushalKwomenEmbroideryKurtaandpalazzowithdupattaset7_t6xzte.jpg';
+const ethnic4 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684136479/39deb463-76b6-4951-935b-d746fa1abb841643438520825NayoWomenBlackEthnicMotifsYokeDesignEmpirePureCottonKurtawit1_lpfddg.jpg';
+const ethnic5 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684137649/18d4c12d-9306-4f35-9f9f-b44433adfca61681295414005OrangeMosaicPrintedShararaSetwithShortKurta1_nvjm4d.jpg';
+const ethnic6 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684137813/6dc3f75f-71be-4bcd-8d14-8b3017731fa81679147029413RedWineGlitterKurtaSet1_jblwyq.jpg';
+const ethnic7 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684137976/7dddd277-47ab-4d81-8c17-a4bac0fa1db91679143305119BlackThreadWorkAnarkaliSet1_guuegf.jpg';
 
 export {logo, header, hm, louis, gucci, levis, zara, dolce, prada, calvin, tops, bottom, dresses, ethnic, cartEmpty};
-export {top1, top2, top3, top4, top5, top6, top7, top8, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, botttom7, dress1, dress2, dress3, dress4, dress5, ethnic1, ethnic2, ethnic3}
+export {top1, top2, top3, top4, top5, top6, top7, top8, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, botttom7, dress1, dress2, dress3, dress4, dress5, ethnic1, ethnic2, ethnic3, ethnic4, ethnic5, ethnic6, ethnic7}
