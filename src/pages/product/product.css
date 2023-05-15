@@ -18,7 +18,7 @@
     display: flex;
 }
 .products .product-list {
-    padding: 0 50px;
+    padding: 10px 50px;
     width: 100%;
-    border: 1px solid var(--gray);
+    /* border: 1px solid var(--gray); */
 }

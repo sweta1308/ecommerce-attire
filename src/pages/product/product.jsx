@@ -1,3 +1,4 @@
+import { ProductCard } from '../../components/product-card/productCard'
 import { SideBar } from '../../components/sidebar/sidebar'
 import './product.css'
 
@@ -12,7 +13,7 @@ export const Product = () => {
                         <SideBar />
                     </div>
                     <div className='product-list'>
-                        <h2>Products</h2>
+                        <ProductCard />
                     </div>
                 </div>
             </div>
