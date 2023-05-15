@@ -28,12 +28,15 @@ const bottom3 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v168409
 const bottom4 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684090984/35cace73-95ce-4140-b0d9-ecad905b07c71663318751220-SASSAFRAS-Women-Track-Pants-6011663318750539-2_wznwix.jpg';
 const bottom5 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684091197/5b6f5d45769447ec9c064cde78a2655fUR_w1000_q90_skjrbg.webp';
 const bottom6 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684091503/8be830fa-f64d-42e2-aba3-3e5cf9543a311652423912513-Levis-Women-Olive-Green-Camouflage-Printed-Joggers-366165242-1_io1wn1.jpg';
-const botttom7 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684091725/52e37168-d484-47c9-8dbe-e4343b81ff101670320930434-DressBerry-Women-Solid-Track-Pants-7231670320929805-1_bjfvjy.jpg';
+const bottom7 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684091725/52e37168-d484-47c9-8dbe-e4343b81ff101670320930434-DressBerry-Women-Solid-Track-Pants-7231670320929805-1_bjfvjy.jpg';
+const bottom8 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684146348/4b6ac67e-3089-450c-83e4-f0362b930af91606971728255-SASSAFRAS-Women-Jeans-7971606971722019-1_qhjbya.jpg';
 const dress1 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684091889/fcdd1e3b39bd401bacebb8534ca9d896_w1000_q90_tymves.webp';
 const dress2 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684092039/1b9df8fd-214e-4e8c-a0b6-759a9167e1e61564379559418-SASSAFRAS-Women-Black-A-Line-Dress-291564379558115-1_atp5ur.jpg';
 const dress3 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684128859/85f3abf6-7d83-411a-98ed-55d0df5baca01678936175312Smockedcottondress1_jhbjhv.jpg';
 const dress4 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684129074/5d57995c-bec8-4d78-a636-2a7730ff1f231619163764942-Levis-Women-Dresses-8421619163764080-1_gffxqu.jpg';
 const dress5 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684129275/b4cd144397c34c02806fdb5956b79adaUR_w1000_q90_r6woxj.webp';
+const dress6 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684145830/945daec4-5875-4037-be46-b694ffdeb04a1609759713242-Antheaa-Women-Dresses-1301609759711537-1_kcbgaf.jpg';
+const dress7 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684146088/016438e0-e11f-4022-928c-fd8286b0cd221652163797752-Ishin-Off-White-Self-Design-Fit-and-Flare-Dress-816521637971-1_z3mqwd.jpg';
 const ethnic1 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684129502/ee1763b7-12ea-45de-aee7-7bab95c3fa081648041870508NayoWomenGreyEthnicMotifsPrintedEmpirePureCottonKurtawithPal1_qnw1fa.jpg';
 const ethnic2 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684132475/2d941a96-a140-4707-8cee-bc3b2c26744b1643937538871NayoWomenNavyBlueStraightScreenPrintPureCottonKurtaPalazzosW1_ry9q83.jpg';
 const ethnic3 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684134234/986d6f97-fe9b-487a-9c64-f577e0a32c491677314970316KhushalKwomenEmbroideryKurtaandpalazzowithdupattaset7_t6xzte.jpg';
@@ -43,4 +46,4 @@ const ethnic6 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v168413
 const ethnic7 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684137976/7dddd277-47ab-4d81-8c17-a4bac0fa1db91679143305119BlackThreadWorkAnarkaliSet1_guuegf.jpg';
 
 export {logo, header, hm, sassafras, roadster, levis, zara, dolce, urbanic, tokyoTalkies, tops, bottom, dresses, ethnic, cartEmpty};
-export {top1, top2, top3, top4, top5, top6, top7, top8, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, botttom7, dress1, dress2, dress3, dress4, dress5, ethnic1, ethnic2, ethnic3, ethnic4, ethnic5, ethnic6, ethnic7}
+export {top1, top2, top3, top4, top5, top6, top7, top8, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, bottom7, bottom8, dress1, dress2, dress3, dress4, dress5, dress6, dress7, ethnic1, ethnic2, ethnic3, ethnic4, ethnic5, ethnic6, ethnic7}
