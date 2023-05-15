@@ -15,9 +15,12 @@
     cursor: pointer;
     color: var(--primary-color);
     font-weight: 600;
-    background-color: var(--primary-lighter);
     padding: 10px;
     border-radius: 10px;
+}
+
+.filters button:hover {
+    border: 1px solid var(--primary-color);
 }
 
 .filters div {
