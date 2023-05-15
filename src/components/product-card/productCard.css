@@ -5,6 +5,8 @@
     font-size: 13px;
     cursor: pointer;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
@@ -25,6 +27,7 @@
     line-height: 13px;
     font-size: 11px;
     padding: 0 10px;
+    height: 25px;
 }
 
 .product-card .price-rating {
