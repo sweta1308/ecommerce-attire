@@ -4,11 +4,19 @@
     padding: 10px 20px 20px;
 }
 
-.filters h2 {
-    font-size: 16px;
+.filters .filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.filters button {
+.filters h2 {
+    font-size: 16px;
+    margin-left: -10px;
+}
+
+.filters .filter button {
     font-size: 12px;
     background-color: transparent;
     border: none;
@@ -17,10 +25,11 @@
     font-weight: 600;
     padding: 10px;
     border-radius: 10px;
+    margin-right: -10px;
 }
 
-.filters button:hover {
-    border: 1px solid var(--primary-color);
+.filters .filter button:hover {
+    color: var(--primary-dark);
 }
 
 .filters div {

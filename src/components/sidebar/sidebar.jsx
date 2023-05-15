@@ -4,8 +4,10 @@ export const SideBar = () => {
     return (
         <>
             <div className="filters">
-                <button>Clear Filters</button>
-                <h2>Filters</h2>
+                <div className='filter'>
+                    <h2>Filters</h2>
+                    <button>Clear Filters</button>
+                </div>
 
                 <h4>Price</h4>
                 <div className="rating-filter">

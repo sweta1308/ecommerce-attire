@@ -14,7 +14,7 @@ export const ProductCard = ({image, title, brand, price, originalPrice, ratings}
                     </div>
                     <p>{ratings?.value} ⭐</p>
                 </div>
-                
+                <button>Add to Cart</button>
             </div>
             
         </>
