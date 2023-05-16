@@ -73,3 +73,14 @@
     color: var(--primary-color);
     font-weight: 700;
 }
+
+@media (max-width: 450px) {
+    .product-card {
+        width: 140px;
+    }
+
+    .product-card img {
+        width: 140px;
+        height: 150px;
+    }
+}
