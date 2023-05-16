@@ -61,7 +61,7 @@
     padding: 8px 0;
     margin: 10px;
     background-color: var(--primary-color);
-    border: none;
+    border: 1px solid var(--primary-color);
     color: var(--white-color);
     border-radius: 10px;
     cursor: pointer;
