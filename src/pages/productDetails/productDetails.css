@@ -85,5 +85,9 @@
 }
 
 .mid-hr {
-    margin: 20px 100px;
+    margin: 0px 100px 10px;
+}
+
+.like-products {
+    padding: 10px 120px 40px;
 }

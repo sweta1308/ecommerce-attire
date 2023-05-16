@@ -48,9 +48,9 @@ export const Home = () => {
                         <p>We offer fast and free shipping for our loyal customers.</p>
                     </div>
                 </div>
-
-                <Category />
                 <Featured />
+                <Category />
+                
 
             </div>
 
