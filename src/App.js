@@ -7,6 +7,7 @@ import { NavBar } from './components/navbar/navbar';
 import { Wishlist } from './pages/wishlist/wishlist';
 import { ProductDetails } from './pages/productDetails/productDetails';
 import { Login } from './pages/login/login';
+import { Signup } from './pages/signup/signup';
 
 import MockMan from 'mockman-js';
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/products/:productID' element={<ProductDetails />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
       </Routes>
     </div>
   );
