@@ -62,3 +62,9 @@
 .login p:hover {
     color: var(--gray);
 }
+
+@media (max-width: 450px) {
+    .login {
+        width: 200px;
+    }
+}

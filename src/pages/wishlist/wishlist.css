@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.wishlist h1 {
+.wishlist h1, .wishlist-items h3 {
     text-align: center;
 }
 
