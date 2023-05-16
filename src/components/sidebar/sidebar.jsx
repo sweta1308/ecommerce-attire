@@ -36,10 +36,11 @@ export const SideBar = ({isFilterVisible}) => {
 
                 <h4>Ratings</h4>
                 <div className="price-filter">
-                    <label><input type="radio" name="rating" /> 4⭐ and above</label>
+                    {/* <label><input type="radio" name="rating" /> 4⭐ and above</label>
                     <label><input type="radio" name="rating" /> 3⭐ and above</label>
                     <label><input type="radio" name="rating" /> 2⭐ and above</label>
-                    <label><input type="radio" name="rating" /> 1⭐ and above</label>
+                    <label><input type="radio" name="rating" /> 1⭐ and above</label> */}
+                    <input type="range" className='slider' />
                 </div>
 
                 <h4>Sort By Price:</h4>

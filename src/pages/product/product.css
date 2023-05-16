@@ -50,7 +50,7 @@
 
 @media (max-width: 1250px) {
     .product {
-        padding: 30px 80px;
+        padding: 30px 60px;
     }
 }
 
@@ -64,11 +64,11 @@
     .sidebar {
         position: fixed;
         z-index: 2;
-        top: 100px;
+        top: 120px;
         left: 0;
         background: white;
         overflow-y: scroll;
-        height: 100vh;
+        height: 78vh;
         padding-left: 0;
     }
 
