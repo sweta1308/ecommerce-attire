@@ -1,9 +1,9 @@
 import './sidebar.css'
 
-export const SideBar = () => {
+export const SideBar = ({isFilterVisible}) => {
     return (
         <>
-            <div className="filters">
+            <div className="filters" style={{display: isFilterVisible ? 'block' : 'none'}}>
                 <div className='filter'>
                     <h2>Filters</h2>
                     <button>Clear Filters</button>

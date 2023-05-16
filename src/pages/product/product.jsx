@@ -3,21 +3,23 @@ import { ProductCard } from '../../components/product-card/productCard'
 import { SideBar } from '../../components/sidebar/sidebar'
 import { useProducts } from '../../context/productContext'
 import './product.css'
+import { useState } from 'react'
 
 export const Product = () => {
     const {productData} = useProducts();
     const navigate = useNavigate();
+    const [isFilterVisible, setIsFilterVisible] = useState(false)
     return (
         <>
             <div className="product">
                 <div className='text-filter'>
                     <p className='text'>Home <i class="fa-solid fa-angle-right fa-xs"></i> <span>Browse Products</span></p>
-                    <button><i class="fa-solid fa-filter" style={{color: '#e80071'}}></i> Filters</button>
+                    <button onClick={() => setIsFilterVisible(prev => !prev)}><i class="fa-solid fa-filter" style={{color: '#e80071'}}></i> Filters</button>
                 </div>
 
                 <div className='products'>
                     <div className='sidebar'>
-                        <SideBar />
+                        <SideBar isFilterVisible={isFilterVisible} />
                     </div>
                     <div className='product-list'>
                         {productData.map(product => {
