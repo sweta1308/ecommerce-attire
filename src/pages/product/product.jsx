@@ -10,7 +10,10 @@ export const Product = () => {
     return (
         <>
             <div className="product">
-                <p className='text'>Home <i class="fa-solid fa-angle-right fa-xs"></i> <span>Browse Products</span></p>
+                <div className='text-filter'>
+                    <p className='text'>Home <i class="fa-solid fa-angle-right fa-xs"></i> <span>Browse Products</span></p>
+                    <button><i class="fa-solid fa-filter" style={{color: '#e80071'}}></i> Filters</button>
+                </div>
 
                 <div className='products'>
                     <div className='sidebar'>
