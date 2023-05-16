@@ -4,3 +4,10 @@
     width: 100%;
     margin-bottom: 90px;
 }
+
+@media (max-width: 1050px) {
+    .featured {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -223,6 +223,17 @@ footer p {
     }
 
     footer {
+        padding: 0 30px;
         padding-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .footer-div .logo-footer {
+        width: 140px;
+    }
+
+    .footer-div .contacts {
+        width: 180px;
+        font-size: 10px
     }
 }
