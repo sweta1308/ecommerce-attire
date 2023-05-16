@@ -6,6 +6,7 @@ import { Cart } from './pages/cart/cart';
 import { NavBar } from './components/navbar/navbar';
 import { Wishlist } from './pages/wishlist/wishlist';
 import { ProductDetails } from './pages/productDetails/productDetails';
+import { Login } from './pages/login/login';
 
 import MockMan from 'mockman-js';
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/mockman' element={<MockMan />} />
         <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/products/:productID' element={<ProductDetails />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </div>
   );

@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.cart h1 {
+    text-align: center;
+}
+
 .cart-items img {
     width: 350px;
     margin-bottom: -30px;
@@ -37,10 +41,4 @@
     color: var(--primary-color);
     border-radius: 5px;
     border: 1px solid var(--primary-color);
-}
-
-@media (max-width: 1200px) {
-    .cart h1 {
-        text-align: center;
-    }
 }

@@ -20,7 +20,6 @@ export const products = [
 		},
 		categoryName: "Tops",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -35,7 +34,6 @@ export const products = [
 		},
 		categoryName: "Bottoms",
 		outOfStock: true,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -50,7 +48,6 @@ export const products = [
 		},
 		categoryName: "Ethnic",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -65,7 +62,6 @@ export const products = [
 		},
 		categoryName: "Tops",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -80,7 +76,6 @@ export const products = [
 		},
 		categoryName: "Dresses",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -95,7 +90,6 @@ export const products = [
 		},
 		categoryName: "Tops",
 		outOfStock: true,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -110,7 +104,6 @@ export const products = [
 		},
 		categoryName: "Bottoms",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -125,7 +118,6 @@ export const products = [
 		},
 		categoryName: "Tops",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -140,7 +132,6 @@ export const products = [
 		},
 		categoryName: "Dresses",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -155,7 +146,6 @@ export const products = [
 		},
 		categoryName: "Ethnic",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -170,7 +160,6 @@ export const products = [
 		},
 		categoryName: "Bottoms",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -185,7 +174,6 @@ export const products = [
 		},
 		categoryName: "Dresses",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -200,7 +188,6 @@ export const products = [
 		},
 		categoryName: "Ethnic",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -215,7 +202,6 @@ export const products = [
 		},
 		categoryName: "Tops",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -230,7 +216,6 @@ export const products = [
 		},
 		categoryName: "Dresses",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -245,7 +230,6 @@ export const products = [
 		},
 		categoryName: "Tops",
 		outOfStock: true,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -260,7 +244,6 @@ export const products = [
 		},
 		categoryName: "Bottoms",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -275,7 +258,6 @@ export const products = [
 		},
 		categoryName: "Tops",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -290,7 +272,6 @@ export const products = [
 		},
 		categoryName: "Tops",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -305,7 +286,6 @@ export const products = [
 		},
 		categoryName: "Bottoms",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -320,7 +300,6 @@ export const products = [
 		},
 		categoryName: "Ethnic",
 		outOfStock: true,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -335,7 +314,6 @@ export const products = [
 		},
 		categoryName: "Dresses",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -350,7 +328,6 @@ export const products = [
 		},
 		categoryName: "Bottoms",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -365,7 +342,6 @@ export const products = [
 		},
 		categoryName: "Bottoms",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -380,7 +356,6 @@ export const products = [
 		},
 		categoryName: "Ethnic",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -395,7 +370,6 @@ export const products = [
 		},
 		categoryName: "Bottoms",
 		outOfStock: false,
-		quantity: 0
 	},
   {
 		_id: uuid(),
@@ -410,7 +384,6 @@ export const products = [
 		},
 		categoryName: "Ethnic",
 		outOfStock: false,
-		quantity: 0
 	},
 	
 	{
@@ -426,7 +399,6 @@ export const products = [
 		},
 		categoryName: "Dresses",
 		outOfStock: true,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -441,7 +413,6 @@ export const products = [
 		},
 		categoryName: "Dresses",
 		outOfStock: false,
-		quantity: 0
 	},
 	{
 		_id: uuid(),
@@ -456,6 +427,5 @@ export const products = [
 		},
 		categoryName: "Ethnic",
 		outOfStock: false,
-		quantity: 0
 	},
 ]
