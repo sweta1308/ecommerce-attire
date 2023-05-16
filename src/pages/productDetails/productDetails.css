@@ -96,7 +96,7 @@
     .product-details {
         flex-direction: column;
         align-items: center;
-        padding: 10px 20px;
+        padding: 10px;
     }
 
     .like-product {
@@ -108,5 +108,27 @@
 
     .quantity-cart, .product-price {
         margin-top: -2px;
+    }
+
+    .product-detail .title-product {
+        width: 200px;
+    }
+}
+
+@media (max-width: 300px) {
+    .product-detail .title-product {
+        width: 150px;
+    }
+
+    .quantity-cart {
+        flex-direction: column;
+        width: 150px;
+    }
+    .quantity-cart button {
+        padding: 10px 25px;
+    }
+
+    .like-product {
+        padding: 10px;
     }
 }

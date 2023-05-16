@@ -84,3 +84,14 @@
         height: 150px;
     }
 }
+
+@media (max-width: 350px) {
+    .product-card {
+        width: 190px;
+    }
+
+    .product-card img {
+        width: 190px;
+        height: 210px;
+    }
+}

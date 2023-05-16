@@ -20,33 +20,26 @@
 .products .product-list {
     padding: 10px 50px;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px
 }
 
 .product-list li {
-    list-style: none;
-    
+    list-style: none;   
 }
 
 @media (max-width: 1250px) {
     .product {
         padding: 30px 80px;
     }
-
-    .products .product-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 @media (max-width: 1000px) {
     .product {
         padding: 30px 40px;
-    }
-
-    .products .product-list {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -55,8 +48,17 @@
         display: none;
     }
 
+    .product {
+        padding: 30px 20px;
+    }
+
     .products .product-list {
         padding: 0;
-        margin: 0px -10px;
+    }
+}
+
+@media (max-width: 325px) {
+    .product {
+        padding: 20px 5px;
     }
 }
