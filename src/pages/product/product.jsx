@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router'
 import { ProductCard } from '../../components/product-card/productCard'
 import { SideBar } from '../../components/sidebar/sidebar'
 import { useProducts } from '../../context/productContext'
@@ -5,6 +6,7 @@ import './product.css'
 
 export const Product = () => {
     const {productData} = useProducts();
+    const navigate = useNavigate();
     return (
         <>
             <div className="product">
@@ -18,7 +20,7 @@ export const Product = () => {
                         {productData.map(product => {
                             const {_id, title, brand, price, originalPrice, ratings, image} = product;
                             return (
-                                <li key={_id}>
+                                <li key={_id} onClick={() => navigate(`/products/${_id}`)}>
                                     <ProductCard title={title} brand={brand} price={price} originalPrice={originalPrice} image={image} ratings={ratings} />
                                 </li>
                             )
