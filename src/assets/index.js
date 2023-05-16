@@ -8,10 +8,6 @@ const zara = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v168388774
 const dolce = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1683887321/dolce_msbiub.png';
 const urbanic = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684138991/mhpqbc8xgvffrkym2mdp.png';
 const tokyoTalkies = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684141513/rhdikkdt5vf3vear8alk.png';
-const tops = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1683898962/top_kokptn.jpg';
-const bottom = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1683918962/download_oqwglc.jpg';
-const dresses = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1683898977/dresses_wbk7k5.jpg';
-const ethnic = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1683898986/ethnic_llwxrg.jpg';
 const cartEmpty = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684057227/free-empty-cart-4085814-3385483_c7dwif.webp';
 
 const top1 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684087983/d7ae3065-98d4-42d0-b244-d2b18802ff101601959656577-SASSAFRAS-Women-Black-Solid-High-Neck-Cropped-Top-4441601959-1_vyybyh.jpg'
@@ -45,5 +41,5 @@ const ethnic5 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v168413
 const ethnic6 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684137813/6dc3f75f-71be-4bcd-8d14-8b3017731fa81679147029413RedWineGlitterKurtaSet1_jblwyq.jpg';
 const ethnic7 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684137976/7dddd277-47ab-4d81-8c17-a4bac0fa1db91679143305119BlackThreadWorkAnarkaliSet1_guuegf.jpg';
 
-export {logo, header, hm, sassafras, roadster, levis, zara, dolce, urbanic, tokyoTalkies, tops, bottom, dresses, ethnic, cartEmpty};
+export {logo, header, hm, sassafras, roadster, levis, zara, dolce, urbanic, tokyoTalkies, cartEmpty};
 export {top1, top2, top3, top4, top5, top6, top7, top8, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, bottom7, bottom8, dress1, dress2, dress3, dress4, dress5, dress6, dress7, ethnic1, ethnic2, ethnic3, ethnic4, ethnic5, ethnic6, ethnic7}

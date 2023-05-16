@@ -8,7 +8,7 @@
     width: 180px;
     position: relative;
     cursor: pointer;
-}
+}      
 
 .category div:hover {
     transform: scale(1.1);
