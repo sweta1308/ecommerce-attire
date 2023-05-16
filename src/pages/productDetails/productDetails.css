@@ -1,6 +1,6 @@
 .product-details {
     display: flex;
-    padding: 70px 60px;
+    padding: 60px 60px;
     justify-content: center;
 }
 
@@ -85,5 +85,9 @@
 }
 
 .mid-hr {
-    margin: 20px 100px;
+    margin: 0px 100px 10px;
+}
+
+.like-product {
+    padding: 10px 120px;
 }

@@ -34,7 +34,10 @@ export const ProductDetails = () => {
                 </div>
             </div>
             <hr className="mid-hr" />
-            <Featured />
+            <div className="like-product">
+                <Featured />
+            </div>
+            
         </>
     )
 }
