@@ -2,6 +2,7 @@ import { useParams } from "react-router"
 import { useProducts } from "../../context/productContext";
 import './productDetails.css';
 import { useState } from "react";
+import { Featured } from "../../components/featured/featured";
 
 export const ProductDetails = () => {
     const [quantity, setQuantity] = useState(1);
@@ -33,6 +34,7 @@ export const ProductDetails = () => {
                 </div>
             </div>
             <hr className="mid-hr" />
+            <Featured />
         </>
     )
 }

@@ -1,7 +1,7 @@
 export const Featured = () => {
     return (
         <>
-            <h2>Featured Products ✨</h2>
+            <h2>Products You May Like ✨</h2>
         </>
     )
 }
