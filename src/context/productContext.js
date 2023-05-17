@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { productReducer } from "../reducer/productReducer";
 import axios from 'axios';
-// import { useParams } from "react-router";
 
 const ProductContext = createContext();
 
