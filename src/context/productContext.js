@@ -11,7 +11,6 @@ export const ProductProdvider = ({children}) => {
         isCategoryLoading: false,
         productData: [],
         categoriesData: [],
-        product: {}
     }
     const [productState, productDispatch] = useReducer(productReducer, initialState)
 
@@ -28,21 +27,6 @@ export const ProductProdvider = ({children}) => {
             console.log(e)
         }
     }
-
-    // const getProduct = async () => {
-    //     try {
-    //         const {status, data} = await axios({
-    //             method: "GET",
-    //             url: `/api/products/${productID}`
-    //         })
-    //         if (status===200) {
-    //             console.log(data)
-    //             productDispatch({type: 'set_product', payload: data.product})
-    //         }
-    //     } catch (e) {
-    //         console.log(e)
-    //     }
-    // }
 
     const getCategories = async ()=> {
         try {
@@ -65,10 +49,6 @@ export const ProductProdvider = ({children}) => {
     useEffect(() => {
         getCategories();
     }, [])
-
-    // useEffect(() => {
-    //     getProduct()
-    // }, [productState.product])
 
     return (
         <ProductContext.Provider value={{ productState, productDispatch }}>{children}</ProductContext.Provider>

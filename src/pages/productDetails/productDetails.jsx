@@ -1,15 +1,34 @@
-import { useParams } from "react-router"
-import { useProducts } from "../../context/productContext";
+import { useParams } from "react-router";
 import './productDetails.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Featured } from "../../components/featured/featured";
+import { getProduct } from "../../utils/getProduct";
+import Shimmer from "../../components/shimmer/shimmer";
 
 export const ProductDetails = () => {
     const [quantity, setQuantity] = useState(1);
+    const [singleProduct, setSingleProduct] = useState({})
     const {productID} = useParams();
-    const {productState} = useProducts();
-    const findProduct = productState.productData?.find(product => product._id === productID)
-    const {image, title, brand, ratings, price, originalPrice, outOfStock} = findProduct
+    const getSingleProduct = async () => {
+        try {
+            const product = await getProduct(productID);
+            console.log(product)
+            setSingleProduct(product?.product)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    useEffect(() => {
+        getSingleProduct();
+    }, [])
+    
+    if (Object.keys(singleProduct).length === 0) {
+        return <Shimmer />
+    }
+
+    const {image, title, brand, ratings, price, originalPrice, outOfStock} = singleProduct
+
     return (
         <>
             <div className="product-details">
@@ -26,8 +45,7 @@ export const ProductDetails = () => {
                     <p className="stock"><strong>Availability: </strong>{outOfStock ? 'Not in Stock' : 'In Stock'}</p>
                     <div className="quantity-cart">
                         <div className="quantity">
-                            <i onClick={() => setQuantity(quantity => quantity-1)} class="fa-solid fa-minus fa-xs"></i>{quantity}<i onClick={() => setQuantity(quantity => quantity+1)} class="fa-solid fa-plus fa-xs"></i>
-                            
+                            <i disabled={quantity===1 ? true : false} onClick={() => setQuantity(quantity => quantity > 1 ? quantity - 1 : quantity)} class="fa-solid fa-minus fa-xs"></i>{quantity}<i onClick={() => setQuantity(quantity => quantity+1)} class="fa-solid fa-plus fa-xs"></i> 
                         </div>
                         <button>Add To Cart</button>
                     </div>
