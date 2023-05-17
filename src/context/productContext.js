@@ -46,8 +46,13 @@ export const ProductProdvider = ({children}) => {
 
     const getCategories = async ()=> {
         try {
-            const categoryRes = await fetch('/api/categories');
-            console.log(await categoryRes.json())
+            const {status, data} = await axios({
+                method: 'GET',
+                url: '/api/categories'
+            });
+            if (status === 200) {
+                productDispatch({type: 'set_category', payload: data.categories})
+            }
         } catch (e) {
             console.log(e)
         }
