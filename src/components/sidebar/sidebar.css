@@ -52,3 +52,9 @@
 .filters h4 {
     color: var(--gray-dark);
 }
+
+@media (max-width: 750px) {
+    .filters {
+        display: none;
+    }
+}

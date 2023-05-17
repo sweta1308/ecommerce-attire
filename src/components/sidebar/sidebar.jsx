@@ -3,7 +3,7 @@ import './sidebar.css'
 export const SideBar = ({isFilterVisible}) => {
     return (
         <>
-            <div className="filters" style={{display: isFilterVisible ? 'block' : 'none'}}>
+            <div className="filters" style={{display: isFilterVisible ? 'block' : ''}}>
                 <div className='filter'>
                     <h2>Filters</h2>
                     <button>Clear Filters</button>
