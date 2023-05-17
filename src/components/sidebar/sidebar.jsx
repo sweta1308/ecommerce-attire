@@ -1,6 +1,10 @@
+// import { useFilters } from '../../context/filterContext';
+import { useProducts } from '../../context/productContext'
 import './sidebar.css'
 
 export const SideBar = ({isFilterVisible}) => {
+    const {productState} = useProducts();
+    // const {filterDispatch} = useFilters();
     return (
         <>
             <div className="filters" style={{display: isFilterVisible ? 'block' : ''}}>
@@ -16,10 +20,13 @@ export const SideBar = ({isFilterVisible}) => {
 
                 <h4>Category</h4>
                 <div className="category-filter">
-                    <label><input type="checkbox" /> Tops</label>
-                    <label><input type="checkbox" /> Bottomwear</label>
-                    <label><input type="checkbox" /> Dresses</label>
-                    <label><input type="checkbox" /> Ethnic</label>
+                    {productState?.categoriesData.map(({categoryName}) => (
+                        <div key={categoryName}>
+                            <label>
+                                <input type='checkbox' /> {categoryName}
+                            </label>
+                        </div>
+                    ))}
                 </div>
 
                 <h4>Brands</h4>
@@ -36,10 +43,6 @@ export const SideBar = ({isFilterVisible}) => {
 
                 <h4>Ratings</h4>
                 <div className="price-filter">
-                    {/* <label><input type="radio" name="rating" /> 4⭐ and above</label>
-                    <label><input type="radio" name="rating" /> 3⭐ and above</label>
-                    <label><input type="radio" name="rating" /> 2⭐ and above</label>
-                    <label><input type="radio" name="rating" /> 1⭐ and above</label> */}
                     <input type="range" className='slider' />
                 </div>
 

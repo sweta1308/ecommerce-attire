@@ -41,6 +41,10 @@
     padding: 7px 17px;
 }
 
+.filters .category-filter {
+    padding: 12px 0px;
+}
+
 .filters div label {
     cursor: pointer;
 }
