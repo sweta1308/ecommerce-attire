@@ -7,8 +7,8 @@ import { Featured } from "../../components/featured/featured";
 export const ProductDetails = () => {
     const [quantity, setQuantity] = useState(1);
     const {productID} = useParams();
-    const {productData} = useProducts();
-    const findProduct = productData.find(product => product._id === productID)
+    const {productState} = useProducts();
+    const findProduct = productState.productData?.find(product => product._id === productID)
     const {image, title, brand, ratings, price, originalPrice, outOfStock} = findProduct
     return (
         <>

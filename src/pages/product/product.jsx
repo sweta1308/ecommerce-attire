@@ -6,9 +6,9 @@ import './product.css'
 import { useState } from 'react'
 
 export const Product = () => {
-    const {productData} = useProducts();
+    const {productState} = useProducts();
+    const [isFilterVisible, setIsFilterVisible] = useState(false);
     const navigate = useNavigate();
-    const [isFilterVisible, setIsFilterVisible] = useState(false)
     return (
         <>
             <div className="product">
@@ -22,7 +22,7 @@ export const Product = () => {
                         <SideBar isFilterVisible={isFilterVisible} />
                     </div>
                     <div className='product-list'>
-                        {productData.map(product => {
+                        {productState?.productData.map(product => {
                             const {_id, title, brand, price, originalPrice, ratings, image} = product;
                             return (
                                 <li key={_id} onClick={() => navigate(`/products/${_id}`)}>
