@@ -25,6 +25,24 @@
     font-size: 12px;
 }
 
+.password-wrapper input {
+    width: 86%;
+    border: none;
+    outline: none;
+}
+
+.password-wrapper {
+    border: 1px solid black;
+    outline: 1px solid black;
+    border-radius: 5px;
+}
+
+.password-wrapper button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .login-button {
     width: 100%;
     background-color: var(--primary-color);
