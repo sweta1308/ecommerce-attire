@@ -25,6 +25,9 @@ export const filterReducer = (state, action) => {
                 ...state,
                 brands: [...state.brands, action.payload]
               };
+        
+        case 'rating':
+            return {...state, rating: action.payload}
 
         case "clear_filters":
             return {

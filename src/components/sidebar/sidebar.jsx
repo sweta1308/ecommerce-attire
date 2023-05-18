@@ -38,7 +38,7 @@ export const SideBar = ({isFilterVisible}) => {
 
                 <h4>Ratings</h4>
                 <div className="price-filter">
-                    <input type="range" className='slider' />
+                    <input type="range" className='slider' min='0' max='5' value={filterState.rating} onChange={(e) => filterDispatch({type: 'rating', payload: e.target.value})} />
                 </div>
 
                 <h4>Sort By Price:</h4>

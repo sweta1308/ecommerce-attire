@@ -7,7 +7,6 @@ const FilterContext = createContext();
 export const FilterProvider = ({children}) => {
     const {productState} = useProducts();
     const initialFilter = {
-        price: 10000,
         category: [], 
         brands: [],
         rating: 5,
@@ -23,6 +22,10 @@ export const FilterProvider = ({children}) => {
 
     if (filterState.brands.length > 0) {
         filteredData = filteredData.filter(data => filterState.brands.includes(data.brand))
+    }
+
+    if (filterState.rating >= 0) {
+        filteredData = filteredData.filter(data => data.ratings.value <= filterState.rating)
     }
 
     return (
