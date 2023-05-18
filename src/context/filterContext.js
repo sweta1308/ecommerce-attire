@@ -12,6 +12,7 @@ export const FilterProvider = ({children}) => {
         rating: 5,
         sort: 'featured'
     }
+    
     const [filterState, filterDispatch] = useReducer(filterReducer, initialFilter);
 
     let filteredData = [...productState?.productData]
