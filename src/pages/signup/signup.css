@@ -59,6 +59,18 @@
     background-color: var(--primary-dark);
 }
 
+
+.signup p {
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.signup p:hover {
+    color: var(--gray);
+}
+
 @media (max-width: 500px) {
     .signup {
         width: 240px;
