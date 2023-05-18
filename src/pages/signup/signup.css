@@ -43,7 +43,27 @@
     font-size: 14px;
 }
 
-.signup button {
+
+.password-wrapper input {
+    width: 86%;
+    border: none;
+    outline: none;
+}
+
+.password-wrapper {
+    border: 1px solid black;
+    outline: 1px solid black;
+    border-radius: 5px;
+}
+
+.password-wrapper button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.signup .button-signup {
     width: 100%;
     background-color: var(--primary-color);
     border: none;
@@ -55,7 +75,7 @@
     border-radius: 10px;
 }
 
-.signup button:hover {
+.signup .button-signup:hover {
     background-color: var(--primary-dark);
 }
 
