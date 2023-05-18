@@ -33,10 +33,36 @@ export const AuthProvider = ({children}) => {
             console.log(e)
         }
     }
+
+    const userSignup = async (signupData) => {
+        try {
+            const {data, status} = await axios({
+                method: 'POST',
+                data: signupData,
+                url: '/api/auth/signup'
+            })
+            if (status === 201) {
+                authDispatch({type: "set_login", payload: true});
+                authDispatch({type: "set_user", payload: data?.createdUser});
+                authDispatch({type: "set_token", payload: data?.encodedToken});
+                navigate('/');
+                localStorage.setItem('token', data?.encodedToken)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    const userLogout = () => {
+        authDispatch({type: "set_login", payload: false});
+        authDispatch({type: "set_user", payload: {}});
+        authDispatch({type: "set_token", payload: ''});
+        localStorage.setItem('token', '')
+    }
     
     return (
         <>
-            <AuthContext.Provider value={{authState, userLogin}}>
+            <AuthContext.Provider value={{authState, userLogin, userSignup, userLogout}}>
                 {children}
             </AuthContext.Provider>
         </>
