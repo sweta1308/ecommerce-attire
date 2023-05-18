@@ -1,10 +1,10 @@
-// import { useFilters } from '../../context/filterContext';
+import { useFilters } from '../../context/filterContext';
 import { useProducts } from '../../context/productContext'
 import './sidebar.css'
 
 export const SideBar = ({isFilterVisible}) => {
     const {productState} = useProducts();
-    // const {filterDispatch} = useFilters();
+    const {filterDispatch, filterState} = useFilters();
     return (
         <>
             <div className="filters" style={{display: isFilterVisible ? 'block' : ''}}>
@@ -13,17 +13,12 @@ export const SideBar = ({isFilterVisible}) => {
                     <button>Clear Filters</button>
                 </div>
 
-                <h4>Price</h4>
-                <div className="rating-filter">
-                    <input type="range" className='slider' />
-                </div>
-
                 <h4>Category</h4>
                 <div className="category-filter">
                     {productState?.categoriesData.map(({categoryName}) => (
                         <div key={categoryName}>
                             <label>
-                                <input type='checkbox' /> {categoryName}
+                                <input type='checkbox' checked={filterState?.category.includes(categoryName)} onChange={() => filterDispatch({type: 'FILTER_BY_CATEGORY', payload: categoryName})} /> {categoryName}
                             </label>
                         </div>
                     ))}

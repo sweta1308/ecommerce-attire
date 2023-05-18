@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router'
 import { ProductCard } from '../../components/product-card/productCard'
 import { SideBar } from '../../components/sidebar/sidebar'
-import { useProducts } from '../../context/productContext'
 import './product.css'
 import { useState } from 'react'
+import { useFilters } from '../../context/filterContext'
 
 export const Product = () => {
-    const {productState} = useProducts();
+    const {filteredData} = useFilters();
     const [isFilterVisible, setIsFilterVisible] = useState(false);
     const navigate = useNavigate();
     return (
@@ -22,7 +22,7 @@ export const Product = () => {
                         <SideBar isFilterVisible={isFilterVisible} />
                     </div>
                     <div className='product-list'>
-                        {productState?.productData.map(product => {
+                        {filteredData.map(product => {
                             const {_id, title, brand, price, originalPrice, ratings, image} = product;
                             return (
                                 <li key={_id} onClick={() => navigate(`/products/${_id}`)}>

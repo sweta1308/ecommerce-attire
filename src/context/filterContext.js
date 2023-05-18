@@ -1,9 +1,11 @@
 import { createContext, useContext, useReducer } from "react";
 import { filterReducer } from "../reducer/filterReducer";
+import { useProducts } from "./productContext";
 
 const FilterContext = createContext();
 
 export const FilterProvider = ({children}) => {
+    const {productState} = useProducts();
     const initialFilter = {
         price: 10000,
         category: [], 
@@ -11,10 +13,17 @@ export const FilterProvider = ({children}) => {
         rating: 5,
         sort: ''
     }
-    const [filterState, filterDispatch] = useReducer(filterReducer, initialFilter)
+    const [filterState, filterDispatch] = useReducer(filterReducer, initialFilter);
+
+    let filteredData = [...productState?.productData]
+
+    if (filterState.category.length > 0) {
+        filteredData = filteredData.filter(data => filterState.category.includes(data.categoryName))
+    }
+
     return (
         <>
-            <FilterContext.Provider value={{filterState, filterDispatch}}>
+            <FilterContext.Provider value={{filterState, filterDispatch, filteredData}}>
                 {children}
             </FilterContext.Provider>
         </>
