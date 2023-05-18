@@ -10,6 +10,7 @@ import { Login } from './pages/login/login';
 import { Signup } from './pages/signup/signup';
 import { RequireAuth } from './components/auth/requireAuth';
 import MockMan from 'mockman-js';
+import { RestrictAuth } from './components/auth/restrictAuth';
 
 
 
@@ -25,8 +26,10 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/wishlist' element={<Wishlist />} />
         </Route>
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
+        <Route element={<RestrictAuth />}>
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+        </Route>
         <Route path='/mockman' element={<MockMan />} />
       </Routes>
     </div>
