@@ -34,6 +34,7 @@ export const AuthProvider = ({children}) => {
             alert(e.response.data.errors)
         }
     }
+    
 
     const userSignup = async (signupData) => {
         try {
