@@ -5,5 +5,5 @@ export const RestrictAuth = () => {
     const {authState} = useAuth();
     const location = useLocation();
 
-    return authState.isLoggedIn ? <Navigate to={location?.state?.from?.pathname || "/loggedIn"} replace /> : <Outlet />
+    return authState.isLoggedIn ? <Navigate to={location?.state?.from?.pathname || "/"} replace /> : <Outlet />
 }

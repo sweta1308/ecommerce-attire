@@ -46,7 +46,7 @@
 .nav .nav-navigate {
     display: flex;
     align-items: center;
-    width: 270px;
+    width: 320px;
     justify-content: space-between;
 }
 
@@ -67,8 +67,22 @@
 }
 
 .nav .nav-navigate i {
-    font-size: 14px;
+    font-size: 12px;
+}
+
+.login-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
+    width: 75px;
+    justify-content: space-between;
+}
+
+.login-icon button {
+    font-size: 10px;
 }
 
 .search-bar {

@@ -26,7 +26,7 @@ export const AuthProvider = ({children}) => {
                 authDispatch({type: "set_login", payload: true});
                 authDispatch({type: "set_user", payload: data?.foundUser});
                 authDispatch({type: "set_token", payload: data?.encodedToken});
-                navigate('/loggedIn');
+                navigate('/');
                 localStorage.setItem('token', data?.encodedToken)
             }
         } catch (e) {

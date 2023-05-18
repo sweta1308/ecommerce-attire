@@ -2,15 +2,22 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { logo } from "../../assets";
 import './navbar.css';
+import { useAuth } from "../../context/authContext";
 
 export const NavBar = () => {
     const [isVisible, setIsVisible] = useState(true);
     const navigate = useNavigate();
+    const {authState, userLogout} = useAuth();
 
     const activeStyle = ({isActive}) => ({
         color: isActive ? 'var(--primary-color)' : 'black',
         textDecoration: 'none'
     })
+
+    const handleHelloClick = () => {
+        userLogout();
+        navigate('/');
+    }
     return (
         <>
             <div className="top-bar" style={{display: isVisible ? 'block' : 'none'}}>
@@ -31,8 +38,9 @@ export const NavBar = () => {
                         </div>
                         <i onClick={() => navigate('/cart')} class="fa-solid fa-cart-shopping"></i>
                         <i onClick={() => navigate('/wishlist')}  class="fa-solid fa-heart"></i>
-                        <i onClick={() => navigate('/login')} class="fa-regular fa-user"></i>
 
+                        {authState.isLoggedIn ? <button className="login-icon" onClick={handleHelloClick}><i class="fa-regular fa-user"></i> Log Out</button> : <button className="login-icon" onClick={() => navigate('/login')} ><i class="fa-regular fa-user"></i> Log In</button>}
+                        {/* // <button onClick={() => authState.isLoggedIn ? handleHelloClick : navigate('/login')} className="login-icon"><i class="fa-regular fa-user"></i> {authState.isLoggedIn ? 'Log Out' : "Log In"}</button> */}
                     </div>
                 </div>
 

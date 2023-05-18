@@ -10,7 +10,6 @@ import { Login } from './pages/login/login';
 import { Signup } from './pages/signup/signup';
 import { RequireAuth } from './components/auth/requireAuth';
 import { RestrictAuth } from './components/auth/restrictAuth';
-import { LoggedIn } from './pages/login/loggedIn';
 import MockMan from 'mockman-js';
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Product />} />
         <Route path='/products/:productID' element={<ProductDetails />} />
-        <Route path='/loggedIn' element={<LoggedIn />} />
         <Route element={<RequireAuth />}>
           <Route path='/cart' element={<Cart />} />
           <Route path='/wishlist' element={<Wishlist />} />

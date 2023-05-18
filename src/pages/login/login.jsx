@@ -23,9 +23,8 @@ export const Login = () => {
             alert('Enter proper credentials.')
         } else {
             userLogin(userData)
-            navigate('/loggedIn')
-        }
-        
+            navigate('/')
+        }   
     }
 
     const handleTestLogin = () => {
