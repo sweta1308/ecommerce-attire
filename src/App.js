@@ -8,8 +8,9 @@ import { Wishlist } from './pages/wishlist/wishlist';
 import { ProductDetails } from './pages/productDetails/productDetails';
 import { Login } from './pages/login/login';
 import { Signup } from './pages/signup/signup';
-
+import { RequireAuth } from './components/auth/requireAuth';
 import MockMan from 'mockman-js';
+
 
 
 function App() {
@@ -19,12 +20,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Product />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/mockman' element={<MockMan />} />
-        <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/products/:productID' element={<ProductDetails />} />
+        <Route element={<RequireAuth />}>
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/wishlist' element={<Wishlist />} />
+        </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/mockman' element={<MockMan />} />
       </Routes>
     </div>
   );
