@@ -10,7 +10,7 @@ export const FilterProvider = ({children}) => {
         category: [], 
         brands: [],
         rating: 5,
-        sort: ''
+        sort: 'featured'
     }
     const [filterState, filterDispatch] = useReducer(filterReducer, initialFilter);
 
@@ -26,6 +26,14 @@ export const FilterProvider = ({children}) => {
 
     if (filterState.rating >= 0) {
         filteredData = filteredData.filter(data => data.ratings.value <= filterState.rating)
+    }
+
+    if (filterState.sort === 'high-to-low') {
+        filteredData = [...filteredData].sort((a, b) => b.price - a.price)
+    } else if (filterState.sort === 'low-to-high') {
+        filteredData = [...filteredData].sort((a, b) => a.price - b.price)
+    } else if (filterState.sort === 'featured') {
+        filteredData = [...filteredData]
     }
 
     return (

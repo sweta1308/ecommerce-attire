@@ -38,14 +38,14 @@ export const SideBar = ({isFilterVisible}) => {
 
                 <h4>Ratings</h4>
                 <div className="price-filter">
-                    <input type="range" className='slider' min='0' max='5' value={filterState.rating} onChange={(e) => filterDispatch({type: 'rating', payload: e.target.value})} />
+                    <input type="range" className='slider' min='0' max='5' value={filterState.rating} onChange={(e) => filterDispatch({type: 'filter_by_rating', payload: e.target.value})} />
                 </div>
 
                 <h4>Sort By Price:</h4>
-                <div className="price-filter">
-                    <label><input type="radio" name="sort" /> High to Low</label>
-                    <label><input type="radio" name="sort" /> Low to High</label>
-                    <label><input type="radio" name="sort" /> Reset</label>
+                <div className="price-filter"> 
+                    <label><input type="radio" name="sort" onChange={() => filterDispatch({type: 'filter_by_sort', payload: 'featured'})} /> Featured</label>
+                    <label><input type="radio" name="sort" onChange={() => filterDispatch({type: 'filter_by_sort', payload: 'high-to-low'})} /> High to Low</label>
+                    <label><input type="radio" name="sort" onChange={() => filterDispatch({type: 'filter_by_sort', payload: 'low-to-high'})} /> Low to High</label>
                 </div>
             </div>
             
