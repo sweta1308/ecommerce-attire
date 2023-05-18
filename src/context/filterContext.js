@@ -21,6 +21,10 @@ export const FilterProvider = ({children}) => {
         filteredData = filteredData.filter(data => filterState.category.includes(data.categoryName))
     }
 
+    if (filterState.brands.length > 0) {
+        filteredData = filteredData.filter(data => filterState.brands.includes(data.brand))
+    }
+
     return (
         <>
             <FilterContext.Provider value={{filterState, filterDispatch, filteredData}}>

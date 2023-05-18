@@ -1,6 +1,6 @@
 export const filterReducer = (state, action) => {
     switch(action.type) {
-        case "FILTER_BY_CATEGORY":
+        case "filter_by_category":
             return state.category.includes(action.payload)
             ? {
                 ...state,
@@ -11,6 +11,19 @@ export const filterReducer = (state, action) => {
             : {
                 ...state,
                 category: [...state.category, action.payload]
+              };
+
+        case "filter_by_brands":
+            return state.brands.includes(action.payload)
+            ? {
+                ...state,
+                brands: [...state.brands].filter(
+                  (item) => item !== action.payload
+                )
+              }
+            : {
+                ...state,
+                brands: [...state.brands, action.payload]
               };
         default:
             return state

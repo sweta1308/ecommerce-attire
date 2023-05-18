@@ -18,7 +18,7 @@ export const SideBar = ({isFilterVisible}) => {
                     {productState?.categoriesData.map(({categoryName}) => (
                         <div key={categoryName}>
                             <label>
-                                <input type='checkbox' checked={filterState?.category.includes(categoryName)} onChange={() => filterDispatch({type: 'FILTER_BY_CATEGORY', payload: categoryName})} /> {categoryName}
+                                <input type='checkbox' checked={filterState?.category.includes(categoryName)} onChange={() => filterDispatch({type: 'filter_by_category', payload: categoryName})} /> {categoryName}
                             </label>
                         </div>
                     ))}
@@ -26,14 +26,14 @@ export const SideBar = ({isFilterVisible}) => {
 
                 <h4>Brands</h4>
                 <div className="brand-filter">
-                    <label><input type="checkbox" /> H&M</label>
-                    <label><input type="checkbox" /> Sassafras</label>
-                    <label><input type="checkbox" /> Levis</label>
-                    <label><input type="checkbox" /> Urbanic</label>
-                    <label><input type="checkbox" /> Zara</label>
-                    <label><input type="checkbox" /> Roadster</label>
-                    <label><input type="checkbox" /> Dolce & Gabbana</label>
-                    <label><input type="checkbox" /> Tokyo Talkies</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('H&M')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'H&M'})} /> H&M</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('Sassafras')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Sassafras'})} /> Sassafras</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('Levis')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Levis'})} /> Levis</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('Urbanic')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Urbanic'})} /> Urbanic</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('Zara')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Zara'})} /> Zara</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('Roadster')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Roadster'})} /> Roadster</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('Dolce & Gabbana')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Dolce & Gabbana'})} /> Dolce & Gabbana</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('Tokyo Talkies')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Tokyo Talkies'})} /> Tokyo Talkies</label>
                 </div>
 
                 <h4>Ratings</h4>
