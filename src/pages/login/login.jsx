@@ -1,8 +1,12 @@
 import { useNavigate } from 'react-router';
 import './login.css';
+import { useState } from 'react';
 
 export const Login = () => {
     const navigate = useNavigate();
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const handlePasswordClick = () => setIsPasswordVisible(prev => !prev)
+
     return (
         <div>
             <div className='login'>
@@ -14,7 +18,10 @@ export const Login = () => {
 
                 <div>
                     <label for='password'>Password:</label>
-                    <input id='password' type='password' placeholder='********' />
+                    <div className='password-wrapper'>
+                        <input id='password' type={isPasswordVisible ? 'text' : 'password'} placeholder={isPasswordVisible ? 'password' : '********'} /> 
+                        <button onClick={handlePasswordClick}>{isPasswordVisible ? <i class="fa-regular fa-eye-slash"></i> : <i class="fa-regular fa-eye"></i>}</button>
+                    </div>
                 </div>
 
                 <button className='login-button'>Login</button>
