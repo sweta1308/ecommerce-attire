@@ -26,7 +26,7 @@ export const Login = () => {
             navigate('/')
         }   
     }
-
+    console.log(userData)
     const handleTestLogin = () => {
         setUserData(testUserData);
         userLogin(testUserData);

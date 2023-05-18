@@ -18,6 +18,8 @@ export const NavBar = () => {
         userLogout();
         navigate('/');
     }
+
+    console.log(authState)
     return (
         <>
             <div className="top-bar" style={{display: isVisible ? 'block' : 'none'}}>
