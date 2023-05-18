@@ -12,8 +12,8 @@ export const Login = () => {
         password: ''
     })
     const testUserData = {
-        email: 'johndoe@gmail.com',
-        password: 'john1234'
+        email: 'adarshbalika@gmail.com',
+        password: 'adarshbalika'
     }
 
     const handlePasswordClick = () => setIsPasswordVisible(prev => !prev);
