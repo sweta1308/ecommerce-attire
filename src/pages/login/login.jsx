@@ -23,12 +23,14 @@ export const Login = () => {
             alert('Enter proper credentials.')
         } else {
             userLogin(userData)
+            navigate('/loggedIn')
         }
+        
     }
 
     const handleTestLogin = () => {
         setUserData(testUserData);
-        userLogin(testUserData)
+        userLogin(testUserData);
     }
 
     return (
