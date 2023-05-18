@@ -25,6 +25,14 @@ export const filterReducer = (state, action) => {
                 ...state,
                 brands: [...state.brands, action.payload]
               };
+
+        case "clear_filters":
+            return {
+                category: [], 
+                brands: [],
+                rating: 5,
+                sort: ''
+            }
         default:
             return state
     }

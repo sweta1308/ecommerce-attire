@@ -10,7 +10,7 @@ export const SideBar = ({isFilterVisible}) => {
             <div className="filters" style={{display: isFilterVisible ? 'block' : ''}}>
                 <div className='filter'>
                     <h2>Filters</h2>
-                    <button>Clear Filters</button>
+                    <button onClick={() => filterDispatch({type: 'clear_filters'})}>Clear Filters</button>
                 </div>
 
                 <h4>Category</h4>
