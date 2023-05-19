@@ -2,7 +2,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
-    --primary-color: #E80071;
+    --primary-color: #e80071;
     --primary-dark: #ba045c;
     --primary-light:rgb(240, 206, 206);
     --primary-lighter: rgb(253, 239, 245);
@@ -23,3 +23,4 @@ body {
     padding: 0;
     font-family: 'Nunito Sans', sans-serif;
 }
+
