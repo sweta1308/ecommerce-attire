@@ -54,13 +54,29 @@ export const CartProvider = ({children}) => {
         }
     }
 
+    const changeCartQuantity = async(dataId, updateType) => {
+        try {
+            const {data, status} = await axios({
+                method: "POST",
+                data: {action: {type: updateType}},
+                url: `/api/user/cart/${dataId}`,
+                headers: {authorization: token}
+            })
+            if (status === 200) {
+                setCart(data?.cart)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     useEffect(() => {
         getCartData()
     })
 
     return (
         <>
-            <CartContext.Provider value={{cart, getCartData, addCartData, removeCartData}}>
+            <CartContext.Provider value={{cart, getCartData, addCartData, removeCartData, changeCartQuantity}}>
                 {children}
             </CartContext.Provider>
         </>
