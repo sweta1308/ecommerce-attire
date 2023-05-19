@@ -5,7 +5,7 @@ import EmptyCart from './emptyCart';
 import PriceCard from './priceCard';
 
 const Cart = () => {
-    const {cart, removeCartData} = useCart();
+    const {cart,  removeCartData} = useCart();
     let cartObject = {
         quantity: 0,
         totalPrice: 0,
@@ -19,6 +19,7 @@ const Cart = () => {
         <>
             <div className='cart'>
                 <h1>Cart {cart.length > 0 && <span>({cart.length})</span>}</h1>
+                {cart.length > 0 && <button className='clear-cart'>Clear Cart</button>}
                 {cart.length > 0 ? <div>
                     <div className='cart-items'>
                         {cart.map(item => {

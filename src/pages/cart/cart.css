@@ -7,6 +7,21 @@
     text-align: center;
 }
 
+.clear-cart {
+    width: max-content;
+    margin: 10px 50px;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.clear-cart:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
 /* Empty Cart */
 .empty-cart-items {
     display: flex;

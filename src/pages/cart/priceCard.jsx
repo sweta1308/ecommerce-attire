@@ -15,7 +15,7 @@ const PriceCard = ({obj}) => {
                     <p>Grand Total</p>
                     <h4>Rs. {obj.totalPrice}</h4>
                 </li>
-                <button>CheckOut</button>
+                <button>CheckOut Now</button>
             </ul>
         </>
     )
