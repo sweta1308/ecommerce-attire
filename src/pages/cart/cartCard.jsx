@@ -1,7 +1,9 @@
+import { useCart } from '../../context/cartContext';
 import './cart.css'
 
 export const CartCard = ({data, handleRemoveCart}) => {
-    const {_id, image, brand, title, qty, price, originalPrice} = data
+    const {_id, image, brand, title, qty, price, originalPrice} = data;
+    const {changeCartQuantity} = useCart();
     return (
         <>
             <div className='cart-card'>
@@ -12,7 +14,7 @@ export const CartCard = ({data, handleRemoveCart}) => {
                 </div>
                 <div className="cart-quantity">
                     <div className="quantity-select">
-                        <i disabled={qty===1 ? true : false} class="fa-solid fa-minus fa-xs"></i>{qty}<i class="fa-solid fa-plus fa-xs"></i> 
+                        <i disabled={qty===1 ? true : false} onClick={() => changeCartQuantity(_id, 'decrement')} class="fa-solid fa-minus fa-xs"></i>{qty}<i class="fa-solid fa-plus fa-xs" onClick={() => changeCartQuantity(_id, 'increment')}></i> 
                     </div>
                     <button onClick={() => handleRemoveCart(_id)}><i class="fa-solid fa-trash-can"></i> Remove</button>
                 </div>

@@ -25,9 +25,8 @@ const Cart = () => {
                             const { _id, price, originalPrice,  qty} = item;
                             cartObject = {
                                 quantity: cartObject.quantity + Number(qty),
-                                totalGivenPrice: cartObject.totalPrice + Number(price),
-                                totalOriginalPrice: cartObject.totalOriginalPrice + Number(originalPrice),
-                                totalPrice: cartObject.totalPrice + Number(qty) * Number(price)
+                                totalPrice: cartObject.totalPrice + Number(price) * Number(qty),
+                                totalOriginalPrice: cartObject.totalOriginalPrice + Number(qty) * Number(originalPrice),
                             }
                             return (
                                 <>

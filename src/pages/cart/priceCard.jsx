@@ -8,7 +8,7 @@ const PriceCard = ({obj}) => {
                 </li>
                 <li>
                     <p>Discount</p>
-                    <h4>- Rs. {obj.totalOriginalPrice - obj.totalGivenPrice}</h4>
+                    <h4>- Rs. {obj.totalOriginalPrice - obj.totalPrice}</h4>
                 </li>
                 <hr />
                 <li>
