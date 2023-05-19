@@ -38,9 +38,25 @@ export const CartProvider = ({children}) => {
             console.log(e)
         }
     }
+
+    const removeCartData = async(dataId) => {
+        try {
+            const {data, status} = await axios({
+                method: "DELETE",
+                url: `/api/user/cart/${dataId}`,
+                headers: {authorization: encodedToken}
+            })
+            if (status === 200) {
+                setCart(data?.cart)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     return (
         <>
-            <CartContext.Provider value={{cart, getCartData, addCartData}}>
+            <CartContext.Provider value={{cart, getCartData, addCartData, removeCartData}}>
                 {children}
             </CartContext.Provider>
         </>
