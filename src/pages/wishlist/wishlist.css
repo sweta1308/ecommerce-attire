@@ -122,3 +122,23 @@
     background-color: var(--primary-color);
     color: var(--white-color);
 }
+
+@media (max-width:786px) {
+    .wishlist {
+        padding: 10px 20px;
+    }
+    .wishlist-card {
+        width: 450px;
+    }
+    .wishlist-container .buttons {
+        width: 100px;
+        margin-left: -80px;
+    }
+    .wishlist-card img {
+        width: 100px;
+        height: 100px;
+    }
+    .wishlist-container p:nth-child(2) {
+        width: 150px;
+    }
+}
