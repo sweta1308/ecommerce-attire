@@ -10,7 +10,8 @@ export const FilterProvider = ({children}) => {
         category: [], 
         brands: [],
         rating: 5,
-        sort: 'featured'
+        sort: 'featured',
+        search: ''
     }
     
     const [filterState, filterDispatch] = useReducer(filterReducer, initialFilter);
@@ -35,6 +36,10 @@ export const FilterProvider = ({children}) => {
         filteredData = [...filteredData].sort((a, b) => a.price - b.price)
     } else if (filterState.sort === 'featured') {
         filteredData = [...filteredData]
+    }
+
+    if (filterState.search.length > 0) {
+        filteredData = filteredData.filter(data => data.title.toLowerCase().includes(filterState.search.toLowerCase()) || data.brand.toLowerCase().includes(filterState.search.toLowerCase()))
     }
 
     return (

@@ -32,6 +32,9 @@ export const filterReducer = (state, action) => {
     case 'filter_by_sort': 
       return {...state, sort: action.payload}
 
+    case 'filter_by_search':
+      return {...state, search: action.payload}
+
     case "clear_filters":
       return {
         category: [], 

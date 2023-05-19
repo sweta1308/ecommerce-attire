@@ -34,6 +34,7 @@ export const SideBar = ({isFilterVisible}) => {
                     <label><input type="checkbox" checked={filterState?.brands.includes('Roadster')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Roadster'})} /> Roadster</label>
                     <label><input type="checkbox" checked={filterState?.brands.includes('Dolce & Gabbana')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Dolce & Gabbana'})} /> Dolce & Gabbana</label>
                     <label><input type="checkbox" checked={filterState?.brands.includes('Tokyo Talkies')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Tokyo Talkies'})} /> Tokyo Talkies</label>
+                    <label><input type="checkbox" checked={filterState?.brands.includes('Indya')} onChange={() => filterDispatch({type: 'filter_by_brands', payload: 'Indya'})} /> Indya</label>
                 </div>
 
                 <h4>Ratings</h4>

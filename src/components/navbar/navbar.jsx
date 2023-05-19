@@ -3,18 +3,20 @@ import { useState } from "react";
 import { logo } from "../../assets";
 import './navbar.css';
 import { useAuth } from "../../context/authContext";
+import { useFilters } from "../../context/filterContext";
 
 export const NavBar = () => {
+    const {authState, userLogout} = useAuth();
+    const {filterState, filterDispatch} = useFilters();
     const [isVisible, setIsVisible] = useState(true);
     const navigate = useNavigate();
-    const {authState, userLogout} = useAuth();
-
+    
     const activeStyle = ({isActive}) => ({
         color: isActive ? 'var(--primary-color)' : 'black',
         textDecoration: 'none'
     })
 
-    const handleHelloClick = () => {
+    const handleLogoutClick = () => {
         userLogout();
         navigate('/');
     }
@@ -36,12 +38,13 @@ export const NavBar = () => {
                     <div className="nav-navigate">
                         <div>
                             <i class="fa-solid fa-magnifying-glass" style={{color: '#98999a'}}></i>
-                            <input placeholder="Search" />
+                            <input placeholder="Search" value={filterState.search} onChange={(e) => {filterDispatch({type: 'filter_by_search', payload: e.target.value});
+                        filterState.search.length > 0 && navigate('/products')}} />
                         </div>
                         <i onClick={() => navigate('/cart')} class="fa-solid fa-cart-shopping"></i>
                         <i onClick={() => navigate('/wishlist')}  class="fa-solid fa-heart"></i>
 
-                        {authState.isLoggedIn ? <button className="login-icon" onClick={handleHelloClick}><i class="fa-regular fa-user"></i> Log Out</button> : <button className="login-icon" onClick={() => navigate('/login')} ><i class="fa-regular fa-user"></i> Log In</button>}
+                        {authState.isLoggedIn ? <button className="login-icon" onClick={handleLogoutClick}><i class="fa-regular fa-user"></i> Log Out</button> : <button className="login-icon" onClick={() => navigate('/login')} ><i class="fa-regular fa-user"></i> Log In</button>}
                         
                     </div>
                 </div>
