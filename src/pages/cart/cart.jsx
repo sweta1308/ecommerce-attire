@@ -18,13 +18,13 @@ const Cart = () => {
                 {cart.length > 0 ? <div>
                     <div>
                         {cart.map(item => {
-                            const { price, originalPrice,  qty} = item;
+                            const { title, brand, image, price, originalPrice,  qty} = item;
                             cartObject = {
                                 quantity: cartObject.quantity + Number(qty),
                                 totalPrice: cartObject.totalPrice + Number(price),
                                 totalOriginalPrice: cartObject.totalOriginalPrice + Number(originalPrice)
                             }
-                            return <CartCard title={item.title} />
+                            return <CartCard  title={title} image={image} brand={brand} price={price} quantity={qty} />
                         })}
                     </div>
                 </div> : <EmptyCart />}
