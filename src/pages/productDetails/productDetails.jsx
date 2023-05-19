@@ -1,14 +1,19 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import './productDetails.css';
 import { useEffect, useState } from "react";
 import { Featured } from "../../components/featured/featured";
 import { GetProduct } from "../../utils/getProduct";
 import Shimmer from "../../components/shimmer/shimmer";
+import { useAuth } from "../../context/authContext";
+import { useCart } from "../../context/cartContext";
+import { isItemInCart } from "../../utils/isItemPresentInCart";
 
 export const ProductDetails = () => {
-    const [quantity, setQuantity] = useState(1);
     const [singleProduct, setSingleProduct] = useState({})
     const {productID} = useParams();
+    const {authState} = useAuth();
+    const {cart, addCartData} = useCart();
+    const navigate = useNavigate();
     const getSingleProduct = async () => {
         try {
             const product = await GetProduct(productID);
@@ -27,7 +32,7 @@ export const ProductDetails = () => {
         return <Shimmer />
     }
 
-    const {image, title, brand, ratings, price, originalPrice, outOfStock} = singleProduct
+    const {_id, image, title, brand, ratings, price, originalPrice, outOfStock} = singleProduct
 
     return (
         <>
@@ -43,11 +48,19 @@ export const ProductDetails = () => {
                         <p>₹{originalPrice}</p>
                     </div>
                     <p className="stock"><strong>Availability: </strong>{outOfStock ? 'Not in Stock' : 'In Stock'}</p>
-                    <div className="quantity-cart">
-                        <div className="quantity">
-                            <i disabled={quantity===1 ? true : false} onClick={() => setQuantity(quantity => quantity > 1 ? quantity - 1 : quantity)} class="fa-solid fa-minus fa-xs"></i>{quantity}<i onClick={() => setQuantity(quantity => quantity+1)} class="fa-solid fa-plus fa-xs"></i> 
-                        </div>
-                        <button>Add To Cart</button>
+                    <div className="wishlist-cart">
+                        <button className="wishlist-btn">Add to Wishlist</button>
+                        <button className="cart-btn" onClick={() => {
+                    if (authState.isLoggedIn) {
+                        if (isItemInCart(cart, _id)) {
+                            navigate('/cart')
+                        } else {
+                            addCartData(singleProduct)
+                        }
+                    } else {
+                        alert('Please login to proceed')
+                    }
+                }}>{isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}</button>
                     </div>
                 </div>
             </div>
