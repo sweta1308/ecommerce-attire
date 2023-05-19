@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import './productDetails.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Featured } from "../../components/featured/featured";
 import { getProduct } from "../../utils/getProduct";
 import Shimmer from "../../components/shimmer/shimmer";
@@ -19,7 +19,9 @@ export const ProductDetails = () => {
         }
     }
 
-    getSingleProduct()
+    useEffect(() => {
+        getSingleProduct()
+    }, [])
     
     if (Object.keys(singleProduct).length === 0) {
         return <Shimmer />
