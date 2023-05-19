@@ -1,8 +1,15 @@
 import { useNavigate } from 'react-router'
 import './productCard.css'
+import { useCart } from '../../context/cartContext';
+import { useAuth } from '../../context/authContext';
+import { isItemInCart } from '../../utils/isItemPresentInCart';
 
-export const ProductCard = ({_id, image, title, brand, price, originalPrice, ratings}) => {
-    const navigate = useNavigate()
+export const ProductCard = ({data}) => {
+    const {_id, image, title, brand, price, originalPrice, ratings} = data
+    const navigate = useNavigate();
+    const {cart, addCartData} = useCart();
+    const {authState} = useAuth();
+
     return (
         <>
             <div className="product-card">
@@ -19,7 +26,17 @@ export const ProductCard = ({_id, image, title, brand, price, originalPrice, rat
                     </div>
                 </div>
                 
-                <button>Add to Cart</button>
+                <button onClick={() => {
+                    if (authState.isLoggedIn) {
+                        if (isItemInCart(cart, _id)) {
+                            navigate('/cart')
+                        } else {
+                            addCartData(data)
+                        }
+                    } else {
+                        alert('Please login to proceed')
+                    }
+                }}>Add to Cart</button>
             </div>
             
         </>
