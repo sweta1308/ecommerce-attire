@@ -12,16 +12,18 @@ export const CartCard = ({data, handleRemoveCart}) => {
                     <h3>{brand}</h3>
                     <p>{title}</p>
                 </div>
-                <div className="cart-quantity">
-                    <div className="quantity-select">
-                        <i disabled={qty===1 ? true : false} onClick={() => changeCartQuantity(_id, 'decrement')} class="fa-solid fa-minus fa-xs"></i>{qty}<i class="fa-solid fa-plus fa-xs" onClick={() => changeCartQuantity(_id, 'increment')}></i> 
+                
+                    <div className="cart-quantity">
+                        <div className="quantity-select">
+                            <i disabled={qty===1 ? true : false} onClick={() => changeCartQuantity(_id, 'decrement')} class="fa-solid fa-minus fa-xs"></i>{qty}<i class="fa-solid fa-plus fa-xs" onClick={() => changeCartQuantity(_id, 'increment')}></i> 
+                        </div>
+                        <button onClick={() => handleRemoveCart(_id)}><i class="fa-solid fa-trash-can"></i> Remove</button>
                     </div>
-                    <button onClick={() => handleRemoveCart(_id)}><i class="fa-solid fa-trash-can"></i> Remove</button>
-                </div>
-                <div className='cart-price'>
-                    <h3>Rs.{price}</h3>
-                    <p>Rs. {originalPrice}</p>
-                </div>
+                    <div className='cart-price'>
+                        <h3>Rs.{price}</h3>
+                        <p>Rs. {originalPrice}</p>
+                    </div>  
+
             </div>
         </>
     )
