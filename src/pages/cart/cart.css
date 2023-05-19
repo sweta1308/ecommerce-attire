@@ -191,4 +191,7 @@
     .cart-card {
         flex-direction: column;
     }
+    .price-card {
+        width: 100%;
+    }
 }
