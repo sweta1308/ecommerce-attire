@@ -7,12 +7,15 @@ import Shimmer from "../../components/shimmer/shimmer";
 import { useAuth } from "../../context/authContext";
 import { useCart } from "../../context/cartContext";
 import { isItemInCart } from "../../utils/isItemPresentInCart";
+import { isItemInWishlist } from "../../utils/isItemPresentInWishlist";
+import { useWishlist } from "../../context/wishlistContext";
 
 export const ProductDetails = () => {
     const [singleProduct, setSingleProduct] = useState({})
     const {productID} = useParams();
     const {authState} = useAuth();
     const {cart, addCartData} = useCart();
+    const {wishlist, addWishlistData} = useWishlist();
     const navigate = useNavigate();
     const getSingleProduct = async () => {
         try {
@@ -49,18 +52,29 @@ export const ProductDetails = () => {
                     </div>
                     <p className="stock"><strong>Availability: </strong>{outOfStock ? 'Not in Stock' : 'In Stock'}</p>
                     <div className="wishlist-cart">
-                        <button className="wishlist-btn">Add to Wishlist</button>
+                        <button className="wishlist-btn" onClick={() => {
+                            if (authState.isLoggedIn) {
+                                if (isItemInWishlist(wishlist, _id)) {
+                                    navigate('/wishlist')
+                                } else {
+                                    addWishlistData(singleProduct)
+                                }
+                            } else {
+                                alert('Please login to proceed')
+                            }
+                        }}>Add to Wishlist</button>
+
                         <button className="cart-btn" onClick={() => {
-                    if (authState.isLoggedIn) {
-                        if (isItemInCart(cart, _id)) {
-                            navigate('/cart')
-                        } else {
-                            addCartData(singleProduct)
-                        }
-                    } else {
-                        alert('Please login to proceed')
-                    }
-                }}>{isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}</button>
+                            if (authState.isLoggedIn) {
+                                if (isItemInCart(cart, _id)) {
+                                    navigate('/cart')
+                                }  else {
+                                    addCartData(singleProduct)
+                                }
+                            } else {
+                                alert('Please login to proceed')
+                            }
+                        }}>{isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}</button>
                     </div>
                 </div>
             </div>
