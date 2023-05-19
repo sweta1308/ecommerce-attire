@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router'
 import { ProductCard } from '../../components/product-card/productCard'
 import { SideBar } from '../../components/sidebar/sidebar'
 import './product.css'
@@ -8,7 +7,6 @@ import { useFilters } from '../../context/filterContext'
 export const Product = () => {
     const {filteredData} = useFilters();
     const [isFilterVisible, setIsFilterVisible] = useState(false);
-    const navigate = useNavigate();
     return (
         <>
             <div className="product">
@@ -25,8 +23,8 @@ export const Product = () => {
                         {filteredData.map(product => {
                             const {_id, title, brand, price, originalPrice, ratings, image} = product;
                             return (
-                                <li key={_id} onClick={() => navigate(`/products/${_id}`)}>
-                                    <ProductCard title={title} brand={brand} price={price} originalPrice={originalPrice} image={image} ratings={ratings} />
+                                <li key={_id}>
+                                    <ProductCard _id={_id} title={title} brand={brand} price={price} originalPrice={originalPrice} image={image} ratings={ratings} />
                                 </li>
                             )
                         })}
