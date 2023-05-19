@@ -2,18 +2,18 @@
     padding: 10px 120px;
 }
 
-.wishlist-items {
+.empty-wishlist {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
-.wishlist h1, .wishlist-items h3 {
+.wishlist h1, .empty-wishlist h3 {
     text-align: center;
 }
 
-.wishlist-items p {
+.empty-wishlist p {
     margin-top: -10px;
     width: 300px;
     text-align: center;
@@ -21,7 +21,7 @@
     color: var(--gray);
 }
 
-.wishlist-items button {
+.empty-wishlist button {
     background-color: var(--primary-color);
     border: none;
     color: var(--white-color);
@@ -31,7 +31,7 @@
     cursor: pointer;
 }
 
-.wishlist-items button:hover {
+.empty-wishlist button:hover {
     background-color: transparent;
     color: var(--primary-color);
     border-radius: 5px;
