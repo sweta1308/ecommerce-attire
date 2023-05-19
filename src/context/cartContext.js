@@ -72,7 +72,8 @@ export const CartProvider = ({children}) => {
 
     useEffect(() => {
         getCartData()
-    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <>
