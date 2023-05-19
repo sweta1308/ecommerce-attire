@@ -11,8 +11,20 @@ import { Signup } from './pages/signup/signup';
 import { RequireAuth } from './components/auth/requireAuth';
 import { RestrictAuth } from './components/auth/restrictAuth';
 import MockMan from 'mockman-js';
+import { useAuth } from './context/authContext';
+import { useEffect } from 'react';
+import { useCart } from './context/cartContext';
 
 function App() {
+  const {token} = useAuth();
+  const {getCartData} = useCart();
+
+  useEffect(() => {
+    if (token) {
+      getCartData()
+    } 
+  })
+
   return (
     <div className="App">
       <NavBar />
