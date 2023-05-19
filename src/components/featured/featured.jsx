@@ -1,6 +1,6 @@
 import { featuredData } from "./featuredData";
 import { ProductCard } from "../product-card/productCard";
-import './featured.css'
+import './featured.css';
 
 export const Featured = () => {
     return (
