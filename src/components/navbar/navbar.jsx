@@ -42,7 +42,7 @@ export const NavBar = () => {
                         <i onClick={() => navigate('/wishlist')}  class="fa-solid fa-heart"></i>
 
                         {authState.isLoggedIn ? <button className="login-icon" onClick={handleHelloClick}><i class="fa-regular fa-user"></i> Log Out</button> : <button className="login-icon" onClick={() => navigate('/login')} ><i class="fa-regular fa-user"></i> Log In</button>}
-                        {/* // <button onClick={() => authState.isLoggedIn ? handleHelloClick : navigate('/login')} className="login-icon"><i class="fa-regular fa-user"></i> {authState.isLoggedIn ? 'Log Out' : "Log In"}</button> */}
+                        
                     </div>
                 </div>
 

@@ -68,6 +68,7 @@
 
 .nav .nav-navigate i {
     font-size: 12px;
+    cursor: pointer;
 }
 
 .login-icon {
@@ -115,8 +116,13 @@
         font-weight: 800;
     }
 
+    .login-icon {
+        font-size: 10px;
+        width: 60px;
+    }
+
     .nav .nav-navigate {
-        width: 70px;
+        width: 110px;
     }
 
     .nav .nav-navigate div {
