@@ -1,6 +1,5 @@
 .cart {
     padding: 10px 120px;
-    display: grid;
 }
 
 .cart h1 {
@@ -146,4 +145,50 @@
 }
 .price-card button:hover {
     background-color: var(--primary-dark);
+}
+
+@media (max-width: 1350px) {
+    .cart-card .title {
+        margin-left: -40px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .cart-card .title {
+        margin-left: 0px;
+    }
+    .price-card {
+        width: 25%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .cart-card {
+        flex-direction: column;
+    }
+    .cart-card img {
+        width: 200px;
+        height: 250px;
+    }
+    .cart-items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 360px) {
+    .empty-cart-items img {
+        width: 250px;
+    }
+    .empty-cart-items p {
+        width: 250px;
+    }
+    .empty-cart-items button {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .cart-card {
+        flex-direction: column;
+    }
 }

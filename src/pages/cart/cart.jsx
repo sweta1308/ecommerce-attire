@@ -5,7 +5,7 @@ import EmptyCart from './emptyCart';
 import PriceCard from './priceCard';
 
 const Cart = () => {
-    const {cart, setCart, removeCartData} = useCart();
+    const {cart, removeCartData} = useCart();
     let cartObject = {
         quantity: 0,
         totalPrice: 0,
@@ -35,8 +35,9 @@ const Cart = () => {
                                 </>
                             )
                         })}
-                        <PriceCard obj={cartObject} />
+                        
                     </div>
+                    <PriceCard obj={cartObject} />
                 </div> : <EmptyCart />}
             </div>            
        </>
