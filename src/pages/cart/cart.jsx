@@ -24,7 +24,7 @@ const Cart = () => {
                                 totalPrice: cartObject.totalPrice + Number(price),
                                 totalOriginalPrice: cartObject.totalOriginalPrice + Number(originalPrice)
                             }
-                            return <CartCard />
+                            return <CartCard title={item.title} />
                         })}
                     </div>
                 </div> : <EmptyCart />}

@@ -21,10 +21,9 @@ export const Product = () => {
                     </div>
                     <div className='product-list'>
                         {filteredData.map(product => {
-                            const {_id, title, brand, price, originalPrice, ratings, image} = product;
                             return (
-                                <li key={_id}>
-                                    <ProductCard _id={_id} title={title} brand={brand} price={price} originalPrice={originalPrice} image={image} ratings={ratings} />
+                                <li key={product._id}>
+                                    <ProductCard data={product} />
                                 </li>
                             )
                         })}

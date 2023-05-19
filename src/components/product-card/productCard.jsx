@@ -36,7 +36,7 @@ export const ProductCard = ({data}) => {
                     } else {
                         alert('Please login to proceed')
                     }
-                }}>Add to Cart</button>
+                }}>{isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}</button>
             </div>
             
         </>

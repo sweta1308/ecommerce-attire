@@ -9,10 +9,9 @@ export const Featured = () => {
 
             <div className="featured">
                 {featuredData.map(data => {
-                    const {_id, title, brand, price, originalPrice, ratings, image} = data;
                     return (
-                    <div key={_id}>
-                        <ProductCard title={title} brand={brand} price={price} originalPrice={originalPrice} image={image} ratings={ratings} />
+                    <div key={data._id}>
+                        <ProductCard data={data} />
                     </div>
                 )})}
             </div>
