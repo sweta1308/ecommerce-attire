@@ -46,7 +46,11 @@
     justify-content: space-around;
     align-items: first topline;
     width: 70%;
-    margin: 15px 0;
+    margin: 25px 0;
+}
+.cart-card:hover {
+    scale: 1.02;
+    transition: scale 0.1s;
 }
 .cart-card img {
     width: 100px;
@@ -87,4 +91,35 @@
 .cart-quantity button:hover {
     color: var(--primary-color);
     font-weight: 700;
+}
+
+/* price card */
+.price-card {
+    width: 19%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 10px 20px;
+    line-height: 5px;
+}
+.price-card li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.price-card li p {
+    color: var(--gray-dark);
+    font-size: 14px;
+}
+.price-card button {
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px 0;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--white-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.price-card button:hover {
+    background-color: var(--primary-dark);
 }
