@@ -6,7 +6,7 @@ const CartContext = createContext();
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     const token = localStorage.getItem('token')
-    console.log(token)
+    // console.log(token)
     const getCartData = async() => {
        
         try {
