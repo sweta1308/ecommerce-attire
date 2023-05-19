@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router';
 import './App.css';
 import { Home } from './pages/home/home';
 import { Product } from './pages/product/product';
-import { Cart } from './pages/cart/cart';
+import Cart from './pages/cart/cart';
 import { NavBar } from './components/navbar/navbar';
 import { Wishlist } from './pages/wishlist/wishlist';
 import { ProductDetails } from './pages/productDetails/productDetails';
@@ -11,19 +11,8 @@ import { Signup } from './pages/signup/signup';
 import { RequireAuth } from './components/auth/requireAuth';
 import { RestrictAuth } from './components/auth/restrictAuth';
 import MockMan from 'mockman-js';
-import { useAuth } from './context/authContext';
-import { useEffect } from 'react';
-import { useCart } from './context/cartContext';
 
 function App() {
-  const {token} = useAuth();
-  const {getCartData} = useCart();
-
-  useEffect(() => {
-    if (token) {
-      getCartData()
-    } 
-  })
 
   return (
     <div className="App">

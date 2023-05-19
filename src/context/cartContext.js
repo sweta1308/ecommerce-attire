@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "./authContext";
 
@@ -6,14 +6,15 @@ const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
-    const {token: encodedToken} = useAuth();
-
+    const token = localStorage.getItem('token')
+    console.log(token)
     const getCartData = async() => {
+       
         try {
             const {data, status} = await axios({
                 method: 'GET',
                 url: '/api/user/cart',
-                headers: {authorization: encodedToken}
+                headers: {authorization: token}
             });
             if (status === 200) {
                 setCart(data?.cart)
@@ -29,7 +30,7 @@ export const CartProvider = ({children}) => {
                 method: "POST",
                 url: "/api/user/cart",
                 data: {product: cartData},
-                headers: {authorization: encodedToken}
+                headers: {authorization: token}
             })
             if (status === 201) {
                 setCart(data?.cart)
@@ -44,7 +45,7 @@ export const CartProvider = ({children}) => {
             const {data, status} = await axios({
                 method: "DELETE",
                 url: `/api/user/cart/${dataId}`,
-                headers: {authorization: encodedToken}
+                headers: {authorization: token}
             })
             if (status === 200) {
                 setCart(data?.cart)
@@ -53,6 +54,10 @@ export const CartProvider = ({children}) => {
             console.log(e)
         }
     }
+
+    useEffect(() => {
+        getCartData()
+    })
 
     return (
         <>
