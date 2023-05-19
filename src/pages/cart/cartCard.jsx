@@ -1,6 +1,7 @@
 import './cart.css'
 
-export const CartCard = ({image, brand, title, quantity, price}) => {
+export const CartCard = ({data, handleRemoveCart}) => {
+    const {_id, image, brand, title, qty, price, originalPrice} = data
     return (
         <>
             <div className='cart-card'>
@@ -11,11 +12,14 @@ export const CartCard = ({image, brand, title, quantity, price}) => {
                 </div>
                 <div className="cart-quantity">
                     <div className="quantity-select">
-                        <i disabled={quantity===1 ? true : false} class="fa-solid fa-minus fa-xs"></i>{quantity}<i class="fa-solid fa-plus fa-xs"></i> 
+                        <i disabled={qty===1 ? true : false} class="fa-solid fa-minus fa-xs"></i>{qty}<i class="fa-solid fa-plus fa-xs"></i> 
                     </div>
-                    <button><i class="fa-solid fa-trash-can"></i> Remove</button>
+                    <button onClick={() => handleRemoveCart(_id)}><i class="fa-solid fa-trash-can"></i> Remove</button>
                 </div>
-                <div className='cart-price'><h3>Rs.{price}</h3></div>
+                <div className='cart-price'>
+                    <h3>Rs.{price}</h3>
+                    <p>Rs. {originalPrice}</p>
+                </div>
             </div>
         </>
     )
