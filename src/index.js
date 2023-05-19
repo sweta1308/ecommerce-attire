@@ -7,6 +7,7 @@ import App from "./App";
 import { ProductProdvider } from "./context/productContext";
 import { FilterProvider } from "./context/filterContext";
 import { AuthProvider } from "./context/authContext";
+import { CartProvider } from "./context/cartContext";
 import { makeServer } from "./server";
 
 // Call make Server
@@ -17,9 +18,11 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <ProductProdvider>
-          <FilterProvider>
-            <App />
-          </FilterProvider>
+          <CartProvider>
+            <FilterProvider>
+              <App />
+            </FilterProvider>
+          </CartProvider>
         </ProductProdvider>
       </AuthProvider>
     </BrowserRouter>
