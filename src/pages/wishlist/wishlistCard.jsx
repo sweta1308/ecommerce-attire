@@ -1,6 +1,14 @@
+import { useNavigate } from 'react-router';
+import { useAuth } from '../../context/authContext';
+import { isItemInCart } from '../../utils/isItemPresentInCart';
 import './wishlist.css'
+import { useCart } from '../../context/cartContext';
 
-export const WishlistCard =({title, image, brand, price, originalPrice, ratings}) => {
+export const WishlistCard =({data}) => {
+    const {authState} = useAuth();
+    const navigate = useNavigate();
+    const {cart, addCartData} = useCart();
+    const {_id, title, image, brand, price, originalPrice, ratings} = data
     return (
         <>
             <div className="wishlist-card">
@@ -15,7 +23,17 @@ export const WishlistCard =({title, image, brand, price, originalPrice, ratings}
                     </div>
                 </div>
                 <div className="buttons">
-                    <button>Add to Cart</button>
+                    <button onClick={() => {
+                            if (authState.isLoggedIn) {
+                                if (isItemInCart(cart, _id)) {
+                                    navigate('/cart')
+                                }  else {
+                                    addCartData(data)
+                                }
+                            } else {
+                                alert('Please login to proceed')
+                            }
+                        }}>{isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}</button>
                     <button>Remove From Wishlist</button>
                 </div>
             </div>
