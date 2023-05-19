@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getProduct = async (productId)  => {
+export const GetProduct = async (productId)  => {
     try {
         const {data, status} = await axios.get(`/api/products/${productId}`)
         console.log(data, status)

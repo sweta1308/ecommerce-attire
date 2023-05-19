@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import './productDetails.css';
 import { useEffect, useState } from "react";
 import { Featured } from "../../components/featured/featured";
-import { getProduct } from "../../utils/getProduct";
+import { GetProduct } from "../../utils/getProduct";
 import Shimmer from "../../components/shimmer/shimmer";
 
 export const ProductDetails = () => {
@@ -11,7 +11,7 @@ export const ProductDetails = () => {
     const {productID} = useParams();
     const getSingleProduct = async () => {
         try {
-            const product = await getProduct(productID);
+            const product = await GetProduct(productID);
             console.log(product)
             setSingleProduct(product?.product)
         } catch (e) {
