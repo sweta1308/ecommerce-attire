@@ -1,5 +1,6 @@
 .cart {
     padding: 10px 120px;
+    display: grid;
 }
 
 .cart h1 {
@@ -82,6 +83,14 @@
 }
 .cart-quantity .quantity-select i {
     cursor: pointer;
+}
+.cart-price {
+    line-height: 5px;
+}
+.cart-price p {
+    font-size: 14px;
+    color: var(--gray-dark);
+    text-decoration: line-through;
 }
 .cart-quantity button {
     background-color: transparent;
