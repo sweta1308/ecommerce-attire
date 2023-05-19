@@ -13,7 +13,6 @@ export const AuthProvider = ({children}) => {
     }
     const [authState, authDispatch] = useReducer(authReducer, authInitial);
     const navigate = useNavigate();
-    // const location = useLocation()
 
     const userLogin = async (loginData) => {
         try {
