@@ -21,7 +21,7 @@ export const ProductDetails = () => {
 
     useEffect(() => {
         getSingleProduct()
-    }, [])
+    })
     
     if (Object.keys(singleProduct).length === 0) {
         return <Shimmer />
