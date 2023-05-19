@@ -63,7 +63,7 @@ export const ProductDetails = () => {
                             } else {
                                 alert('Please login to proceed')
                             }
-                        }}>Add to Wishlist</button>
+                        }}>{isItemInWishlist(wishlist, _id) ? "Go to Wishlist" : "Add to Wishlist"}</button>
 
                         <button className="cart-btn" onClick={() => {
                             if (authState.isLoggedIn) {
