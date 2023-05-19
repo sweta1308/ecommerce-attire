@@ -4,7 +4,7 @@ import { isItemInCart } from '../../utils/isItemPresentInCart';
 import './wishlist.css'
 import { useCart } from '../../context/cartContext';
 
-export const WishlistCard =({data}) => {
+export const WishlistCard =({data, handleRemoveWishlist}) => {
     const {authState} = useAuth();
     const navigate = useNavigate();
     const {cart, addCartData} = useCart();
@@ -34,7 +34,7 @@ export const WishlistCard =({data}) => {
                                 alert('Please login to proceed')
                             }
                         }}>{isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}</button>
-                    <button>Remove From Wishlist</button>
+                    <button onClick={() => handleRemoveWishlist(_id)}>Remove From Wishlist</button>
                 </div>
             </div>
         </>
