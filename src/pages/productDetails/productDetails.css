@@ -1,135 +1,136 @@
 .product-details {
-    display: flex;
-    padding: 60px 60px;
-    justify-content: center;
+  display: flex;
+  padding: 60px 60px;
+  justify-content: center;
 }
 
 .product-details img {
-    width: 300px;
-    height: 350px;
-    object-fit: cover;
-    margin: 30px;
-    border-radius: 10px;
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  margin: 30px;
+  border-radius: 10px;
 }
 
 .product-detail {
-    margin: 20px 30px;   
+  margin: 20px 30px;
 }
 
 .product-detail hr {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .product-detail .title-product {
-    margin-top: -18px;
-    color: var(--gray);
-    width: 300px;
-    font-size: 13px;
+  margin-top: -18px;
+  color: var(--gray);
+  width: 300px;
+  font-size: 13px;
 }
 
 .rating {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .product-price {
-    display: flex;
-    align-items: center;
-    width: 130px;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  width: 130px;
+  justify-content: space-between;
 }
 
 .product-price p {
-    color: var(--gray);
-    text-decoration: line-through;
-    font-size: 14px;
+  color: var(--gray);
+  text-decoration: line-through;
+  font-size: 14px;
 }
 
 .stock {
-    margin-top: -7px;
-    font-size: 14px;
+  margin-top: -7px;
+  font-size: 14px;
 }
 
 .wishlist-cart {
-    display: flex;
-    justify-content: space-between;
-    width: 250px;
-    margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin-top: 30px;
 }
 
 .wishlist-cart .wishlist-btn {
-    background-color: var(--primary-color);
-    border: none;
-    color: var(--white-color);
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 10px;
-    cursor: pointer;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .wishlist-cart .wishlist-btn:hover {
-    background-color: var(--primary-dark);
+  background-color: var(--primary-dark);
 }
 
 .wishlist-cart .cart-btn {
-    background-color: transparent;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 10px;
-    cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .wishlist-cart .cart-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 
 .mid-hr {
-    margin: 0px 100px 10px;
+  margin: 0px 100px 10px;
 }
 
 .like-product {
-    padding: 10px 120px;
+  padding: 10px 120px;
 }
 
 @media (max-width: 700px) {
-    .product-details {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
+  .product-details {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
 
-    .like-product {
-        padding: 10px 40px;
-    }
-    .product-detail {
-        margin-top: -30px;
-    }
+  .like-product {
+    padding: 10px 40px;
+  }
+  .product-detail {
+    margin-top: -30px;
+  }
 
-    .quantity-cart, .product-price {
-        margin-top: -2px;
-    }
+  .quantity-cart,
+  .product-price {
+    margin-top: -2px;
+  }
 
-    .product-detail .title-product {
-        width: 200px;
-    }
+  .product-detail .title-product {
+    width: 200px;
+  }
 }
 
 @media (max-width: 300px) {
-    .product-detail .title-product {
-        width: 150px;
-    }
+  .product-detail .title-product {
+    width: 150px;
+  }
 
-    .quantity-cart {
-        flex-direction: column;
-        width: 150px;
-    }
-    .quantity-cart button {
-        padding: 10px 25px;
-    }
+  .quantity-cart {
+    flex-direction: column;
+    width: 150px;
+  }
+  .quantity-cart button {
+    padding: 10px 25px;
+  }
 
-    .like-product {
-        padding: 10px;
-    }
+  .like-product {
+    padding: 10px;
+  }
 }

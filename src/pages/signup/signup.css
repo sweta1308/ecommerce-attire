@@ -1,112 +1,108 @@
 .signup {
-    padding: 10px 40px;
-    width: 300px;
-    margin: 70px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  padding: 10px 40px;
+  width: 300px;
+  margin: 70px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .signup h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .signup div {
-    margin: 13px 0;
+  margin: 13px 0;
 }
 
 .signup .name {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .signup .name div {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .signup .name div:first-child {
-    margin: 0 10px 0 0;
+  margin: 0 10px 0 0;
 }
 
-
 .signup .name div:nth-child(2) {
-    margin: 0 0 0 10px;
+  margin: 0 0 0 10px;
 }
 
 .signup input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px 7px;
-    border-radius: 5px;
-    font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 7px;
+  border-radius: 5px;
+  font-size: 12px;
 }
 
 .signup label {
-    font-size: 14px;
+  font-size: 14px;
 }
 
-
 .password-wrapper input {
-    width: 86%;
-    border: none;
-    outline: none;
+  width: 86%;
+  border: none;
+  outline: none;
 }
 
 .password-wrapper {
-    border: 1px solid black;
-    outline: 1px solid black;
-    border-radius: 5px;
+  border: 1px solid black;
+  outline: 1px solid black;
+  border-radius: 5px;
 }
 
 .password-wrapper button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-
 .signup .button-signup {
-    width: 100%;
-    background-color: var(--primary-color);
-    border: none;
-    color: var(--white-color);
-    padding: 7px;
-    margin: 8px 0 15px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 10px;
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  padding: 7px;
+  margin: 8px 0 15px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .signup .button-signup:hover {
-    background-color: var(--primary-dark);
+  background-color: var(--primary-dark);
 }
 
-
 .signup p {
-    text-decoration: none;
-    text-align: center;
-    font-weight: 700;
-    cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .signup p:hover {
-    color: var(--gray);
+  color: var(--gray);
 }
 
 @media (max-width: 500px) {
-    .signup {
-        width: 240px;
-        padding: 10px 20px;
-        margin: 20px auto 50px;
-    }
+  .signup {
+    width: 240px;
+    padding: 10px 20px;
+    margin: 20px auto 50px;
+  }
 
-    .signup .name {
-        flex-direction: column;
-    }
+  .signup .name {
+    flex-direction: column;
+  }
 
-    .signup .name div:first-child {
-        margin: 0;
-    }
-    
-    .signup .name div:nth-child(2) {
-        margin: 0;
-    }
+  .signup .name div:first-child {
+    margin: 0;
+  }
+
+  .signup .name div:nth-child(2) {
+    margin: 0;
+  }
 }

@@ -1,64 +1,66 @@
 .filters {
-    border: 1px solid var(--gray-lighter);
-    border-radius: 10px;
-    padding: 10px 20px 20px;
+  border: 1px solid var(--gray-lighter);
+  border-radius: 10px;
+  padding: 10px 20px 20px;
 }
 
 .filters .filter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .filters h2 {
-    font-size: 16px;
-    margin-left: -10px;
+  font-size: 16px;
+  margin-left: -10px;
 }
 
 .filters .filter button {
-    font-size: 12px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-weight: 600;
-    padding: 10px;
-    border-radius: 10px;
-    margin-right: -10px;
+  font-size: 12px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: -10px;
 }
 
 .filters .filter button:hover {
-    color: var(--primary-dark);
+  color: var(--primary-dark);
 }
 
 .filters div {
-    font-size: 12px;
-    color: var(--gray);
-    display: flex;
-    flex-direction: column;
-    margin-top: -15px;
-    padding: 7px 17px;
+  font-size: 12px;
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  margin-top: -15px;
+  padding: 7px 17px;
 }
 
 .filters .category-filter {
-    padding: 12px 0px;
+  padding: 12px 0px;
 }
 
 .filters div label {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.slider, .filters input[type="checkbox"], .filters input[type="radio"] {
-    accent-color: var(--primary-color);
+.slider,
+.filters input[type="checkbox"],
+.filters input[type="radio"] {
+  accent-color: var(--primary-color);
 }
 
 .filters h4 {
-    color: var(--gray-dark);
+  color: var(--gray-dark);
 }
 
 @media (max-width: 750px) {
-    .filters {
-        display: none;
-    }
+  .filters {
+    display: none;
+  }
 }

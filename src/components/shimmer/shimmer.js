@@ -1,7 +1,7 @@
 import React from "react";
 
 const Shimmer = () => {
-    console.log("hello")
+  console.log("hello");
   return (
     <div className="product-details">
       {Array(10)

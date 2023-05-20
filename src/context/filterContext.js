@@ -4,51 +4,66 @@ import { useProducts } from "./productContext";
 
 const FilterContext = createContext();
 
-export const FilterProvider = ({children}) => {
-    const {productState} = useProducts();
-    const initialFilter = {
-        category: [], 
-        brands: [],
-        rating: 5,
-        sort: 'featured',
-        search: ''
-    }
-    
-    const [filterState, filterDispatch] = useReducer(filterReducer, initialFilter);
+export const FilterProvider = ({ children }) => {
+  const { productState } = useProducts();
+  const initialFilter = {
+    category: [],
+    brands: [],
+    rating: 5,
+    sort: "featured",
+    search: "",
+  };
 
-    let filteredData = [...productState?.productData]
+  const [filterState, filterDispatch] = useReducer(
+    filterReducer,
+    initialFilter
+  );
 
-    if (filterState.category.length > 0) {
-        filteredData = filteredData.filter(data => filterState.category.includes(data.categoryName))
-    }
+  let filteredData = [...productState?.productData];
 
-    if (filterState.brands.length > 0) {
-        filteredData = filteredData.filter(data => filterState.brands.includes(data.brand))
-    }
+  if (filterState.category.length > 0) {
+    filteredData = filteredData.filter((data) =>
+      filterState.category.includes(data.categoryName)
+    );
+  }
 
-    if (filterState.rating >= 0) {
-        filteredData = filteredData.filter(data => data.ratings.value <= filterState.rating)
-    }
+  if (filterState.brands.length > 0) {
+    filteredData = filteredData.filter((data) =>
+      filterState.brands.includes(data.brand)
+    );
+  }
 
-    if (filterState.search.length > 0) {
-        filteredData = filteredData.filter(data => data.title.toLowerCase().includes(filterState.search.toLowerCase()) || data.brand.toLowerCase().includes(filterState.search.toLowerCase()))
-    }
+  if (filterState.rating >= 0) {
+    filteredData = filteredData.filter(
+      (data) => data.ratings.value <= filterState.rating
+    );
+  }
 
-    if (filterState.sort === 'high-to-low') {
-        filteredData = [...filteredData].sort((a, b) => b.price - a.price)
-    } else if (filterState.sort === 'low-to-high') {
-        filteredData = [...filteredData].sort((a, b) => a.price - b.price)
-    } else if (filterState.sort === 'featured') {
-        filteredData = [...filteredData]
-    }
+  if (filterState.search.length > 0) {
+    filteredData = filteredData.filter(
+      (data) =>
+        data.title.toLowerCase().includes(filterState.search.toLowerCase()) ||
+        data.brand.toLowerCase().includes(filterState.search.toLowerCase())
+    );
+  }
 
-    return (
-        <>
-            <FilterContext.Provider value={{filterState, filterDispatch, filteredData}}>
-                {children}
-            </FilterContext.Provider>
-        </>
-    )
-}
+  if (filterState.sort === "high-to-low") {
+    filteredData = [...filteredData].sort((a, b) => b.price - a.price);
+  } else if (filterState.sort === "low-to-high") {
+    filteredData = [...filteredData].sort((a, b) => a.price - b.price);
+  } else if (filterState.sort === "featured") {
+    filteredData = [...filteredData];
+  }
 
-export const useFilters = () => useContext(FilterContext)
+  return (
+    <>
+      <FilterContext.Provider
+        value={{ filterState, filterDispatch, filteredData }}
+      >
+        {children}
+      </FilterContext.Provider>
+    </>
+  );
+};
+
+export const useFilters = () => useContext(FilterContext);

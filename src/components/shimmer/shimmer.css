@@ -1,8 +1,8 @@
 .product-details {
-    width: 200px;
-    height: 200px;
-    display: flex;
-    padding: 60px 60px;
-    justify-content: center;
-    background-color: blue;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  padding: 60px 60px;
+  justify-content: center;
+  background-color: blue;
 }

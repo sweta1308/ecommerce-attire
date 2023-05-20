@@ -1,13 +1,13 @@
 .featured {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-bottom: 90px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 90px;
 }
 
 @media (max-width: 1050px) {
-    .featured {
-        flex-direction: column;
-        align-items: center;
-    }
+  .featured {
+    flex-direction: column;
+    align-items: center;
+  }
 }

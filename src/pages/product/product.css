@@ -1,91 +1,91 @@
 .product {
-    padding: 30px 120px;
+  padding: 30px 120px;
 }
 .text {
-    font-size: 13px;
-    width: 170px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--gray);
+  font-size: 13px;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--gray);
 }
 .text span {
-    color: var(--primary-color);
-    font-weight: 600;
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 .text-filter {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .text-filter button {
-    border: 1px solid var(--primary-color);
-    background-color: transparent;
-    color: var(--primary-color);
-    cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 10px;
-    display: none;
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 10px;
+  display: none;
 }
 
 .products {
-    display: flex;
+  display: flex;
 }
 .products .product-list {
-    padding: 30px 50px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px
+  padding: 30px 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
 .product-list li {
-    list-style: none;   
+  list-style: none;
 }
 
 @media (max-width: 1250px) {
-    .product {
-        padding: 30px 60px;
-    }
+  .product {
+    padding: 30px 60px;
+  }
 }
 
 @media (max-width: 1000px) {
-    .product {
-        padding: 30px 40px;
-    }
+  .product {
+    padding: 30px 40px;
+  }
 }
 
 @media (max-width: 750px) {
-    .sidebar {
-        position: fixed;
-        z-index: 2;
-        top: 120px;
-        left: 0;
-        background: white;
-        overflow-y: scroll;
-        height: 78vh;
-        padding-left: 0;
-    }
+  .sidebar {
+    position: fixed;
+    z-index: 2;
+    top: 120px;
+    left: 0;
+    background: white;
+    overflow-y: scroll;
+    height: 78vh;
+    padding-left: 0;
+  }
 
-    .text-filter button {
-        display: block;
-    }
+  .text-filter button {
+    display: block;
+  }
 
-    .product {
-        padding: 30px 20px;
-    }
+  .product {
+    padding: 30px 20px;
+  }
 
-    .products .product-list {
-        padding: 25px 0;
-    }
+  .products .product-list {
+    padding: 25px 0;
+  }
 }
 
 @media (max-width: 325px) {
-    .product {
-        padding: 20px 5px;
-    }
+  .product {
+    padding: 20px 5px;
+  }
 }
