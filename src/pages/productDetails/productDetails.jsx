@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router";
 import "./productDetails.css";
 import { useEffect, useState } from "react";
 import { Featured } from "../../components/featured/featured";
-import { GetProduct } from "../../utils/getProduct";
+import { getProduct } from "../../utils/getProduct";
 import Shimmer from "../../components/shimmer/shimmer";
 import { useAuth } from "../../context/authContext";
 import { useCart } from "../../context/cartContext";
@@ -19,7 +19,7 @@ export const ProductDetails = () => {
   const navigate = useNavigate();
   const getSingleProduct = async () => {
     try {
-      const product = await GetProduct(productID);
+      const product = await getProduct(productID);
       console.log(product);
       setSingleProduct(product?.product);
     } catch (e) {
