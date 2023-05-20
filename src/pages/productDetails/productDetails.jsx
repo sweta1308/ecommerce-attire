@@ -29,7 +29,7 @@ export const ProductDetails = () => {
 
   useEffect(() => {
     getSingleProduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (Object.keys(singleProduct).length === 0) {

@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
+
 const PriceCard = ({ obj }) => {
+  const navigate = useNavigate();
   return (
     <>
       <ul className="price-card">
@@ -15,7 +18,7 @@ const PriceCard = ({ obj }) => {
           <p>Grand Total</p>
           <h4>Rs. {obj.totalPrice}</h4>
         </li>
-        <button>CheckOut Now</button>
+        <button onClick={() => navigate('/address')}>CheckOut Now</button>
       </ul>
     </>
   );
