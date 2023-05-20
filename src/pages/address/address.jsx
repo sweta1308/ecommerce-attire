@@ -1,10 +1,10 @@
-import { AddressCom } from "../../components/address/addressCom"
+import { AddressCard } from "../../components/address/addressCard"
 
 export const Address = () => {
     return (
         <>
             <div className="address">
-                <AddressCom />
+                <AddressCard />
             </div>
         </>
     )
