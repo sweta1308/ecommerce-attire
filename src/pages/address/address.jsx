@@ -1,7 +1,11 @@
+import { AddressCom } from "../../components/address/addressCom"
+
 export const Address = () => {
     return (
         <>
-            <h1>Address</h1>
+            <div className="address">
+                <AddressCom />
+            </div>
         </>
     )
 }
