@@ -12,7 +12,6 @@ const Cart = () => {
     totalGivenPrice: 0,
     totalOriginalPrice: 0,
   };
-
   const handleRemoveCart = (id) => removeCartData(id);
 
   return (

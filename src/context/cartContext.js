@@ -6,6 +6,7 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const token = localStorage.getItem("token");
+ 
   // console.log(token)
   const getCartData = async () => {
     try {
@@ -83,7 +84,7 @@ export const CartProvider = ({ children }) => {
           getCartData,
           addCartData,
           removeCartData,
-          changeCartQuantity,
+          changeCartQuantity
         }}
       >
         {children}

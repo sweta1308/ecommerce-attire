@@ -13,7 +13,7 @@ const AddressContext = createContext();
 export const AddressProvider = ({ children }) => {
   const [addressData, setAddressData] = useState([]);
   const token = localStorage.getItem("token");
-  const [isAddressCardVisible, setIsAddressCardVisible] = useState(false);
+  const [isAddressCardVisible, setIsAddressCardVisible] = useState(true);
   const checkoutInitial = {
     name: "",
     street: "",
