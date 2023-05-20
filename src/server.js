@@ -57,11 +57,11 @@ export function makeServer({ environment = "development" } = {}) {
       users.forEach((item) =>
         server.create("user", { ...item, cart: [], wishlist: [], address: [{
           _id: "27d94942-cd9b-4137-a0bd-39296b8a6bd2",
-          name: "Aniket Prakash",
-          street: "Near MKC High School",
-          city: "Keonjhar",
+          name: "Sweta Agarwalla",
+          street: "Traffic Square",
+          city: "Balasore",
           state: "Odisha",
-          pincode: "411001"
+          pincode: "720110"
         }
       ] })
       );
