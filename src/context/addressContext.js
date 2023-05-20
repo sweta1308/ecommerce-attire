@@ -36,6 +36,7 @@ export const AddressProvider = ({ children }) => {
       });
       if (status === 200) {
         setAddressData(data?.address);
+        
       }
     } catch (e) {
       console.log(e);
