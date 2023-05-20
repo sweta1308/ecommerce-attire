@@ -1,0 +1,56 @@
+.address {
+    padding: 20px 60px;
+}
+
+.address-checkout {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+/* Address form */
+.address-form, .checkout-details {
+    padding: 20px 30px 5px;
+    box-sizing: border-box;
+}
+.address-list {
+    display: flex;
+    width: 300px;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px 15px;
+}
+.address-list div {
+    line-height: 5px;
+    margin-left: 20px;
+}
+.address-form button {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px 0;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.address-form button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Checkout details */
+.checkout-details {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    line-height: 0px;
+    width: 300px;
+}
+.checkout-details .flex-div {
+    display: flex;
+    justify-content: space-between;
+}
+.checkout-details .flex-div .title-cart {
+    width: 140px;
+    font-size: 13px;
+    line-height: 15px;
+    margin-top: 5px;
+}
