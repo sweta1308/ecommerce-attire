@@ -2,12 +2,12 @@ import { useAddress } from '../../context/addressContext';
 import './addressCard.css';
 
 export const AddressCard = () => {
-    const {checkoutState} = useAddress();
+    const {checkoutState, isAddressCardVisible, setIsAddressCardVisible} = useAddress();
     const {name, street, city, state, pincode} = checkoutState
     return (
         <>
-            <div className='address-card'>
-                <i class="fa-solid fa-xmark"></i>
+            <div className='address-card' style={{display: isAddressCardVisible ? '' : 'none'}}>
+                <i onClick={() => setIsAddressCardVisible(false)} class="fa-solid fa-xmark"></i>
                 <h3>Enter Your Address</h3>
                 <label for="name">Name: </label>
                 <input id='name' placeholder='Adarsh Balika' value={name} />
@@ -19,7 +19,7 @@ export const AddressCard = () => {
                 <input id='city' placeholder='Odisha' value={state} />
                 <label for="pincode">Pincode: </label>
                 <input id='pincode' placeholder='757001' value={pincode} />
-                <button>Add Address</button>
+                <button onClick={() => setIsAddressCardVisible(false)}>Add Address</button>
             </div>
         </>
     )
