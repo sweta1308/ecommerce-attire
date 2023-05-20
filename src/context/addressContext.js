@@ -13,13 +13,13 @@ const AddressContext = createContext();
 export const AddressProvider = ({ children }) => {
   const [addressData, setAddressData] = useState([]);
   const token = localStorage.getItem("token");
-
+  const [isAddressCardVisible, setIsAddressCardVisible] = useState(false);
   const checkoutInitial = {
-    name: '',
-    street: '',
-    city: '',
-    state: '',
-    pincode: ''
+    name: "",
+    street: "",
+    city: "",
+    state: "",
+    pincode: "",
   };
 
   const [checkoutState, checkoutDispatch] = useReducer(
@@ -87,6 +87,8 @@ export const AddressProvider = ({ children }) => {
           removeAddressData,
           checkoutState,
           checkoutDispatch,
+          isAddressCardVisible,
+          setIsAddressCardVisible,
         }}
       >
         {children}
