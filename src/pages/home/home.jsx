@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { Brand } from "../../components/brand/Brand";
-import { Featured } from "../../components/featured/Featured";
-import { Category } from "../../components/category/Category";
+import { Brand } from "../../components/brand/brand";
+import { Featured } from "../../components/featured/featured";
+import { Category } from "../../components/category/category";
 import { header, logo } from "../../assets";
 import "./home.css";
 // import { Footer } from "../../components/footer/footer";
