@@ -90,7 +90,17 @@ export const NavBar = () => {
             class="fa-solid fa-magnifying-glass"
             style={{ color: "#98999a" }}
           ></i>
-          <input placeholder="Search" />
+          <input
+            placeholder="Search"
+            value={filterState.search}
+            onChange={(e) => {
+              filterDispatch({
+                type: "filter_by_search",
+                payload: e.target.value,
+              });
+              filterState.search.length > 0 && navigate("/products");
+            }}
+          />
         </div>
       </div>
     </>
