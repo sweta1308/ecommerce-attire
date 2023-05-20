@@ -19,7 +19,7 @@ export const AddressProvider = ({ children }) => {
     street: "",
     city: "",
     state: "",
-    pincode: "",
+    pincode: "",  
   };
 
   const [checkoutState, checkoutDispatch] = useReducer(
@@ -31,7 +31,7 @@ export const AddressProvider = ({ children }) => {
     try {
       const { status, data } = await axios({
         method: "GET",
-        url: "/api/user/addresses",
+        url: "/api/user/address",
         headers: { authorization: token },
       });
       if (status === 200) {

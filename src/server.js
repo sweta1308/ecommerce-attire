@@ -1,5 +1,10 @@
 import { Server, Model, RestSerializer } from "miragejs";
 import {
+  addNewAddressHandler,
+  getAllAddressesHandler,
+  removeAddressHandler,
+} from "./backend/controllers/AddressController";
+import {
   loginHandler,
   signupHandler,
 } from "./backend/controllers/AuthController";
@@ -38,6 +43,7 @@ export function makeServer({ environment = "development" } = {}) {
       user: Model,
       cart: Model,
       wishlist: Model,
+      address: Model
     },
 
     // Runs on the start of the server
@@ -49,7 +55,15 @@ export function makeServer({ environment = "development" } = {}) {
       });
 
       users.forEach((item) =>
-        server.create("user", { ...item, cart: [], wishlist: [] })
+        server.create("user", { ...item, cart: [], wishlist: [], address: [{
+          _id: "27d94942-cd9b-4137-a0bd-39296b8a6bd2",
+          name: "Aniket Prakash",
+          street: "Near MKC High School",
+          city: "Keonjhar",
+          state: "Odisha",
+          pincode: "411001"
+        }
+      ] })
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
@@ -85,6 +99,11 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
+
+      // address routes (private)
+      this.get("/user/address", getAllAddressesHandler.bind(this));
+      this.post("/user/address", addNewAddressHandler.bind(this));
+      this.delete("/user/address/:addressId", removeAddressHandler.bind(this));
     },
   });
 }
