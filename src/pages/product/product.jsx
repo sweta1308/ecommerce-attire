@@ -1,4 +1,4 @@
-import { ProductCard } from "../../components/product-card/productCard";
+import { ProductCard } from "../../components/product-card/ProductCard";
 import { SideBar } from "../../components/sidebar/sidebar";
 import "./product.css";
 import { useState } from "react";

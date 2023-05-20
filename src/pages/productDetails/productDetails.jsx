@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router";
 import "./productDetails.css";
 import { useEffect, useState } from "react";
-import { Featured } from "../../components/featured/featured";
+import { Featured } from "../../components/featured/Featured";
 import { getProduct } from "../../utils/getProduct";
 import Shimmer from "../../components/shimmer/shimmer";
 import { useAuth } from "../../context/authContext";

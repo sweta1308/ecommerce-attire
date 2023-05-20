@@ -1,5 +1,5 @@
 import { featuredData } from "./featuredData";
-import { ProductCard } from "../product-card/productCard";
+import { ProductCard } from "../product-card/ProductCard";
 import "./featured.css";
 
 export const Featured = () => {
