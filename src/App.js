@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
-import { Home } from "./pages/home/Home";
-import { Product } from "./pages/product/Product";
+import { Home } from "./pages/home/home";
+import { Product } from "./pages/product/product";
 import Cart from "./pages/cart/cart";
 import { NavBar } from "./components/navbar/navbar";
 import { Wishlist } from "./pages/wishlist/wishlist";
-import { ProductDetails } from "./pages/productDetails/ProductDetails";
+import { ProductDetails } from "./pages/productDetails/productDetails";
 import { Login } from "./pages/login/login";
 import { Signup } from "./pages/signup/signup";
 import { RequireAuth } from "./components/auth/requireAuth";
