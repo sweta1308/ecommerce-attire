@@ -30,16 +30,16 @@ export const FilterProvider = ({children}) => {
         filteredData = filteredData.filter(data => data.ratings.value <= filterState.rating)
     }
 
+    if (filterState.search.length > 0) {
+        filteredData = filteredData.filter(data => data.title.toLowerCase().includes(filterState.search.toLowerCase()) || data.brand.toLowerCase().includes(filterState.search.toLowerCase()))
+    }
+
     if (filterState.sort === 'high-to-low') {
         filteredData = [...filteredData].sort((a, b) => b.price - a.price)
     } else if (filterState.sort === 'low-to-high') {
         filteredData = [...filteredData].sort((a, b) => a.price - b.price)
     } else if (filterState.sort === 'featured') {
         filteredData = [...filteredData]
-    }
-
-    if (filterState.search.length > 0) {
-        filteredData = filteredData.filter(data => data.title.toLowerCase().includes(filterState.search.toLowerCase()) || data.brand.toLowerCase().includes(filterState.search.toLowerCase()))
     }
 
     return (
