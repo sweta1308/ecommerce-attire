@@ -38,6 +38,7 @@ export const ProductCard = ({ data }) => {
               }
             } else {
               alert("Please login to proceed");
+              navigate('/login')
             }
           }}
         >
