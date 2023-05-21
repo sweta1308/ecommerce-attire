@@ -6,12 +6,7 @@ import PriceCard from "./priceCard";
 
 const Cart = () => {
   const { cart, removeCartData } = useCart();
-  let cartObject = {
-    quantity: 0,
-    totalPrice: 0,
-    totalGivenPrice: 0,
-    totalOriginalPrice: 0,
-  };
+  let {cartObject} = useCart();
   const handleRemoveCart = (id) => removeCartData(id);
 
   return (
