@@ -3,13 +3,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
     padding: 20px 15px;
     box-sizing: border-box;
     box-shadow: #64646f33 0px 7px 29px 0px;
     margin-top: 40px;
-    position: relative;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 10px;
+    z-index: 1;
+    background-color: var(--white-color);
 }
 
 .address-card i {
