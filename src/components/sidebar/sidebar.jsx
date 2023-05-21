@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+
 import { useFilters } from "../../context/filterContext";
 import { useProducts } from "../../context/productContext";
 import "./sidebar.css";
@@ -6,7 +6,6 @@ import "./sidebar.css";
 export const SideBar = ({ isFilterVisible }) => {
   const { productState } = useProducts();
   const { filterDispatch, filterState } = useFilters();
-  const navigate = useNavigate();
   return (
     <>
       <div
@@ -18,7 +17,6 @@ export const SideBar = ({ isFilterVisible }) => {
           <button
             onClick={() => {
               filterDispatch({ type: "clear_filters" });
-              navigate("/products");
             }}
           >
             Clear Filters

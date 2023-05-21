@@ -39,6 +39,7 @@ export const filterReducer = (state, action) => {
         brands: [],
         rating: 5,
         sort: "featured",
+        search: ''
       };
     default:
       return state;
