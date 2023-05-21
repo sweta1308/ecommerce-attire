@@ -20,7 +20,6 @@ export const ProductDetails = () => {
   const getSingleProduct = async () => {
     try {
       const product = await getProduct(productID);
-      console.log(product);
       setSingleProduct(product?.product);
     } catch (e) {
       console.log(e);
@@ -97,6 +96,7 @@ export const ProductDetails = () => {
                   }
                 } else {
                   alert("Please login to proceed");
+                  navigate('/login')
                 }
               }}
             >
