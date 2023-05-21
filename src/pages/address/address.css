@@ -19,6 +19,7 @@
     font-size: 14px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10px 15px;
+    margin: 10px 0;
 }
 .address-list div {
     line-height: 5px;
@@ -43,6 +44,9 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     line-height: 0px;
     width: 300px;
+    height: fit-content;
+    padding-bottom: 20px;
+    margin-top: 30px;
 }
 .checkout-details .flex-div {
     display: flex;
@@ -53,4 +57,7 @@
     font-size: 13px;
     line-height: 15px;
     margin-top: 5px;
+}
+.checkout-address {
+    font-size: 14px;
 }
