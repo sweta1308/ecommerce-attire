@@ -25,7 +25,7 @@
     line-height: 5px;
     margin-left: 20px;
 }
-.address-form button {
+.address-form button, .checkout-details button {
     width: 100%;
     margin: 20px 0;
     padding: 10px 0;
@@ -35,7 +35,7 @@
     border-radius: 10px;
     cursor: pointer;
 }
-.address-form button:hover {
+.address-form button:hover, .checkout-details button:hover {
     background-color: var(--primary-dark);
 }
 
@@ -60,4 +60,13 @@
 }
 .checkout-address {
     font-size: 14px;
+}
+
+.checkout-price li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: -10px;
 }
