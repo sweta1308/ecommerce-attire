@@ -1,12 +1,11 @@
 import axios from "axios";
+import { v4 as uuid } from "uuid";
 import {
   createContext,
   useContext,
   useEffect,
-  useReducer,
   useState,
 } from "react";
-import { checkoutReducer } from "../reducer/checkoutReducer";
 
 const AddressContext = createContext();
 
@@ -22,10 +21,7 @@ export const AddressProvider = ({ children }) => {
     pincode: "",  
   };
 
-  const [checkoutState, checkoutDispatch] = useReducer(
-    checkoutReducer,
-    checkoutInitial
-  );
+  const [checkout, setCheckout] = useState(checkoutInitial);
 
   const getAddressData = async () => {
     try {
@@ -86,8 +82,8 @@ export const AddressProvider = ({ children }) => {
           addressData,
           addAddressData,
           removeAddressData,
-          checkoutState,
-          checkoutDispatch,
+          checkout,
+          setCheckout,
           isAddressCardVisible,
           setIsAddressCardVisible,
         }}
