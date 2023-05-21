@@ -12,6 +12,7 @@ import { RequireAuth } from "./components/auth/requireAuth";
 import { RestrictAuth } from "./components/auth/restrictAuth";
 import MockMan from "mockman-js";
 import { Address } from "./pages/address/address";
+import { OrderSummary } from "./pages/orderSummary/orderSummary";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path='/address' element={<Address />} />
+          <Route path='/orderSummary' element={<OrderSummary />} />
         </Route>
         <Route element={<RestrictAuth />}>
           <Route path="/login" element={<Login />} />

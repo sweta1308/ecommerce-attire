@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { useAddress } from "../../context/addressContext";
 import { useCart } from "../../context/cartContext";
 import "./address.css";
@@ -6,6 +7,7 @@ export const CheckoutCard = () => {
   const { cart } = useCart();
   let { cartObject } = useCart();
   const { checkout } = useAddress();
+  const navigate = useNavigate();
   return (
     <>
       <div className="checkout-details">
@@ -85,7 +87,7 @@ export const CheckoutCard = () => {
           </div>
         )}
 
-        <button>Place Order</button>
+        <button onClick={() => navigate('/orderSummary')}>Place Order</button>
       </div>
     </>
   );
