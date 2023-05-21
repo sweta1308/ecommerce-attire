@@ -2,7 +2,7 @@ import { useAddress } from '../../context/addressContext'
 import './address.css'
 
 export const AddressForm  = () => {
-    const {addressData} = useAddress();
+    const {addressData, setIsAddressCardVisible} = useAddress();
     return (
         <>
             <div className="address-form">
@@ -21,7 +21,7 @@ export const AddressForm  = () => {
                         </div>
                     )
                 })}
-                <button>Add New Address</button>
+                <button onClick={() => setIsAddressCardVisible(true)}>Add New Address</button>
             </div>
         </>
     )
