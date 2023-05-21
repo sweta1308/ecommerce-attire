@@ -35,7 +35,7 @@ export const AddressCard = () => {
         <input
           id="name"
           placeholder="Adarsh Balika"
-          value={checkout.name}
+          value={checkout.name} 
           onChange={(e) =>
             setCheckout({...checkout, name: e.target.value})
           }

@@ -14,6 +14,8 @@ import MockMan from "mockman-js";
 import { Address } from "./pages/address/address";
 
 function App() {
+
+
   return (
     <div className="App">
       <NavBar />

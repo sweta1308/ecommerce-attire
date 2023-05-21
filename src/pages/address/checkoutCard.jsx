@@ -28,7 +28,7 @@ export const CheckoutCard = () => {
                 <hr />
                 <h4>Deliver to</h4>
                 <hr />
-                {checkout && <div>
+                {Object.values(checkout)[0].length > 0 && <div>
                     <p><strong>{checkout.name}</strong></p>
                     <div className="checkout-address">
                         <p>{checkout.street}</p>

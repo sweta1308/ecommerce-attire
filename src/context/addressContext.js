@@ -31,7 +31,6 @@ export const AddressProvider = ({ children }) => {
       });
       if (status === 200) {
         setAddressData(data?.address);
-        
       }
     } catch (e) {
       console.log(e);
@@ -70,10 +69,9 @@ export const AddressProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getAddressData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+    getAddressData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <>
       <AddressContext.Provider
