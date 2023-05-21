@@ -5,7 +5,7 @@ import EmptyCart from "./emptyCart";
 import PriceCard from "./priceCard";
 
 const Cart = () => {
-  const { cart, removeCartData } = useCart();
+  const { cart, removeCartData, setCart } = useCart();
   let {cartObject} = useCart();
   const handleRemoveCart = (id) => removeCartData(id);
 
@@ -13,7 +13,7 @@ const Cart = () => {
     <>
       <div className="cart">
         <h1>Cart {cart.length > 0 && <span>({cart.length})</span>}</h1>
-        {cart.length > 0 && <button className="clear-cart">Clear Cart</button>}
+        {cart.length > 0 && <button className="clear-cart" onClick={() => setCart([])}>Clear Cart</button>}
         {cart.length > 0 ? (
           <div className="cart-container">
             <div className="cart-items">
