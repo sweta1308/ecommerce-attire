@@ -4,7 +4,7 @@ import { useCart } from "../../context/cartContext";
 import "./address.css";
 
 export const CheckoutCard = () => {
-  const { cart } = useCart();
+  const { cart, setCart } = useCart();
   let { cartObject } = useCart();
   const { checkout } = useAddress();
   const navigate = useNavigate();
@@ -87,7 +87,10 @@ export const CheckoutCard = () => {
           </div>
         )}
 
-        <button onClick={() => navigate('/orderSummary')}>Place Order</button>
+        <button disabled={Object.values(checkout)[0].length === 0} onClick={() => {
+          navigate('/orderSummary');
+          setCart([])
+        }}>Place Order</button>
       </div>
     </>
   );
