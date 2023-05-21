@@ -14,7 +14,6 @@ export const CartProvider = ({ children }) => {
     totalOriginalPrice: 0,
   };
  
-  // console.log(token)
   const getCartData = async () => {
     try {
       const { data, status } = await axios({

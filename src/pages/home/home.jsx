@@ -4,7 +4,6 @@ import { Featured } from "../../components/featured/featured";
 import { Category } from "../../components/category/category";
 import { header, logo } from "../../assets";
 import "./home.css";
-// import { Footer } from "../../components/footer/footer";
 
 export const Home = () => {
   const navigate = useNavigate();

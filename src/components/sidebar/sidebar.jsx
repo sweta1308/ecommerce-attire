@@ -1,4 +1,3 @@
-
 import { useFilters } from "../../context/filterContext";
 import { useProducts } from "../../context/productContext";
 import "./sidebar.css";

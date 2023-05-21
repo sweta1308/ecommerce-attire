@@ -8,7 +8,6 @@ export const AddressCard = () => {
     isAddressCardVisible,
     setIsAddressCardVisible, addAddressData
   } = useAddress();
-//   const { name, street, city, state, pincode } = checkout;
 
   const handleAddAddress = () => {
     if (checkout.name.trim()||checkout.street.trim()||checkout.city.trim()||checkout.state.trim()||checkout.pincode.trim()) {

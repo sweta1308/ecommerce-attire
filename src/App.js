@@ -15,8 +15,6 @@ import { Address } from "./pages/address/address";
 import { OrderSummary } from "./pages/orderSummary/orderSummary";
 
 function App() {
-
-
   return (
     <div className="App">
       <NavBar />
