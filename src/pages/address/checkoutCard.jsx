@@ -28,12 +28,14 @@ export const CheckoutCard = () => {
                 <hr />
                 <h4>Deliver to</h4>
                 <hr />
-                <p><strong>{checkout.name}</strong></p>
-                <div className="checkout-address">
-                    <p>{checkout.street}</p>
-                    <p>{checkout.city}, {checkout.state}</p>
-                    <p>Pincode: {checkout.pincode}</p>
-                </div>
+                {checkout && <div>
+                    <p><strong>{checkout.name}</strong></p>
+                    <div className="checkout-address">
+                        <p>{checkout.street}</p>
+                        <p>{checkout.city}, {checkout.state}</p>
+                        <p>Pincode: {checkout.pincode}</p>
+                    </div>
+                </div>}
                 
             </div>
             
