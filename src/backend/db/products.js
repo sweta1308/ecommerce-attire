@@ -76,7 +76,7 @@ export const products = [
     price: "3900",
     originalPrice: "4598",
     ratings: {
-      value: "4.6",
+      value: "2.9",
       count: "902",
     },
     categoryName: "Ethnic",
@@ -121,7 +121,7 @@ export const products = [
     price: "689",
     originalPrice: "1459",
     ratings: {
-      value: "3.8",
+      value: "2.8",
       count: "921",
     },
     categoryName: "Tops",
@@ -136,7 +136,7 @@ export const products = [
     price: "699",
     originalPrice: "942",
     ratings: {
-      value: "3.1",
+      value: "1.1",
       count: "346",
     },
     categoryName: "Bottoms",
@@ -395,7 +395,7 @@ export const products = [
     price: "2899",
     originalPrice: "3599",
     ratings: {
-      value: "3.5",
+      value: "2.5",
       count: "879",
     },
     categoryName: "Bottoms",
@@ -456,7 +456,7 @@ export const products = [
     price: "2199",
     originalPrice: "2870",
     ratings: {
-      value: "4",
+      value: "1",
       count: "1.5k",
     },
     categoryName: "Dresses",
