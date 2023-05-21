@@ -1,0 +1,10 @@
+.order-summary {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.order-summary small {
+    margin-top: -20px;
+}
