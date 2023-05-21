@@ -26,7 +26,7 @@ export const NavBar = () => {
     <>
       <div
         className="top-bar"
-        style={{ display: isVisible ? "block" : "none" }}
+        style={{ display: isVisible && !authState.isLoggedIn ? "block" : "none" }}
       >
         Sign up and get exclusive offers.
         <i onClick={() => setIsVisible(false)} class="fa-solid fa-xmark"></i>
