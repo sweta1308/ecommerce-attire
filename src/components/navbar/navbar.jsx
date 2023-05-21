@@ -21,7 +21,6 @@ export const NavBar = () => {
     navigate("/");
   };
 
-  console.log(authState);
   return (
     <>
       <div
