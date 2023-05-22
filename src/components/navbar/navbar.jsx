@@ -46,7 +46,7 @@ export const NavBar = () => {
             </p>
           </div>
           <div className="nav-navigate">
-            <div>
+            <div onClick={() => navigate('/products')}>
               <i
                 class="fa-solid fa-magnifying-glass"
                 style={{ color: "#98999a" }}
@@ -59,7 +59,6 @@ export const NavBar = () => {
                     type: "filter_by_search",
                     payload: e.target.value,
                   });
-                  filterState.search.length > 0 && navigate("/products");
                 }}
               />
             </div>
@@ -84,7 +83,7 @@ export const NavBar = () => {
           </div>
         </div>
 
-        <div className="search-bar">
+        <div className="search-bar" onClick={() => navigate('/products')}>
           <i
             class="fa-solid fa-magnifying-glass"
             style={{ color: "#98999a" }}
@@ -97,7 +96,6 @@ export const NavBar = () => {
                 type: "filter_by_search",
                 payload: e.target.value,
               });
-              filterState.search.length > 0 && navigate("/products");
             }}
           />
         </div>
