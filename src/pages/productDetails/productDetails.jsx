@@ -77,6 +77,7 @@ export const ProductDetails = () => {
                   }
                 } else {
                   alert("Please login to proceed");
+                  navigate('/login')
                 }
               }}
             >
