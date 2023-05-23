@@ -16,7 +16,7 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
         <div className="wishlist-container">
           <h3>{brand}</h3>
           <p>{title}</p>
-          <p>{ratings.value} ⭐</p>
+          <p>{ratings.value} ⭐ ({ratings.count})</p>
           <div className="price">
             <h3>{price}</h3>
             <p>{originalPrice}</p>
