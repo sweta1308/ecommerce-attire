@@ -1,5 +1,6 @@
 import { useAddress } from "../../context/addressContext";
 import "./addressCard.css";
+import {toast} from 'react-toastify';
 
 export const AddressCard = () => {
   const {
@@ -15,7 +16,7 @@ export const AddressCard = () => {
         setIsAddressCardVisible(false);
         setCheckout({...checkout, name: '', street: '', city: '', state: '', pincode: ''})
     }else {
-        alert('Fill all the data')
+        toast.warning('Fill all the data!')
     }
   }
 

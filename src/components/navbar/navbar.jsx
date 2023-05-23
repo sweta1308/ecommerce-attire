@@ -4,6 +4,7 @@ import { logo } from "../../assets";
 import "./navbar.css";
 import { useAuth } from "../../context/authContext";
 import { useFilters } from "../../context/filterContext";
+import {toast} from 'react-toastify';
 
 export const NavBar = () => {
   const { authState, userLogout } = useAuth();
@@ -19,6 +20,7 @@ export const NavBar = () => {
   const handleLogoutClick = () => {
     userLogout();
     navigate("/");
+    toast.error("Logged Out!")
   };
 
   return (

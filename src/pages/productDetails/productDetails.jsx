@@ -9,6 +9,7 @@ import { useCart } from "../../context/cartContext";
 import { isItemInCart } from "../../utils/isItemPresentInCart";
 import { isItemInWishlist } from "../../utils/isItemPresentInWishlist";
 import { useWishlist } from "../../context/wishlistContext";
+import {toast} from 'react-toastify'
 
 export const ProductDetails = () => {
   const [singleProduct, setSingleProduct] = useState({});
@@ -17,6 +18,7 @@ export const ProductDetails = () => {
   const { cart, addCartData } = useCart();
   const { wishlist, addWishlistData } = useWishlist();
   const navigate = useNavigate();
+
   const getSingleProduct = async () => {
     try {
       const product = await getProduct(productID);
@@ -74,9 +76,10 @@ export const ProductDetails = () => {
                     navigate("/wishlist");
                   } else {
                     addWishlistData(singleProduct);
+                    toast.success("Added to wishlist!")
                   }
                 } else {
-                  alert("Please login to proceed");
+                  toast.warning("Please login to proceed");
                   navigate('/login')
                 }
               }}
@@ -94,9 +97,10 @@ export const ProductDetails = () => {
                     navigate("/cart");
                   } else {
                     addCartData(singleProduct);
+                    toast.success("Added to wishlist!")
                   }
                 } else {
-                  alert("Please login to proceed");
+                  toast.warning("Please login to proceed");
                   navigate('/login')
                 }
               }}

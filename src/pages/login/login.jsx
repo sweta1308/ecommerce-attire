@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import "./login.css";
 import { useState } from "react";
 import { useAuth } from "../../context/authContext";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -20,16 +21,18 @@ export const Login = () => {
 
   const handleLogin = () => {
     if (!userData.email.trim() || !userData.password.trim()) {
-      alert("Enter proper credentials.");
+      toast.warning("Enter all credentials!")
     } else {
       userLogin(userData);
       navigate("/");
+      toast.success("Logged In!")
     }
   };
 
   const handleTestLogin = () => {
     setUserData(testUserData);
     userLogin(testUserData);
+    toast.success("Logged In!")
   };
 
   return (

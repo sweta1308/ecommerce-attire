@@ -3,6 +3,7 @@ import { useAuth } from "../../context/authContext";
 import { isItemInCart } from "../../utils/isItemPresentInCart";
 import "./wishlist.css";
 import { useCart } from "../../context/cartContext";
+import {toast} from 'react-toastify'
 
 export const WishlistCard = ({ data, handleRemoveWishlist }) => {
   const { authState } = useAuth();
@@ -30,9 +31,10 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
                   navigate("/cart");
                 } else {
                   addCartData(data);
+                  toast.success("Added to cart!")
                 }
               } else {
-                alert("Please login to proceed");
+                toast.warning("Please login to proceed!")
               }
             }}
           >

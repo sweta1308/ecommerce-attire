@@ -13,11 +13,14 @@ import { RestrictAuth } from "./components/auth/restrictAuth";
 import MockMan from "mockman-js";
 import { Address } from "./pages/address/address";
 import { OrderSummary } from "./pages/orderSummary/orderSummary";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <ToastContainer position="bottom-right" autoClose={2000} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Product />} />

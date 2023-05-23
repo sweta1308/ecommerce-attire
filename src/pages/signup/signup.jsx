@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import "./signup.css";
 import { useState } from "react";
 import { useAuth } from "../../context/authContext";
+import {toast} from 'react-toastify';
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -29,11 +30,12 @@ export const Signup = () => {
       !userCredentials.password.trim() ||
       !userCredentials.confirmPassword.trim()
     ) {
-      alert("Enter proper credentials");
+      toast.warning("Enter all credentials!")
     } else if (userCredentials.password !== userCredentials.confirmPassword) {
-      alert("Passwords donot match");
+      toast.warning("Passwords donot match!")
     } else {
       userSignup(userCredentials);
+      toast.success("Logged In!")
     }
   };
 

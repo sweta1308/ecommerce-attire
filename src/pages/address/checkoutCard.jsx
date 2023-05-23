@@ -2,14 +2,13 @@ import { useNavigate } from "react-router";
 import { useAddress } from "../../context/addressContext";
 import { useCart } from "../../context/cartContext";
 import "./address.css";
+import {toast} from 'react-toastify';
 
 export const CheckoutCard = () => {
   const { cart, removeCartData } = useCart();
   let { cartObject } = useCart();
   const { checkout } = useAddress();
   const navigate = useNavigate();
-
-  
 
   return (
     <>
@@ -90,9 +89,10 @@ export const CheckoutCard = () => {
           </div>
         )}
 
-        <button disabled={Object.values(checkout)[0].length === 0} onClick={() => {
+        <button disabled={Object.values(checkout)[0].length === 0 || cart.length === 0} onClick={() => {
           navigate('/orderSummary');
-          cart.map(item => removeCartData(item._id))
+          cart.map(item => removeCartData(item._id));
+          toast.success("Order Placed!")
         }}>Place Order</button>
       </div>
     </>

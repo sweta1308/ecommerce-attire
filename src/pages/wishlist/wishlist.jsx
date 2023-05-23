@@ -2,10 +2,14 @@ import "./wishlist.css";
 import { useWishlist } from "../../context/wishlistContext";
 import { EmptyWishlist } from "./emptyWishlist";
 import { WishlistCard } from "./wishlistCard";
+import {toast} from 'react-toastify'
 
 export const Wishlist = () => {
   const { wishlist, removeWishlistData } = useWishlist();
-  const handleRemoveWishlist = (id) => removeWishlistData(id);
+  const handleRemoveWishlist = (id) => {
+    removeWishlistData(id)
+    toast.error("Item removed from wishlist!")
+  };
   return (
     <>
       <div className="wishlist">

@@ -3,17 +3,24 @@ import "./cart.css";
 import { CartCard } from "./cartCard";
 import EmptyCart from "./emptyCart";
 import PriceCard from "./priceCard";
+import {toast} from 'react-toastify';
 
 const Cart = () => {
   const { cart, removeCartData } = useCart();
   let {cartObject} = useCart();
-  const handleRemoveCart = (id) => removeCartData(id);
+  const handleRemoveCart = (id) => {
+    removeCartData(id);
+    toast.error("Item removed from cart!")
+  };
 
   return (
     <>
       <div className="cart">
         <h1>Cart {cart.length > 0 && <span>({cart.length})</span>}</h1>
-        {cart.length > 0 && <button className="clear-cart" onClick={() => cart.map(item => removeCartData(item._id))}>Clear Cart</button>}
+        {cart.length > 0 && <button className="clear-cart" onClick={() => {
+          cart.map(item => removeCartData(item._id))
+          toast.error("Cleared Cart!")
+        }}>Clear Cart</button>}
         {cart.length > 0 ? (
           <div className="cart-container">
             <div className="cart-items">

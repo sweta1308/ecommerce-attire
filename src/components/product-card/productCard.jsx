@@ -3,6 +3,7 @@ import "./productCard.css";
 import { useCart } from "../../context/cartContext";
 import { useAuth } from "../../context/authContext";
 import { isItemInCart } from "../../utils/isItemPresentInCart";
+import {toast} from 'react-toastify';
 
 export const ProductCard = ({ data }) => {
   const { _id, image, title, brand, price, originalPrice, ratings } = data;
@@ -35,9 +36,10 @@ export const ProductCard = ({ data }) => {
                 navigate("/cart");
               } else {
                 addCartData(data);
+                toast.success('Added to cart!');
               }
             } else {
-              alert("Please login to proceed");
+              toast.warning("Please login to proceed!")
               navigate('/login')
             }
           }}
