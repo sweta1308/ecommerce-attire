@@ -129,17 +129,12 @@
     padding: 10px 20px;
   }
   .wishlist-card {
-    width: 450px;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin-left: 30px;
   }
-  .wishlist-container .buttons {
-    width: 100px;
-    margin-left: -80px;
-  }
-  .wishlist-card img {
-    width: 100px;
-    height: 100px;
-  }
-  .wishlist-container p:nth-child(2) {
-    width: 150px;
+  .buttons button {
+    margin: 7px 0;
   }
 }

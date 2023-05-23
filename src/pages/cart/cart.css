@@ -196,6 +196,9 @@
   .cart-quantity {
     display: flex;
   }
+  .cart-quantity .quantity-select {
+    margin: 10px 0;
+  }
 }
 
 @media (max-width: 900px) {

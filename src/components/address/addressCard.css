@@ -55,3 +55,13 @@
 .address-card button:hover {
   background-color: var(--primary-dark);
 }
+
+@media (max-width: 700px) {
+  .address-card {
+    width: 250px;
+    padding: 10px 15px;
+  }
+  .address-card input {
+    padding: 4px;
+  }
+}
