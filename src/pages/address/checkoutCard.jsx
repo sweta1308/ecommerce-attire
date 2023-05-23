@@ -4,10 +4,13 @@ import { useCart } from "../../context/cartContext";
 import "./address.css";
 
 export const CheckoutCard = () => {
-  const { cart, setCart } = useCart();
+  const { cart, removeCartData } = useCart();
   let { cartObject } = useCart();
   const { checkout } = useAddress();
   const navigate = useNavigate();
+
+  
+
   return (
     <>
       <div className="checkout-details">
@@ -89,7 +92,7 @@ export const CheckoutCard = () => {
 
         <button disabled={Object.values(checkout)[0].length === 0} onClick={() => {
           navigate('/orderSummary');
-          setCart([])
+          cart.map(item => removeCartData(item._id))
         }}>Place Order</button>
       </div>
     </>

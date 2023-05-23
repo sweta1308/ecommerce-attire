@@ -22,6 +22,7 @@ export const CartProvider = ({ children }) => {
         headers: { authorization: token },
       });
       if (status === 200) {
+        console.log(data)
         setCart(data?.cart);
       }
     } catch (e) {
