@@ -6,7 +6,7 @@ import { isItemInCart } from "../../utils/isItemPresentInCart";
 import {toast} from 'react-toastify';
 
 export const ProductCard = ({ data }) => {
-  const { _id, image, title, brand, price, originalPrice, ratings } = data;
+  const { _id, image, title, brand, price, originalPrice, ratings, outOfStock } = data;
   const navigate = useNavigate();
   const { cart, addCartData } = useCart();
   const { authState } = useAuth();
@@ -14,6 +14,7 @@ export const ProductCard = ({ data }) => {
   return (
     <>
       <div className="product-card">
+        {outOfStock && <span className="overlay">OUT OF STOCK</span>}
         <div onClick={() => navigate(`/products/${_id}`)}>
           <img src={image} alt={title} />
           <h3>{brand}</h3>
