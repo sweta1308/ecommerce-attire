@@ -16,7 +16,7 @@
 
 /* Address form */
 .address-form, .checkout-details {
-    padding: 20px 30px 5px;
+    padding: 0px 30px 5px;
     box-sizing: border-box;
 }
 .address-list {
