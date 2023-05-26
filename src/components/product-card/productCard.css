@@ -7,6 +7,23 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(180, 180, 181, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 10px;
 }
 
 .product-card:hover {
