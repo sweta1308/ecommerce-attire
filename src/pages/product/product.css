@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   color: var(--gray);
+  cursor: pointer;
 }
 .text span {
   color: var(--primary-color);

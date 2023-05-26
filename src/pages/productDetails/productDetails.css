@@ -1,6 +1,12 @@
+.text.details {
+  width: 300px;
+  margin-left: 120px;
+  margin-top: 40px;
+}
+
 .product-details {
   display: flex;
-  padding: 60px 60px;
+  padding: 0px 60px 60px;
   justify-content: center;
 }
 

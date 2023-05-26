@@ -9,7 +9,7 @@ import { useCart } from "../../context/cartContext";
 import { isItemInCart } from "../../utils/isItemPresentInCart";
 import { isItemInWishlist } from "../../utils/isItemPresentInWishlist";
 import { useWishlist } from "../../context/wishlistContext";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 
 export const ProductDetails = () => {
   const [singleProduct, setSingleProduct] = useState({});
@@ -30,7 +30,7 @@ export const ProductDetails = () => {
 
   useEffect(() => {
     getSingleProduct();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (Object.keys(singleProduct).length === 0) {
@@ -50,7 +50,14 @@ export const ProductDetails = () => {
 
   return (
     <>
-      <div className="product-details">
+      <p className="text details">
+        <p onClick={() => navigate("/")}>Home</p>{" "}
+        <i class="fa-solid fa-angle-right fa-xs"></i>{" "}
+        <p onClick={() => navigate("/products")}>Browse Products</p>
+        <i class="fa-solid fa-angle-right fa-xs"></i>
+        <span onClick={() => navigate("/products")}>Product Details</span>
+      </p>
+      <div className="product-details">     
         <img src={image} alt={title} />
         <div className="product-detail">
           <h1>{brand}</h1>
@@ -76,11 +83,11 @@ export const ProductDetails = () => {
                     navigate("/wishlist");
                   } else {
                     addWishlistData(singleProduct);
-                    toast.success("Added to wishlist!")
+                    toast.success("Added to wishlist!");
                   }
                 } else {
                   toast.warning("Please login to proceed");
-                  navigate('/login')
+                  navigate("/login");
                 }
               }}
             >
@@ -97,11 +104,11 @@ export const ProductDetails = () => {
                     navigate("/cart");
                   } else {
                     addCartData(singleProduct);
-                    toast.success("Added to wishlist!")
+                    toast.success("Added to wishlist!");
                   }
                 } else {
                   toast.warning("Please login to proceed");
-                  navigate('/login')
+                  navigate("/login");
                 }
               }}
             >
