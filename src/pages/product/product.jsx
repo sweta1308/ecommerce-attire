@@ -14,8 +14,11 @@ export const Product = () => {
       <div className="product">
         <div className="text-filter">
           <p className="text">
-            <p onClick={() => navigate('/')}>Home</p> <i class="fa-solid fa-angle-right fa-xs"></i>{" "}
-            <span onClick={() => navigate('/products')}>Browse Products ({filteredData.length})</span>
+            <p onClick={() => navigate("/")}>Home</p>{" "}
+            <i class="fa-solid fa-angle-right fa-xs"></i>{" "}
+            <span onClick={() => navigate("/products")}>
+              Browse Products ({filteredData.length})
+            </span>
           </p>
           <button onClick={() => setIsFilterVisible((prev) => !prev)}>
             <i class="fa-solid fa-filter" style={{ color: "#e80071" }}></i>{" "}
@@ -28,13 +31,19 @@ export const Product = () => {
             <SideBar isFilterVisible={isFilterVisible} />
           </div>
           <div className="product-list">
-            {filteredData.map((product) => {
-              return (
-                <li key={product._id}>
-                  <ProductCard data={product} />
-                </li>
-              );
-            })}
+            {filteredData.length === 0 ? (
+              <h2 style={{ textAlign: "center" }}>
+                No Products Found.
+              </h2>
+            ) : (
+              filteredData.map((product) => {
+                return (
+                  <li key={product._id}>
+                    <ProductCard data={product} />
+                  </li>
+                );
+              })
+            )}
           </div>
         </div>
       </div>
