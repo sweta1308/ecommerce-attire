@@ -33,6 +33,9 @@ export const filterReducer = (state, action) => {
     case "filter_by_search":
       return { ...state, search: action.payload };
 
+    case "filter_by_availability":
+      return {...state, includeOutOfStock: action.payload}
+
     case "clear_filters":
       return {
         category: [],

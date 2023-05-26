@@ -12,6 +12,7 @@ export const FilterProvider = ({ children }) => {
     rating: 5,
     sort: "featured",
     search: "",
+    includeOutOfStock: false
   };
 
   const [filterState, filterDispatch] = useReducer(
@@ -19,7 +20,11 @@ export const FilterProvider = ({ children }) => {
     initialFilter
   );
 
-  let filteredData = [...productState?.productData];
+  let filteredData = productState?.productData.filter(data => !data.outOfStock);
+
+  if (filterState.includeOutOfStock) {
+    filteredData = productState?.productData;
+  }
 
   if (filterState.category.length > 0) {
     filteredData = filteredData.filter((data) =>

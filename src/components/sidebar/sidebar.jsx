@@ -181,7 +181,7 @@ export const SideBar = ({ isFilterVisible }) => {
             <input
               type="radio"
               name="sort"
-              checked={filterState.sort === 'featured'}
+              checked={filterState.sort === "featured"}
               onChange={() =>
                 filterDispatch({ type: "filter_by_sort", payload: "featured" })
               }
@@ -192,7 +192,7 @@ export const SideBar = ({ isFilterVisible }) => {
             <input
               type="radio"
               name="sort"
-              checked={filterState.sort === 'high-to-low'}
+              checked={filterState.sort === "high-to-low"}
               onChange={() =>
                 filterDispatch({
                   type: "filter_by_sort",
@@ -206,7 +206,7 @@ export const SideBar = ({ isFilterVisible }) => {
             <input
               type="radio"
               name="sort"
-              checked={filterState.sort === 'low-to-high'}
+              checked={filterState.sort === "low-to-high"}
               onChange={() =>
                 filterDispatch({
                   type: "filter_by_sort",
@@ -215,6 +215,23 @@ export const SideBar = ({ isFilterVisible }) => {
               }
             />{" "}
             Low to High
+          </label>
+        </div>
+
+        <h4>Availability</h4>
+        <div className="stock-filter">
+          <label>
+            <input
+              type="checkbox"
+              checked={filterState.includeOutOfStock}
+              onChange={() =>
+                filterDispatch({
+                  type: "filter_by_availability",
+                  payload: !filterState.includeOutOfStock,
+                })
+              }
+            />{" "}
+            Include Out of Stock
           </label>
         </div>
       </div>
