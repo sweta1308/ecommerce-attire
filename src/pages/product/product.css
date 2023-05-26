@@ -9,6 +9,7 @@
   align-items: center;
   color: var(--gray);
   cursor: pointer;
+  margin-top: -10px;
 }
 .text span {
   color: var(--primary-color);
