@@ -55,7 +55,7 @@ export const ProductDetails = () => {
         <i class="fa-solid fa-angle-right fa-xs"></i>{" "}
         <p onClick={() => navigate("/products")}>Browse Products</p>
         <i class="fa-solid fa-angle-right fa-xs"></i>
-        <span onClick={() => navigate("/products")}>Product Details</span>
+        <span>Product Details</span>
       </p>
       <div className="product-details">     
         <img src={image} alt={title} />
