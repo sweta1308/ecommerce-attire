@@ -157,6 +157,7 @@ export const SideBar = ({ isFilterVisible }) => {
             min="0"
             max="5"
             value={filterState.rating}
+            list="numbers"
             onChange={(e) =>
               filterDispatch({
                 type: "filter_by_rating",
@@ -164,6 +165,14 @@ export const SideBar = ({ isFilterVisible }) => {
               })
             }
           />
+          <datalist id="numbers">
+            <option value="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+          </datalist>
         </div>
 
         <h4>Sort By Price:</h4>
