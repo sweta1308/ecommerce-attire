@@ -4,12 +4,16 @@ import { logo } from "../../assets";
 import "./navbar.css";
 import { useAuth } from "../../context/authContext";
 import { useFilters } from "../../context/filterContext";
-import {toast} from 'react-toastify';
+import { toast } from "react-toastify";
+import { useCart } from "../../context/cartContext";
+import { useWishlist } from "../../context/wishlistContext";
 
 export const NavBar = () => {
   const { authState, userLogout } = useAuth();
   const { filterState, filterDispatch } = useFilters();
   const [isVisible, setIsVisible] = useState(true);
+  const { cart } = useCart();
+  const { wishlist } = useWishlist();
   const navigate = useNavigate();
 
   const activeStyle = ({ isActive }) => ({
@@ -20,14 +24,16 @@ export const NavBar = () => {
   const handleLogoutClick = () => {
     userLogout();
     navigate("/");
-    toast.error("Logged Out!")
+    toast.error("Logged Out!");
   };
 
   return (
     <>
       <div
         className="top-bar"
-        style={{ display: isVisible && !authState.isLoggedIn ? "block" : "none" }}
+        style={{
+          display: isVisible && !authState.isLoggedIn ? "block" : "none",
+        }}
       >
         Sign up and get exclusive offers.
         <i onClick={() => setIsVisible(false)} class="fa-solid fa-xmark"></i>
@@ -48,7 +54,7 @@ export const NavBar = () => {
             </p>
           </div>
           <div className="nav-navigate">
-            <div onClick={() => navigate('/products')}>
+            <div onClick={() => navigate("/products")}>
               <i
                 class="fa-solid fa-magnifying-glass"
                 style={{ color: "#98999a" }}
@@ -68,10 +74,12 @@ export const NavBar = () => {
               onClick={() => navigate("/cart")}
               class="fa-solid fa-cart-shopping"
             ></i>
+            <p className="badge">{cart.length}</p>
             <i
               onClick={() => navigate("/wishlist")}
               class="fa-solid fa-heart"
             ></i>
+            <p className="badge">{wishlist.length}</p>
 
             {authState.isLoggedIn ? (
               <button className="login-icon" onClick={handleLogoutClick}>
@@ -85,7 +93,7 @@ export const NavBar = () => {
           </div>
         </div>
 
-        <div className="search-bar" onClick={() => navigate('/products')}>
+        <div className="search-bar" onClick={() => navigate("/products")}>
           <i
             class="fa-solid fa-magnifying-glass"
             style={{ color: "#98999a" }}
