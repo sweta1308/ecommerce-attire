@@ -46,7 +46,7 @@
 .nav .nav-navigate {
   display: flex;
   align-items: center;
-  width: 320px;
+  width: 330px;
   justify-content: space-between;
 }
 
@@ -69,6 +69,19 @@
 .nav .nav-navigate i {
   font-size: 12px;
   cursor: pointer;
+}
+
+.badge {
+  font-size: 11px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 13px;
+  height: 13px;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  top: -7px;
+  left: -7px;
 }
 
 .login-icon {
