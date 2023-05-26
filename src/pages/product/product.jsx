@@ -15,7 +15,7 @@ export const Product = () => {
         <div className="text-filter">
           <p className="text">
             <p onClick={() => navigate('/')}>Home</p> <i class="fa-solid fa-angle-right fa-xs"></i>{" "}
-            <span onClick={() => navigate('/products')}>Browse Products</span>
+            <span onClick={() => navigate('/products')}>Browse Products ({filteredData.length})</span>
           </p>
           <button onClick={() => setIsFilterVisible((prev) => !prev)}>
             <i class="fa-solid fa-filter" style={{ color: "#e80071" }}></i>{" "}
