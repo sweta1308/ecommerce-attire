@@ -55,7 +55,6 @@ export const CartCard = ({ data, handleRemoveCart }) => {
                 toast.warning("Please login to proceed");
                 navigate("/login");
               };
-              handleRemoveCart(_id);
             }}
           >
             {isItemInWishlist(wishlist, _id)
