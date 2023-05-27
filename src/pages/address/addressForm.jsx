@@ -24,6 +24,10 @@ export const AddressForm = () => {
                   {city}, {state}
                 </p>
                 <p>Pincode: {pincode}</p>
+                <div className="address-btn">
+                  <button>Edit Address</button>
+                  <button>Delete Address</button>
+                </div>
               </div>
             </div>
           );
