@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
         authDispatch({ type: "set_login", payload: true });
         authDispatch({ type: "set_user", payload: data?.foundUser });
         authDispatch({ type: "set_token", payload: data?.encodedToken });
-        navigate("/");
+        navigate("/products");
         localStorage.setItem("token", data?.encodedToken);
       }
     } catch (e) {
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
         authDispatch({ type: "set_login", payload: true });
         authDispatch({ type: "set_user", payload: data?.createdUser });
         authDispatch({ type: "set_token", payload: data?.encodedToken });
-        navigate("/");
+        navigate("/products");
         localStorage.setItem("token", data?.encodedToken);
       }
     } catch (e) {
