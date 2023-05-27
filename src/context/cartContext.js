@@ -7,12 +7,11 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const token = localStorage.getItem("token");
 
-  let cartObject = {
-    quantity: 0,
-    totalPrice: 0,
-    totalGivenPrice: 0,
-    totalOriginalPrice: 0,
-  };
+  const priceDetails = cart.reduce((acc, curr) => ({
+    quantity: acc.quantity + Number(curr.qty),
+    totalPrice: acc.totalPrice + Number(curr.price) * Number(curr.qty),
+    totalOriginalPrice: acc.totalOriginalPrice + Number(curr.qty) * Number(curr.originalPrice),
+  }), {quantity: 0, totalPrice:0, totalOriginalPrice:0})
  
   const getCartData = async () => {
     try {
@@ -22,7 +21,6 @@ export const CartProvider = ({ children }) => {
         headers: { authorization: token },
       });
       if (status === 200) {
-        console.log(data)
         setCart(data?.cart);
       }
     } catch (e) {
@@ -91,7 +89,7 @@ export const CartProvider = ({ children }) => {
           getCartData,
           addCartData,
           removeCartData,
-          changeCartQuantity, cartObject
+          changeCartQuantity, priceDetails
         }}
       >
         {children}
