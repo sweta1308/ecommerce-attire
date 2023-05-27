@@ -6,8 +6,7 @@ import PriceCard from "./priceCard";
 import { toast } from "react-toastify";
 
 const Cart = () => {
-  const { cart, removeCartData } = useCart();
-  let { cartObject } = useCart();
+  const { cart, removeCartData, priceDetails } = useCart();
   const handleRemoveCart = (id) => {
     removeCartData(id);
     toast.error("Item removed from cart!");
@@ -32,26 +31,17 @@ const Cart = () => {
           <div className="cart-container">
             <div className="cart-items">
               {cart.map((item) => {
-                const { _id, price, originalPrice, qty } = item;
-                cartObject = {
-                  quantity: cartObject.quantity + Number(qty),
-                  totalPrice:
-                    cartObject.totalPrice + Number(price) * Number(qty),
-                  totalOriginalPrice:
-                    cartObject.totalOriginalPrice +
-                    Number(qty) * Number(originalPrice),
-                };
                 return (
                   <>
                     <CartCard
                       data={item}
-                      handleRemoveCart={() => handleRemoveCart(_id)}
+                      handleRemoveCart={() => handleRemoveCart(item._id)}
                     />
                   </>
                 );
               })}
             </div>
-            <PriceCard obj={cartObject} />
+            <PriceCard obj={priceDetails} />
           </div>
         ) : (
           <EmptyCart />
