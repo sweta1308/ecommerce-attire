@@ -24,7 +24,7 @@ export const Login = () => {
       toast.warning("Enter all credentials!")
     } else {
       userLogin(userData);
-      navigate("/");
+      navigate("/products");
       toast.success("Logged In!")
     }
   };
@@ -33,6 +33,7 @@ export const Login = () => {
     setUserData(testUserData);
     userLogin(testUserData);
     toast.success("Logged In!")
+    navigate("/products");
   };
 
   return (
