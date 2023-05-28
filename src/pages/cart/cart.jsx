@@ -9,7 +9,7 @@ const Cart = () => {
   const { cart, removeCartData, priceDetails } = useCart();
   const handleRemoveCart = (id) => {
     removeCartData(id);
-    toast.error("Item removed from cart!");
+    toast.warning("Item removed from cart!");
   };
 
   return (
