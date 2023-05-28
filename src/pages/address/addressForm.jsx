@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { useAddress } from "../../context/addressContext";
 import "./address.css";
 
 export const AddressForm = () => {
-  const { addressData, setIsAddressCardVisible, checkout, setCheckout } = useAddress();
+  const { addressData, setIsAddressCardVisible, checkout, setCheckout } =
+    useAddress();
+  const [isEditing, setIsEditing] = useState(false);
   return (
     <>
       <div className="address-form">
@@ -16,17 +19,68 @@ export const AddressForm = () => {
                 name="address"
                 checked={checkout && checkout._id === _id}
                 onChange={() => setCheckout(data)}
+                disabled={isEditing}
               />
               <div className="address-data">
-                <h3>{name}</h3>
-                <p>{street},</p>
-                <p>
-                  {city}, {state}
-                </p>
-                <p>Pincode: {pincode}</p>
+                {isEditing ? (
+                  <div>
+                    <input
+                      type="text"
+                      value={name}
+                      placeholder="Enter Name"
+                      onChange={(e) =>
+                        setCheckout({ ...checkout, name: e.target.value })
+                      }
+                    />
+                    <input
+                      type="text"
+                      value={street}
+                      placeholder="Enter street"
+                      onChange={(e) =>
+                        setCheckout({ ...checkout, street: e.target.value })
+                      }
+                    />
+                    <input
+                      type="text"
+                      value={city}
+                      placeholder="Enter city"
+                      onChange={(e) =>
+                        setCheckout({ ...checkout, city: e.target.value })
+                      }
+                    />
+                    <input
+                      type="text"
+                      value={state}
+                      placeholder="Enter state"
+                      onChange={(e) =>
+                        setCheckout({ ...checkout, state: e.target.value })
+                      }
+                    />
+                    <input
+                      type="text"
+                      value={pincode}
+                      placeholder="Enter pincode"
+                      onChange={(e) =>
+                        setCheckout({ ...checkout, pincode: e.target.value })
+                      }
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <h3>{name}</h3>
+                    <p>{street},</p>
+                    <p>
+                      {city}, {state}
+                    </p>
+                    <p>Pincode: {pincode}</p>
+                  </div>
+                )}
+
                 <div className="address-btn">
-                  <button>Edit Address</button>
-                  <button>Delete Address</button>
+                  <button onClick={(_id) => addressData.map(data => data._id === _id && setIsEditing((prev) => !prev))}>
+                    {isEditing ? "Save" : "Edit"} Address
+                  </button>
+                  <button onClick={(_id) => addressData.filter(data => data._id === _id)}>Delete Address</button>
                 </div>
               </div>
             </div>
