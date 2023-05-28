@@ -1,6 +1,6 @@
 import { ProductCard } from "../../components/product-card/productCard";
 import { SideBar } from "../../components/sidebar/sidebar";
-import BarLoader from "react-spinners/BarLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 import "./product.css";
 import { useState } from "react";
 import { useFilters } from "../../context/filterContext";
@@ -36,7 +36,7 @@ export const Product = () => {
             <SideBar isFilterVisible={isFilterVisible} />
           </div>
           {productState.isProductLoading ? (
-            <BarLoader color={`var(--primary-color)`} size={60} />
+            <ClipLoader color={`var(--primary-color)`} size={60} />
           ) : (
             <div className="product-list">
               {filteredData.length === 0 ? (
