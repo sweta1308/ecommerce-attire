@@ -90,6 +90,13 @@
   font-weight: 700;
 }
 
+.add-wishlist {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  z-index: 1;
+}
+
 @media (max-width: 450px) {
   .product-card {
     width: 140px;
