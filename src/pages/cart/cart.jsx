@@ -21,7 +21,7 @@ const Cart = () => {
             className="clear-cart"
             onClick={() => {
               cart.map((item) => removeCartData(item._id));
-              toast.error("Cleared Cart!");
+              toast.error("Item removed from Cart!");
             }}
           >
             Clear Cart
