@@ -3,10 +3,13 @@ import { Brand } from "../../components/brand/brand";
 import { Featured } from "../../components/featured/featured";
 import { Category } from "../../components/category/category";
 import { header, logo } from "../../assets";
+import ClipLoader from "react-spinners/ClipLoader";
 import "./home.css";
+import { useProducts } from "../../context/productContext";
 
 export const Home = () => {
   const navigate = useNavigate();
+  const {productState} = useProducts();
   return (
     <>
       <div className="hero">
@@ -57,8 +60,10 @@ export const Home = () => {
             <p>We offer fast and free shipping for our loyal customers.</p>
           </div>
         </div>
-        <Featured />
-        <Category />
+        {productState.isProductLoading ? <ClipLoader color={`var(--primary-color)`} size={40}/> : <Featured />}
+
+        {productState?.isCategoryLoading ? <ClipLoader color={`var(--primary-color)`} size={40}/> : <Category />}
+        
       </div>
       <footer>
         <div className="footer-div">
