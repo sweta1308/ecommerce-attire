@@ -3,10 +3,11 @@ import "./login.css";
 import { useState } from "react";
 import { useAuth } from "../../context/authContext";
 import { toast } from "react-toastify";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export const Login = () => {
   const navigate = useNavigate();
-  const { userLogin } = useAuth();
+  const { userLogin, authState } = useAuth();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [userData, setUserData] = useState({
     email: "",
@@ -75,9 +76,11 @@ export const Login = () => {
         </div>
 
         <button className="login-button" onClick={handleLogin}>
+          {authState.isAuthLoading && <ClipLoader color={`#fff`} size={15} />}
           Login
         </button>
         <button className="login-button guest" onClick={handleTestLogin}>
+          {authState.isAuthLoading && <ClipLoader color={`#fff`} size={15} />}
           Login As Guest
         </button>
 
