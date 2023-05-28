@@ -10,6 +10,8 @@ import { isItemInCart } from "../../utils/isItemPresentInCart";
 import { isItemInWishlist } from "../../utils/isItemPresentInWishlist";
 import { useWishlist } from "../../context/wishlistContext";
 import { toast } from "react-toastify";
+import BarLoader from "react-spinners/BarLoader";
+import { useProducts } from "../../context/productContext";
 
 export const ProductDetails = () => {
   const [singleProduct, setSingleProduct] = useState({});
@@ -17,12 +19,15 @@ export const ProductDetails = () => {
   const { authState } = useAuth();
   const { cart, addCartData } = useCart();
   const { wishlist, addWishlistData } = useWishlist();
+  const { productState, productDispatch } = useProducts();
   const navigate = useNavigate();
 
   const getSingleProduct = async () => {
     try {
+      productDispatch({ type: "detail_loading", payload: true });
       const product = await getProduct(productID);
       setSingleProduct(product?.product);
+      productDispatch({ type: "detail_loading", payload: false });
     } catch (e) {
       console.log(e);
     }
@@ -57,66 +62,71 @@ export const ProductDetails = () => {
         <i class="fa-solid fa-angle-right fa-xs"></i>
         <span>Product Details</span>
       </p>
-      <div className="product-details">     
-        <img src={image} alt={title} />
-        <div className="product-detail">
-          <h1>{brand}</h1>
-          <p className="title-product">{title}</p>
-          <hr />
-          <p className="rating">
-            {ratings.value}⭐ ({ratings.count} reviews)
-          </p>
-          <div className="product-price">
-            <h2>₹{price}</h2>
-            <p>₹{originalPrice}</p>
-          </div>
-          <p className="stock">
-            <strong>Availability: </strong>
-            {outOfStock ? "Not in Stock" : "In Stock"}
-          </p>
-          <div className="wishlist-cart">
-            <button
-              className="wishlist-btn"
-              onClick={() => {
-                if (authState.isLoggedIn) {
-                  if (isItemInWishlist(wishlist, _id)) {
-                    navigate("/wishlist");
+      {productState.isDetailLoading ? (
+        <BarLoader color={`var(--primary-color)`} size={60} />
+      ) : (
+        <div className="product-details">
+          <img src={image} alt={title} />
+          <div className="product-detail">
+            <h1>{brand}</h1>
+            <p className="title-product">{title}</p>
+            <hr />
+            <p className="rating">
+              {ratings.value}⭐ ({ratings.count} reviews)
+            </p>
+            <div className="product-price">
+              <h2>₹{price}</h2>
+              <p>₹{originalPrice}</p>
+            </div>
+            <p className="stock">
+              <strong>Availability: </strong>
+              {outOfStock ? "Not in Stock" : "In Stock"}
+            </p>
+            <div className="wishlist-cart">
+              <button
+                className="wishlist-btn"
+                onClick={() => {
+                  if (authState.isLoggedIn) {
+                    if (isItemInWishlist(wishlist, _id)) {
+                      navigate("/wishlist");
+                    } else {
+                      addWishlistData(singleProduct);
+                      toast.success("Added to wishlist!");
+                    }
                   } else {
-                    addWishlistData(singleProduct);
-                    toast.success("Added to wishlist!");
+                    toast.warning("Please login to proceed");
+                    navigate("/login");
                   }
-                } else {
-                  toast.warning("Please login to proceed");
-                  navigate("/login");
-                }
-              }}
-            >
-              {isItemInWishlist(wishlist, _id)
-                ? "Go to Wishlist"
-                : "Add to Wishlist"}
-            </button>
+                }}
+              >
+                {isItemInWishlist(wishlist, _id)
+                  ? "Go to Wishlist"
+                  : "Add to Wishlist"}
+              </button>
 
-            <button
-              className="cart-btn"
-              onClick={() => {
-                if (authState.isLoggedIn) {
-                  if (isItemInCart(cart, _id)) {
-                    navigate("/cart");
+              <button
+                className="cart-btn"
+                onClick={() => {
+                  if (authState.isLoggedIn) {
+                    if (isItemInCart(cart, _id)) {
+                      navigate("/cart");
+                    } else {
+                      addCartData(singleProduct);
+                      toast.success("Added to wishlist!");
+                    }
                   } else {
-                    addCartData(singleProduct);
-                    toast.success("Added to wishlist!");
+                    toast.warning("Please login to proceed");
+                    navigate("/login");
                   }
-                } else {
-                  toast.warning("Please login to proceed");
-                  navigate("/login");
-                }
-              }}
-            >
-              {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
-            </button>
+                }}
+              >
+                {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+
       <hr className="mid-hr" />
       <div className="like-product">
         <Featured />
