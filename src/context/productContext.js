@@ -18,12 +18,14 @@ export const ProductProdvider = ({ children }) => {
 
   const getData = async () => {
     try {
+      productDispatch({type: 'products_loading', payload: true})
       const { status, data } = await axios({
         method: "GET",
         url: "/api/products",
       });
       if (status === 200) {
         productDispatch({ type: "set_products", payload: data.products });
+        productDispatch({type: 'products_loading', payload: false})
       }
     } catch (e) {
       console.log(e);
@@ -32,12 +34,14 @@ export const ProductProdvider = ({ children }) => {
 
   const getCategories = async () => {
     try {
+      productDispatch({type: 'categories_loading', payload: true})
       const { status, data } = await axios({
         method: "GET",
         url: "/api/categories",
       });
       if (status === 200) {
         productDispatch({ type: "set_category", payload: data.categories });
+        productDispatch({type: 'categories_loading', payload: false})
       }
     } catch (e) {
       console.log(e);
