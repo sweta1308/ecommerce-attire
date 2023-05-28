@@ -7,6 +7,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const authInitial = {
+    isAuthLoading: false,
     isLoggedIn: false,
     user: {},
     token: "",
@@ -16,6 +17,7 @@ export const AuthProvider = ({ children }) => {
 
   const userLogin = async (loginData) => {
     try {
+      authDispatch({type: "set_loading", payload: true})
       const { data, status } = await axios({
         method: "POST",
         data: loginData,
@@ -25,6 +27,7 @@ export const AuthProvider = ({ children }) => {
         authDispatch({ type: "set_login", payload: true });
         authDispatch({ type: "set_user", payload: data?.foundUser });
         authDispatch({ type: "set_token", payload: data?.encodedToken });
+        authDispatch({type: "set_loading", payload: false})
         navigate("/products");
         localStorage.setItem("token", data?.encodedToken);
       }
@@ -36,6 +39,7 @@ export const AuthProvider = ({ children }) => {
 
   const userSignup = async (signupData) => {
     try {
+      authDispatch({type: "set_loading", payload: true})
       const { data, status } = await axios({
         method: "POST",
         data: signupData,
@@ -45,6 +49,7 @@ export const AuthProvider = ({ children }) => {
         authDispatch({ type: "set_login", payload: true });
         authDispatch({ type: "set_user", payload: data?.createdUser });
         authDispatch({ type: "set_token", payload: data?.encodedToken });
+        authDispatch({type: "set_loading", payload: false})
         navigate("/products");
         localStorage.setItem("token", data?.encodedToken);
       }
