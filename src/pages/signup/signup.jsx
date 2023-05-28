@@ -3,10 +3,11 @@ import "./signup.css";
 import { useState } from "react";
 import { useAuth } from "../../context/authContext";
 import {toast} from 'react-toastify';
+import ClipLoader from 'react-spinners/ClipLoader'
 
 export const Signup = () => {
   const navigate = useNavigate();
-  const { userSignup } = useAuth();
+  const { userSignup, authState } = useAuth();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
     useState(false);
@@ -137,6 +138,7 @@ export const Signup = () => {
         </div>
 
         <button className="button-signup" onClick={handleSignUp}>
+          {authState.isAuthLoading && <ClipLoader color={`#fff`} size={15} />}
           Signup
         </button>
 
