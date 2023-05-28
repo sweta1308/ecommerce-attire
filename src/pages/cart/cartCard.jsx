@@ -23,16 +23,16 @@ export const CartCard = ({ data, handleRemoveCart }) => {
 
         <div className="cart-quantity">
           <div className="quantity-select">
-            <i
+            <button
               disabled={qty <= 1}
               onClick={() => changeCartQuantity(_id, "decrement")}
-              class="fa-solid fa-minus fa-xs"
-            ></i>
+            >
+              <i class="fa-solid fa-minus fa-xs"></i>
+            </button>
             {qty}
-            <i
-              class="fa-solid fa-plus fa-xs"
-              onClick={() => changeCartQuantity(_id, "increment")}
-            ></i>
+            <button onClick={() => changeCartQuantity(_id, "increment")}>
+              <i class="fa-solid fa-plus fa-xs"></i>
+            </button>
           </div>
           <button onClick={() => handleRemoveCart(_id)}>
             <i class="fa-solid fa-trash-can"></i> Remove
@@ -54,7 +54,7 @@ export const CartCard = ({ data, handleRemoveCart }) => {
               } else {
                 toast.warning("Please login to proceed");
                 navigate("/login");
-              };
+              }
             }}
           >
             {isItemInWishlist(wishlist, _id)
