@@ -8,6 +8,7 @@ export const ProductProdvider = ({ children }) => {
   const initialState = {
     isProuductLoading: false,
     isCategoryLoading: false,
+    isDetailLoading: false,
     productData: [],
     categoriesData: [],
   };
