@@ -1,14 +1,19 @@
 import { ProductCard } from "../../components/product-card/productCard";
 import { SideBar } from "../../components/sidebar/sidebar";
+import BarLoader from "react-spinners/BarLoader";
 import "./product.css";
 import { useState } from "react";
 import { useFilters } from "../../context/filterContext";
 import { useNavigate } from "react-router";
+import { useProducts } from "../../context/productContext";
 
 export const Product = () => {
   const { filteredData } = useFilters();
   const [isFilterVisible, setIsFilterVisible] = useState(false);
+  const { productState } = useProducts();
   const navigate = useNavigate();
+ 
+
   return (
     <>
       <div className="product">
@@ -30,21 +35,23 @@ export const Product = () => {
           <div className="sidebar">
             <SideBar isFilterVisible={isFilterVisible} />
           </div>
-          <div className="product-list">
-            {filteredData.length === 0 ? (
-              <h2 style={{ textAlign: "center" }}>
-                No Products Found.
-              </h2>
-            ) : (
-              filteredData.map((product) => {
-                return (
-                  <li key={product._id}>
-                    <ProductCard data={product} />
-                  </li>
-                );
-              })
-            )}
-          </div>
+          {productState.isProductLoading ? (
+            <BarLoader color={`var(--primary-color)`} size={60} />
+          ) : (
+            <div className="product-list">
+              {filteredData.length === 0 ? (
+                <h2 style={{ textAlign: "center" }}>No Products Found.</h2>
+              ) : (
+                filteredData.map((product) => {
+                  return (
+                    <li key={product._id}>
+                      <ProductCard data={product} />
+                    </li>
+                  );
+                })
+              )}
+            </div>
+          )}
         </div>
       </div>
     </>
