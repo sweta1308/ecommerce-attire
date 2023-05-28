@@ -8,7 +8,6 @@ export const CheckoutCard = () => {
   const { cart, removeCartData, priceDetails } = useCart();
   const { checkout } = useAddress();
   const navigate = useNavigate();
-  console.log(priceDetails);
   return (
     <>
       <div className="checkout-details">
@@ -34,7 +33,10 @@ export const CheckoutCard = () => {
           );
         })}
         <hr />
-        <h4>Price Details</h4>
+        <div className="flex-div">
+          <h4>Price Details</h4>
+          <p>{priceDetails.quantity}</p>
+        </div>
         <hr />
         <ul className="checkout-price">
           <li>
