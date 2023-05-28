@@ -77,10 +77,9 @@ export const AddressForm = () => {
                 )}
 
                 <div className="address-btn">
-                  <button onClick={(_id) => addressData.map(data => data._id === _id && setIsEditing((prev) => !prev))}>
-                    {isEditing ? "Save" : "Edit"} Address
+                  <button onClick={() => setIsEditing(!isEditing)}>{isEditing ? 'Save' : 'Edit'} Address
                   </button>
-                  <button onClick={(_id) => addressData.filter(data => data._id === _id)}>Delete Address</button>
+                  <button>Delete Address</button>
                 </div>
               </div>
             </div>
