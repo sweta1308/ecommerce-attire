@@ -1,14 +1,12 @@
 import { useNavigate } from "react-router";
-import { useCart } from "../../context/cartContext";
 
 const PriceCard = ({ obj }) => {
   const navigate = useNavigate();
-  const { cart } = useCart();
   return (
     <>
       <ul className="price-card">
         <li>
-          <p>Subtotal ({cart.length})</p>
+          <p>Subtotal ({obj.quantity})</p>
           <h4>Rs. {obj.totalOriginalPrice}</h4>
         </li>
         <li>
@@ -17,7 +15,7 @@ const PriceCard = ({ obj }) => {
         </li>
         <hr />
         <li>
-          <p>Grand Total ({cart.length})</p>
+          <p>Grand Total ({obj.quantity})</p>
           <h4>Rs. {obj.totalPrice}</h4>
         </li>
         <button onClick={() => navigate("/address")}>CheckOut Now</button>
