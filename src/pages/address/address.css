@@ -47,11 +47,15 @@
 
 .address-btn {
     display: flex;
+    margin: 10px 0;
 }
 .address-btn button {
     margin: 0 10px;
     font-size: 10px;
     padding: 4px;
+}
+.address-data input {
+    margin: 4px 0;
 }
 
 /* Checkout details */
