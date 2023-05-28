@@ -24,7 +24,7 @@ export const NavBar = () => {
   const handleLogoutClick = () => {
     userLogout();
     navigate("/");
-    toast.error("Logged Out!");
+    toast.warning("Logged Out!");
   };
 
   return (
