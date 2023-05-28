@@ -78,7 +78,7 @@ export const CheckoutCard = () => {
             Object.values(checkout)[0].length === 0 || cart.length === 0
           }
           onClick={() => {
-            navigate("/orderSummary");
+            navigate("/order-summary");
             cart.map((item) => removeCartData(item._id));
             toast.success("Order Placed!");
           }}
