@@ -3,18 +3,55 @@ import "./productCard.css";
 import { useCart } from "../../context/cartContext";
 import { useAuth } from "../../context/authContext";
 import { isItemInCart } from "../../utils/isItemPresentInCart";
-import {toast} from 'react-toastify';
+import { isItemInWishlist } from "../../utils/isItemPresentInWishlist";
+import { toast } from "react-toastify";
+import { useWishlist } from "../../context/wishlistContext";
 
 export const ProductCard = ({ data }) => {
-  const { _id, image, title, brand, price, originalPrice, ratings, outOfStock } = data;
+  const {
+    _id,
+    image,
+    title,
+    brand,
+    price,
+    originalPrice,
+    ratings,
+    outOfStock,
+  } = data;
   const navigate = useNavigate();
   const { cart, addCartData } = useCart();
+  const { wishlist, addWishlistData, removeWishlistData } = useWishlist();
   const { authState } = useAuth();
 
   return (
     <>
       <div className="product-card">
         {outOfStock && <span className="overlay">OUT OF STOCK</span>}
+        {isItemInWishlist(wishlist, _id) ? (
+            <i
+              class="fa-solid fa-heart fa-lg add-wishlist"
+              style={{ color: "#ff0000" }}
+              onClick={() => {
+                removeWishlistData(_id);
+                toast.warning("Item removed from wishlist!");
+              }}
+            ></i>
+          ) : (
+            <i
+              class="fa-regular fa-heart fa-lg add-wishlist"
+              onClick={() => {
+                if (authState.isLoggedIn) {
+                  if (!isItemInWishlist(wishlist, _id)) {
+                    addWishlistData(data);
+                    toast.success("Added to wishlist!");
+                  }
+                } else {
+                  toast.warning("Please login to proceed");
+                  navigate("/login");
+                }
+              }}
+            ></i>
+          )}
         <div onClick={() => navigate(`/products/${_id}`)}>
           <img src={image} alt={title} />
           <h3>{brand}</h3>
@@ -37,11 +74,11 @@ export const ProductCard = ({ data }) => {
                 navigate("/cart");
               } else {
                 addCartData(data);
-                toast.success('Added to cart!');
+                toast.success("Added to cart!");
               }
             } else {
-              toast.warning("Please login to proceed!")
-              navigate('/login')
+              toast.warning("Please login to proceed!");
+              navigate("/login");
             }
           }}
         >
