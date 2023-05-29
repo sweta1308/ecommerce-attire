@@ -3,13 +3,14 @@ import { useAddress } from "../../context/addressContext";
 import "./address.css";
 
 export const AddressForm = () => {
-  const { addressData, setIsAddressCardVisible, checkout, setCheckout } =
+  const { addressData, setIsAddressCardVisible, checkout, setCheckout, removeAddressData } =
     useAddress();
   const [isEditing, setIsEditing] = useState(false);
   return (
     <>
       <div className="address-form">
         <h2>Select Address</h2>
+        {addressData.length === 0 && <h2>No addresses added.</h2>}
         {addressData.map((data) => {
           const { _id, name, street, city, state, pincode } = data;
           return (
@@ -79,7 +80,7 @@ export const AddressForm = () => {
                 <div className="address-btn">
                   <button onClick={() => setIsEditing(!isEditing)}>{isEditing ? 'Save' : 'Edit'} Address
                   </button>
-                  <button>Delete Address</button>
+                  <button onClick={() => removeAddressData(_id)}>Delete Address</button>
                 </div>
               </div>
             </div>
