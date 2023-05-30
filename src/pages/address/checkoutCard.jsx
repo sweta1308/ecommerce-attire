@@ -4,10 +4,59 @@ import { useCart } from "../../context/cartContext";
 import "./address.css";
 import { toast } from "react-toastify";
 
+const loadScript = (url) => {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = url;
+
+    script.onload = () => {
+      resolve(true);
+    };
+
+    script.onerror = () => {
+      resolve(false);
+    };
+
+    document.body.appendChild(script);
+  });
+};
+
 export const CheckoutCard = () => {
   const { cart, removeCartData, priceDetails } = useCart();
   const { checkout } = useAddress();
   const navigate = useNavigate();
+
+  const displayRazorpay = async () => {
+    const response = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    if (!response) {
+      alert("Razorpay SDK failed to load, check you internet connection");
+      return;
+    }
+    const options = {
+      key: "rzp_test_4hPkeR34PzPm3M",
+      amount: Number(priceDetails.totalPrice) * 100,
+      currency: "INR",
+      name: "ATTIRE",
+      description: "Thank you for shopping with us",
+      handler: function () {
+        toast.success(
+          `Payment of Rs. ${priceDetails.totalPrice} is Succesful`
+        );
+        navigate("/order-summary");
+        cart.map((item) => removeCartData(item._id));
+      },
+      theme: {
+        color: "#e80071",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
+
+
   return (
     <>
       <div className="checkout-details">
@@ -78,9 +127,7 @@ export const CheckoutCard = () => {
             Object.values(checkout)[0].length === 0 || cart.length === 0
           }
           onClick={() => {
-            navigate("/order-summary");
-            cart.map((item) => removeCartData(item._id));
-            toast.success("Order Placed!");
+            displayRazorpay()
           }}
         >
           Place Order
