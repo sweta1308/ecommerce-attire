@@ -11,6 +11,7 @@ import { CartProvider } from "./context/cartContext";
 import { Wishlistprovider } from "./context/wishlistContext";
 import { AddressProvider } from "./context/addressContext";
 import { makeServer } from "./server";
+import ScrollToTop from "./components/scrollToTop";
 
 // Call make Server
 makeServer();
@@ -18,6 +19,7 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <AuthProvider>
         <ProductProdvider>
           <Wishlistprovider>
