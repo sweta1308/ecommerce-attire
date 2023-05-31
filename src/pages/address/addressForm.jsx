@@ -7,7 +7,7 @@ export const AddressForm = () => {
     setIsAddressCardVisible,
     checkout,
     setCheckout,
-    removeAddressData,
+    removeAddressData, setIsEditBtn
   } = useAddress();
   return (
     <>
@@ -39,6 +39,7 @@ export const AddressForm = () => {
                     onClick={() => {
                       setIsAddressCardVisible(true);
                       setCheckout(data);
+                      setIsEditBtn(true)
                     }}
                   >
                     Edit
@@ -61,7 +62,7 @@ export const AddressForm = () => {
             });
           }}
         >
-          Add New Address
+          + ADD NEW ADDRESS
         </button>
       </div>
     </>
