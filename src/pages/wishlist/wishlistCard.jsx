@@ -13,7 +13,7 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
   return (
     <>
       <div className="wishlist-card">
-        <img alt={title} src={image} />
+        <img alt={title} src={image} onClick={() => navigate(`/products/${_id}`)} />
         <div className="wishlist-container">
           <h3>{brand}</h3>
           <p>{title}</p>
