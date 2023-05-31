@@ -7,17 +7,11 @@ import ClipLoader from 'react-spinners/ClipLoader'
 
 export const Signup = () => {
   const navigate = useNavigate();
-  const { userSignup, authState } = useAuth();
+  const { userSignup, authState, userCredentials, setUserCredentials } = useAuth();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
     useState(false);
-  const [userCredentials, setUserCredentials] = useState({
-    fName: "",
-    lName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  
 
   const handlePasswordClick = () => setIsPasswordVisible((prev) => !prev);
   const handleConfirmPasswordClick = () =>
