@@ -13,13 +13,13 @@ export const AddressDetails = () => {
     removeAddressData,
     setIsAddressCardVisible,
     isAddressCardVisible,
-    setCheckout,
+    setCheckout, setIsEditBtn
   } = useAddress();
   return (
     <div>
       <div style={{ filter: isAddressCardVisible ? "blur(10px)" : "" }}>
         <h1>Account</h1>
-        <div className="profile">
+        <div className="profile address">
           <div className="links">
             <NavLink style={getStyles} to="/profile">
               Profile
@@ -28,7 +28,7 @@ export const AddressDetails = () => {
               Address
             </NavLink>
           </div>
-          <button
+          <button className="add-address"
             style={{ cursor: "pointer" }}
             onClick={() => {
               setIsAddressCardVisible(true);
@@ -41,7 +41,7 @@ export const AddressDetails = () => {
               });
             }}
           >
-            ADD NEW ADDRESS
+            + ADD NEW ADDRESS
           </button>
           {addressData.length === 0 && <h2>No addresses added.</h2>}
           {addressData.map((data) => {
@@ -58,6 +58,7 @@ export const AddressDetails = () => {
                   onClick={() => {
                     setIsAddressCardVisible(true);
                     setCheckout(data);
+                    setIsEditBtn(true)
                   }}
                 >
                   Edit
