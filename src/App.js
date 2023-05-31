@@ -15,11 +15,14 @@ import { Address } from "./pages/address/address";
 import { OrderSummary } from "./pages/orderSummary/orderSummary";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Profile } from "./pages/profile/profile";
+import { AddressDetails } from "./pages/profile/addressDetails";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      
       <ToastContainer position="bottom-right" autoClose={2000} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,6 +33,8 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path='/address' element={<Address />} />
           <Route path='/order-summary' element={<OrderSummary />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/address-details' element={<AddressDetails />} />
         </Route>
         <Route element={<RestrictAuth />}>
           <Route path="/login" element={<Login />} />
