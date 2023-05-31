@@ -39,6 +39,7 @@ export const AddressCard = () => {
           onChange={(e) =>
             setCheckout({...checkout, name: e.target.value})
           }
+          required
         />
         <label for="street">Street: </label>
         <input
@@ -48,6 +49,7 @@ export const AddressCard = () => {
           onChange={(e) =>
             setCheckout({...checkout, street: e.target.value})
           }
+          required
         />
         <label for="city">City: </label>
         <input
@@ -57,6 +59,7 @@ export const AddressCard = () => {
           onChange={(e) =>
             setCheckout({...checkout, city: e.target.value})
           }
+          required
         />
         <label for="city">State: </label>
         <input
@@ -66,6 +69,7 @@ export const AddressCard = () => {
           onChange={(e) =>
             setCheckout({...checkout, state: e.target.value})
           }
+          required
         />
         <label for="pincode">Pincode: </label>
         <input
@@ -75,6 +79,7 @@ export const AddressCard = () => {
           onChange={(e) =>
             setCheckout({...checkout, pincode: e.target.value})
           }
+          required
         />
         <button onClick={handleAddAddress}>
           Add Address
