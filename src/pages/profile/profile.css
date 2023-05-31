@@ -1,0 +1,55 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  padding: 10px 0 40px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 350px;
+}
+
+.links a {
+  margin: 10px 0;
+  text-decoration: none;
+  color: black;
+}
+
+.profile div {
+  margin: 5px 0;
+}
+
+.profile .log-out {
+  background-color: red;
+  padding: 5px 10px;
+  border: none;
+  color: var(--white-color);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profile .log-out:hover {
+  background-color: rgb(173, 3, 3);
+}
+
+.address-container {
+  border: 1px solid black;
+  padding: 10px 55px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.address-container p {
+  margin: -2px 0;
+}
