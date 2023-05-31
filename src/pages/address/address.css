@@ -103,6 +103,9 @@
         justify-content: center;
         align-items: center;
     }
+    .address-form, .checkout-details {
+        padding: 0px 10px 5px;
+    }
     .address-list {
         width: 220px;
     }

@@ -80,3 +80,12 @@ h1 {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
+
+@media (max-width: 400px) {
+  .profile {
+    width: 280px;
+  }
+  .address-container {
+    padding: 10px 15px;
+  }
+}
