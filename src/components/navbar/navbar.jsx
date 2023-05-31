@@ -4,12 +4,11 @@ import { logo } from "../../assets";
 import "./navbar.css";
 import { useAuth } from "../../context/authContext";
 import { useFilters } from "../../context/filterContext";
-import { toast } from "react-toastify";
 import { useCart } from "../../context/cartContext";
 import { useWishlist } from "../../context/wishlistContext";
 
 export const NavBar = () => {
-  const { authState, userLogout } = useAuth();
+  const { authState } = useAuth();
   const { filterState, filterDispatch } = useFilters();
   const [isVisible, setIsVisible] = useState(true);
   const { cart } = useCart();
@@ -20,12 +19,6 @@ export const NavBar = () => {
     color: isActive ? "var(--primary-color)" : "black",
     textDecoration: "none",
   });
-
-  const handleLogoutClick = () => {
-    userLogout();
-    navigate("/");
-    toast.warning("Logged Out!");
-  };
 
   return (
     <>
@@ -82,12 +75,12 @@ export const NavBar = () => {
             <p className="badge">{wishlist.length}</p>
 
             {authState.isLoggedIn ? (
-              <button className="login-icon" onClick={handleLogoutClick}>
-                <i class="fa-regular fa-user"></i> Log Out
+              <button className="login-icon" onClick={() => navigate("/profile")}>
+                <i class="fa-regular fa-user"></i>
               </button>
             ) : (
               <button className="login-icon" onClick={() => navigate("/login")}>
-                <i class="fa-regular fa-user"></i> Log In
+                <i class="fa-regular fa-user"></i>
               </button>
             )}
           </div>
