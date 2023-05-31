@@ -15,7 +15,7 @@ export const CartCard = ({ data, handleRemoveCart }) => {
   return (
     <>
       <div className="cart-card">
-        <img src={image} alt={title} />
+        <img src={image} alt={title} onClick={() => navigate(`/products/${_id}`)} />
         <div className="title">
           <h3>{brand}</h3>
           <p>{title}</p>
