@@ -1,24 +1,51 @@
 import { useAddress } from "../../context/addressContext";
 import "./addressCard.css";
-import {toast} from 'react-toastify';
+import { toast } from "react-toastify";
 
 export const AddressCard = () => {
   const {
     checkout,
     setCheckout,
     isAddressCardVisible,
-    setIsAddressCardVisible, addAddressData
+    setIsAddressCardVisible,
+    addAddressData,
+    isEditBtn,
+    setIsEditBtn,
+    editAddress,
+    addressData,
   } = useAddress();
 
   const handleAddAddress = () => {
-    if (checkout.name.trim()||checkout.street.trim()||checkout.city.trim()||checkout.state.trim()||checkout.pincode.trim()) {
+    const addressExist = addressData.find(
+      (address) => address._id === checkout._id
+    );
+    if (addressExist) {
+      editAddress(checkout, addressExist._id);
+    } else {
+      if (
+        checkout.name.trim() ||
+        checkout.street.trim() ||
+        checkout.city.trim() ||
+        checkout.state.trim() ||
+        checkout.pincode.trim()
+      ) {
         addAddressData(checkout);
-        setIsAddressCardVisible(false);
-        setCheckout({...checkout, name: '', street: '', city: '', state: '', pincode: ''})
-    }else {
-        toast.warning('Fill all the data!')
+        setCheckout({
+          ...checkout,
+          name: "",
+          street: "",
+          city: "",
+          state: "",
+          pincode: "",
+        });
+      } else {
+        toast.warning("Fill all the data!");
+      }
     }
-  }
+    setIsAddressCardVisible(false);
+    setIsEditBtn(false);
+    
+  };
 
   return (
     <>
@@ -35,10 +62,8 @@ export const AddressCard = () => {
         <input
           id="name"
           placeholder="Adarsh Balika"
-          value={checkout.name} 
-          onChange={(e) =>
-            setCheckout({...checkout, name: e.target.value})
-          }
+          value={checkout.name}
+          onChange={(e) => setCheckout({ ...checkout, name: e.target.value })}
           required
         />
         <label for="street">Street: </label>
@@ -46,9 +71,7 @@ export const AddressCard = () => {
           id="street"
           placeholder="114, New Colony"
           value={checkout.street}
-          onChange={(e) =>
-            setCheckout({...checkout, street: e.target.value})
-          }
+          onChange={(e) => setCheckout({ ...checkout, street: e.target.value })}
           required
         />
         <label for="city">City: </label>
@@ -56,9 +79,7 @@ export const AddressCard = () => {
           id="city"
           placeholder="Baripada"
           value={checkout.city}
-          onChange={(e) =>
-            setCheckout({...checkout, city: e.target.value})
-          }
+          onChange={(e) => setCheckout({ ...checkout, city: e.target.value })}
           required
         />
         <label for="city">State: </label>
@@ -66,9 +87,7 @@ export const AddressCard = () => {
           id="city"
           placeholder="Odisha"
           value={checkout.state}
-          onChange={(e) =>
-            setCheckout({...checkout, state: e.target.value})
-          }
+          onChange={(e) => setCheckout({ ...checkout, state: e.target.value })}
           required
         />
         <label for="pincode">Pincode: </label>
@@ -77,12 +96,12 @@ export const AddressCard = () => {
           placeholder="757001"
           value={checkout.pincode}
           onChange={(e) =>
-            setCheckout({...checkout, pincode: e.target.value})
+            setCheckout({ ...checkout, pincode: e.target.value })
           }
           required
         />
         <button onClick={handleAddAddress}>
-          Add Address
+          {isEditBtn ? "Save Address" : "Add Address"}
         </button>
       </div>
     </>
