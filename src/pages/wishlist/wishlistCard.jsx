@@ -9,7 +9,7 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
   const { authState } = useAuth();
   const navigate = useNavigate();
   const { cart, addCartData } = useCart();
-  const { _id, title, image, brand, price, originalPrice, ratings } = data;
+  const { _id, title, image, brand, price, originalPrice, ratings, outOfStock } = data;
   return (
     <>
       <div className="wishlist-card">
@@ -25,6 +25,7 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
         </div>
         <div className="buttons">
           <button
+            disabled={outOfStock}
             onClick={() => {
               if (authState.isLoggedIn) {
                 if (isItemInCart(cart, _id)) {
