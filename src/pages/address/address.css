@@ -5,7 +5,7 @@
 }
 
 .address {
-    padding: 20px 60px;
+    padding: 0 60px 20px;
 }
 
 .address-checkout {
@@ -63,6 +63,12 @@
 }
 .address-data input {
     margin: 4px 0;
+}
+.address-data div {
+    line-height: 0px;
+}
+.address-data div p, .final-address {
+    line-height: 15px;
 }
 
 /* Checkout details */
