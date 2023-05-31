@@ -67,6 +67,49 @@ export const addNewAddressHandler = function (schema, request) {
   }
 };
 
+/** 
+ * This handler handles adding an address to user.
+ * send POST request at api/user/address/:addressId
+ * body contains { address }
+*/
+
+export const editAddressHandler = function (schema, request) {
+  const userId = requiresAuth.call(this, request);
+
+    try {
+        if(!userId){
+            new Response(
+                404,
+                {},
+                {
+                    errors: ["The email you entered is not Registered. Not Found error"],
+                }
+            );
+        }
+
+        const addressId = request.params.addressId;
+        const {address} = JSON.parse(request.requestBody);
+
+        let userAddresses = schema.users.findBy({_id: userId}).address;
+
+        userAddresses =  userAddresses.map((item)=>
+            item._id === addressId ? address : item
+        );
+
+        this.db.users.update({_id: userId}, {address: userAddresses});
+        return new Response(201, {}, {address: userAddresses});
+
+    } catch (error) {
+        return new Response(
+            500,
+            {},
+            {
+                error,
+            }
+        );
+    }
+};
+
 /**
  * This handler handles removing an address from user.
  * send DELETE Request at /api/user/address/:addressId
