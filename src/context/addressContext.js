@@ -8,6 +8,7 @@ export const AddressProvider = ({ children }) => {
   const [addressData, setAddressData] = useState([]);
   const token = localStorage.getItem("token");
   const [isAddressCardVisible, setIsAddressCardVisible] = useState(false);
+  const [isEditBtn, setIsEditBtn] = useState(false);
   const checkoutInitial = {
     name: "",
     street: "",
@@ -91,7 +92,7 @@ export const AddressProvider = ({ children }) => {
           setCheckout,
           isAddressCardVisible,
           setIsAddressCardVisible,
-          editAddress,
+          editAddress, isEditBtn, setIsEditBtn
         }}
       >
         {children}
