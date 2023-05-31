@@ -68,6 +68,7 @@ export const ProductCard = ({ data }) => {
         </div>
 
         <button
+          disabled={outOfStock}
           onClick={() => {
             if (authState.isLoggedIn) {
               if (isItemInCart(cart, _id)) {
