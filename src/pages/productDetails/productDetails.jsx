@@ -3,7 +3,6 @@ import "./productDetails.css";
 import { useEffect, useState } from "react";
 import { Featured } from "../../components/featured/featured";
 import { getProduct } from "../../utils/getProduct";
-import Shimmer from "../../components/shimmer/shimmer";
 import { useAuth } from "../../context/authContext";
 import { useCart } from "../../context/cartContext";
 import { isItemInCart } from "../../utils/isItemPresentInCart";
@@ -39,7 +38,7 @@ export const ProductDetails = () => {
   }, []);
 
   if (Object.keys(singleProduct).length === 0) {
-    return <Shimmer />;
+    return null;
   }
 
   const {
