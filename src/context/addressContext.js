@@ -1,10 +1,6 @@
 import axios from "axios";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { editAddressService } from "../utils/editAddress";
 
 const AddressContext = createContext();
 
@@ -17,7 +13,7 @@ export const AddressProvider = ({ children }) => {
     street: "",
     city: "",
     state: "",
-    pincode: "",  
+    pincode: "",
   };
 
   const [checkout, setCheckout] = useState(checkoutInitial);
@@ -53,6 +49,18 @@ export const AddressProvider = ({ children }) => {
     }
   };
 
+  const editAddress = async (addressInput, addressId) => {
+    try {
+      const response = await editAddressService(addressInput, addressId, token);
+      const { status, data } = response;
+      if (status === 201) {
+        setAddressData(data?.address);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const removeAddressData = async (dataId) => {
     try {
       const { data, status } = await axios({
@@ -69,9 +77,9 @@ export const AddressProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getAddressData()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    getAddressData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <AddressContext.Provider
@@ -83,6 +91,7 @@ export const AddressProvider = ({ children }) => {
           setCheckout,
           isAddressCardVisible,
           setIsAddressCardVisible,
+          editAddress,
         }}
       >
         {children}
