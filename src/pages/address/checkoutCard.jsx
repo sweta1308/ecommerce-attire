@@ -117,7 +117,7 @@ export const CheckoutCard = () => {
               <p>
                 {checkout.city}, {checkout.state}
               </p>
-              <p>Pincode: {checkout.pincode}</p>
+              <p>{checkout.pincode}</p>
             </div>
           </div>
         )}
