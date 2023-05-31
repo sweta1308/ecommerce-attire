@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import { authReducer } from "../reducer/authReducer";
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -12,6 +12,13 @@ export const AuthProvider = ({ children }) => {
     user: {},
     token: "",
   };
+  const [userCredentials, setUserCredentials] = useState({
+    fName: "",
+    lName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
   const [authState, authDispatch] = useReducer(authReducer, authInitial);
   const navigate = useNavigate();
 
@@ -68,7 +75,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <>
       <AuthContext.Provider
-        value={{ authState, userLogin, userSignup, userLogout }}
+        value={{ authState, userLogin, userSignup, userLogout, userCredentials, setUserCredentials }}
       >
         {children}
       </AuthContext.Provider>
