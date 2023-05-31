@@ -51,8 +51,15 @@
 }
 .address-btn button {
     margin: 0 10px;
-    font-size: 10px;
-    padding: 4px;
+    font-size: 12px;
+    padding: 7px 10px;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.address-btn button:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
 .address-data input {
     margin: 4px 0;
