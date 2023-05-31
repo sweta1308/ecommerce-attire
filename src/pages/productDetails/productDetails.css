@@ -22,6 +22,10 @@
   margin: 20px 30px;
 }
 
+.product-detail h1 {
+  text-align: left;
+}
+
 .product-detail hr {
   margin: 20px 0;
 }
