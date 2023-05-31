@@ -23,7 +23,7 @@ const loadScript = (url) => {
 
 export const CheckoutCard = () => {
   const { cart, removeCartData, priceDetails } = useCart();
-  const { checkout } = useAddress();
+  const { checkout, addressData } = useAddress();
   const navigate = useNavigate();
 
   const displayRazorpay = async () => {
@@ -41,9 +41,7 @@ export const CheckoutCard = () => {
       name: "ATTIRE",
       description: "Thank you for shopping with us",
       handler: function () {
-        toast.success(
-          `Payment of Rs. ${priceDetails.totalPrice} is Succesful`
-        );
+        toast.success(`Payment of Rs. ${priceDetails.totalPrice} is Succesful`);
         navigate("/order-summary");
         cart.map((item) => removeCartData(item._id));
       },
@@ -55,7 +53,6 @@ export const CheckoutCard = () => {
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   };
-
 
   return (
     <>
@@ -107,8 +104,9 @@ export const CheckoutCard = () => {
         <hr />
         <h4>Deliver to</h4>
         <hr />
-        {Object.values(checkout)[0].length > 0 && (
-          <div>
+        {Object.values(checkout)[0].length > 0 &&
+        addressData.includes(checkout) ? (
+          <div className="final-address">
             <p>
               <strong>{checkout.name}</strong>
             </p>
@@ -120,14 +118,14 @@ export const CheckoutCard = () => {
               <p>{checkout.pincode}</p>
             </div>
           </div>
-        )}
+        ) : null}
 
         <button
           disabled={
             Object.values(checkout)[0].length === 0 || cart.length === 0
           }
           onClick={() => {
-            displayRazorpay()
+            displayRazorpay();
           }}
         >
           Place Order
