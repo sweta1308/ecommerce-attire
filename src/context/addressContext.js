@@ -1,12 +1,13 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { editAddressService } from "../utils/editAddress";
+import { useAuth } from "./authContext";
 
 const AddressContext = createContext();
 
 export const AddressProvider = ({ children }) => {
+  const {authState} = useAuth();
   const [addressData, setAddressData] = useState([]);
-  const token = localStorage.getItem("token");
   const [isAddressCardVisible, setIsAddressCardVisible] = useState(false);
   const [isEditBtn, setIsEditBtn] = useState(false);
   const checkoutInitial = {
@@ -24,7 +25,7 @@ export const AddressProvider = ({ children }) => {
       const { status, data } = await axios({
         method: "GET",
         url: "/api/user/address",
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 200) {
         setAddressData(data?.address);
@@ -40,7 +41,7 @@ export const AddressProvider = ({ children }) => {
         method: "POST",
         url: "/api/user/address",
         data: { address: addressData },
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 201) {
         setAddressData(data?.address);
@@ -52,7 +53,7 @@ export const AddressProvider = ({ children }) => {
 
   const editAddress = async (addressInput, addressId) => {
     try {
-      const response = await editAddressService(addressInput, addressId, token);
+      const response = await editAddressService(addressInput, addressId, authState.token);
       const { status, data } = response;
       if (status === 201) {
         setAddressData(data?.address);
@@ -67,7 +68,7 @@ export const AddressProvider = ({ children }) => {
       const { data, status } = await axios({
         method: "DELETE",
         url: `/api/user/address/${dataId}`,
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 200) {
         setAddressData(data?.address);
@@ -78,9 +79,12 @@ export const AddressProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getAddressData();
+    if (authState.token) {
+      getAddressData();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [authState.token]);
+  
   return (
     <>
       <AddressContext.Provider
