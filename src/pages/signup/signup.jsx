@@ -19,8 +19,8 @@ export const Signup = () => {
 
   const handleSignUp = () => {
     if (
-      !userCredentials.fName.trim() ||
-      !userCredentials.lName.trim() ||
+      !userCredentials.firstName.trim() ||
+      !userCredentials.lastName.trim() ||
       !userCredentials.email.trim() ||
       !userCredentials.password.trim() ||
       !userCredentials.confirmPassword.trim()
@@ -44,11 +44,11 @@ export const Signup = () => {
             <input
               id="first-name"
               placeholder="John"
-              value={userCredentials.fName}
+              value={userCredentials.firstName}
               onChange={(e) =>
                 setUserCredentials((prev) => ({
                   ...prev,
-                  fName: e.target.value,
+                  firstName: e.target.value,
                 }))
               }
             />
@@ -58,11 +58,11 @@ export const Signup = () => {
             <input
               id="last-name"
               placeholder="Doe"
-              value={userCredentials.lName}
+              value={userCredentials.lastName}
               onChange={(e) =>
                 setUserCredentials((prev) => ({
                   ...prev,
-                  lName: e.target.value,
+                  lastName: e.target.value,
                 }))
               }
             />
