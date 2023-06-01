@@ -1,13 +1,13 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { authReducer } from "../reducer/authReducer";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const localStorageItem = JSON.parse(localStorage.getItem("data"));
-  
+  const location = useLocation();
   const authInitial = {
     isAuthLoading: false,
     isLoggedIn: false,
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
         authDispatch({ type: "set_user", payload: data?.foundUser });
         authDispatch({ type: "set_token", payload: data?.encodedToken });
         authDispatch({ type: "set_loading", payload: false });
-        navigate("/products");
+        navigate(location?.state?.from?.pathname || "/products");
         localStorage.setItem(
           "data",
           JSON.stringify({ user: data?.foundUser, token: data?.encodedToken })
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
         authDispatch({ type: "set_user", payload: data?.createdUser });
         authDispatch({ type: "set_token", payload: data?.encodedToken });
         authDispatch({ type: "set_loading", payload: false });
-        navigate("/products");
+        navigate(location?.state?.from?.pathname || "/products");
         localStorage.setItem(
           "data",
           JSON.stringify({ user: data?.createdUser, token: data?.encodedToken })

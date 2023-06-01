@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import "./login.css";
 import { useState } from "react";
 import { useAuth } from "../../context/authContext";
@@ -8,6 +8,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 export const Login = () => {
   const navigate = useNavigate();
   const { userLogin, authState } = useAuth();
+  const location = useLocation()
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [userData, setUserData] = useState({
     email: "",
@@ -25,7 +26,6 @@ export const Login = () => {
       toast.warning("Enter all credentials!")
     } else {
       userLogin(userData);
-      navigate("/products");
       toast.success("Logged In!")
     }
   };
@@ -34,7 +34,7 @@ export const Login = () => {
     setUserData(testUserData);
     userLogin(testUserData);
     toast.success("Logged In!")
-    navigate("/products");
+    navigate(location?.state?.from?.pathname || "/products");
   };
 
   return (
