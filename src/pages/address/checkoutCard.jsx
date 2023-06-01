@@ -23,7 +23,7 @@ const loadScript = (url) => {
 
 export const CheckoutCard = () => {
   const { cart, removeCartData, priceDetails } = useCart();
-  const { checkout, addressData } = useAddress();
+  const { checkout } = useAddress();
   const navigate = useNavigate();
 
   const displayRazorpay = async () => {
@@ -44,6 +44,10 @@ export const CheckoutCard = () => {
         toast.success(`Payment of Rs. ${priceDetails.totalPrice} is Succesful`);
         navigate("/order-summary");
         cart.map((item) => removeCartData(item._id));
+        setTimeout(() => {
+          console.log("Success")
+          navigate("/");
+        }, 4000);
       },
       theme: {
         color: "#e80071",
@@ -104,8 +108,7 @@ export const CheckoutCard = () => {
         <hr />
         <h4>Deliver to</h4>
         <hr />
-        {Object.values(checkout)[0].length > 0 &&
-        addressData.includes(checkout) ? (
+        {Object.values(checkout)[0].length > 0  ? (
           <div className="final-address">
             <p>
               <strong>{checkout.name}</strong>
@@ -118,7 +121,7 @@ export const CheckoutCard = () => {
               <p>{checkout.pincode}</p>
             </div>
           </div>
-        ) : null}
+        ) : <p>No Address Found</p>}
 
         <button
           disabled={
