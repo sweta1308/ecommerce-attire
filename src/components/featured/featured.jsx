@@ -1,17 +1,19 @@
-import { featuredData } from "./featuredData";
+// import { featuredData } from "./featuredData";
 import { ProductCard } from "../product-card/productCard";
 import "./featured.css";
-import { useNavigate } from "react-router";
+import { useProducts } from "../../context/productContext";
 
 export const Featured = () => {
-  const navigate = useNavigate();
+  const {productState} = useProducts();
+  const {productData} = productState
+  const featuredData = [productData[22], productData[18], productData[5], productData[29], productData[19]]
   return (
     <>
       <h2>Products You May Like ✨</h2>
       <div className="featured">
         {featuredData.map((data) => {
           return (
-            <div key={data._id} onClick={() => navigate('/products')}>
+            <div key={data._id}>
               <ProductCard data={data} />
             </div>
           );
