@@ -67,12 +67,12 @@ export const NavBar = () => {
               onClick={() => navigate("/cart")}
               class="fa-solid fa-cart-shopping"
             ></i>
-            <p className="badge">{cart.length}</p>
+            <p className="badge">{authState.token ? cart.length : '0'}</p>
             <i
               onClick={() => navigate("/wishlist")}
               class="fa-solid fa-heart"
             ></i>
-            <p className="badge">{wishlist.length}</p>
+            <p className="badge">{authState.token ? wishlist.length : '0'}</p>
 
             {authState.isLoggedIn ? (
               <button className="login-icon" onClick={() => navigate("/profile")}>
