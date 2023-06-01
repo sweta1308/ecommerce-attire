@@ -41,7 +41,6 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 30px;
 }
 
@@ -65,11 +64,11 @@
   .sidebar {
     position: fixed;
     z-index: 2;
-    top: 120px;
+    top: 100px;
     left: 0;
     background: white;
     overflow-y: scroll;
-    height: 78vh;
+    height: 83vh;
     padding-left: 0;
   }
 
@@ -83,6 +82,7 @@
 
   .products .product-list {
     padding: 25px 0;
+    justify-content: center;
   }
 }
 
