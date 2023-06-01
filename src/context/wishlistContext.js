@@ -7,9 +7,11 @@ const WishlistContext = createContext();
 export const Wishlistprovider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
   const {authState} = useAuth();
+  const [isWishlistUpdate, setIsWishlistUpdate] = useState(false)
 
   const getWishlistData = async () => {
     try {
+      setIsWishlistUpdate(true)
       const { data, status } = await axios({
         method: "GET",
         url: "/api/user/wishlist",
@@ -17,6 +19,7 @@ export const Wishlistprovider = ({ children }) => {
       });
       if (status === 200) {
         setWishlist(data?.wishlist);
+        setIsWishlistUpdate(false)
       }
     } catch (e) {
       console.log(e);
@@ -25,6 +28,7 @@ export const Wishlistprovider = ({ children }) => {
 
   const addWishlistData = async (wishlistData) => {
     try {
+      setIsWishlistUpdate(true)
       const { data, status } = await axios({
         method: "POST",
         url: "/api/user/wishlist",
@@ -33,6 +37,7 @@ export const Wishlistprovider = ({ children }) => {
       });
       if (status === 201) {
         setWishlist(data?.wishlist);
+        setIsWishlistUpdate(false)
       }
     } catch (e) {
       console.log(e);
@@ -41,6 +46,7 @@ export const Wishlistprovider = ({ children }) => {
 
   const removeWishlistData = async (dataId) => {
     try {
+      setIsWishlistUpdate(true)
       const { status, data } = await axios({
         method: "DELETE",
         url: `/api/user/wishlist/${dataId}`,
@@ -48,6 +54,7 @@ export const Wishlistprovider = ({ children }) => {
       });
       if (status === 200) {
         setWishlist(data?.wishlist);
+        setIsWishlistUpdate(false)
       }
     } catch (e) {
       console.log(e);
@@ -68,7 +75,7 @@ export const Wishlistprovider = ({ children }) => {
           wishlist,
           getWishlistData,
           addWishlistData,
-          removeWishlistData,
+          removeWishlistData, isWishlistUpdate
         }}
       >
         {children}
