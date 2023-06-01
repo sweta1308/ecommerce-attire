@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { authReducer } from "../reducer/authReducer";
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -6,15 +6,17 @@ import { useNavigate } from "react-router";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const localStorageItem = JSON.parse(localStorage.getItem("data"));
+  
   const authInitial = {
     isAuthLoading: false,
     isLoggedIn: false,
     user: {},
-    token: "",
+    token: null,
   };
   const [userCredentials, setUserCredentials] = useState({
-    fName: "",
-    lName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -24,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 
   const userLogin = async (loginData) => {
     try {
-      authDispatch({type: "set_loading", payload: true})
+      authDispatch({ type: "set_loading", payload: true });
       const { data, status } = await axios({
         method: "POST",
         data: loginData,
@@ -34,9 +36,12 @@ export const AuthProvider = ({ children }) => {
         authDispatch({ type: "set_login", payload: true });
         authDispatch({ type: "set_user", payload: data?.foundUser });
         authDispatch({ type: "set_token", payload: data?.encodedToken });
-        authDispatch({type: "set_loading", payload: false})
+        authDispatch({ type: "set_loading", payload: false });
         navigate("/products");
-        localStorage.setItem("token", data?.encodedToken);
+        localStorage.setItem(
+          "data",
+          JSON.stringify({ user: data?.foundUser, token: data?.encodedToken })
+        );
       }
     } catch (e) {
       console.log(e);
@@ -46,7 +51,7 @@ export const AuthProvider = ({ children }) => {
 
   const userSignup = async (signupData) => {
     try {
-      authDispatch({type: "set_loading", payload: true})
+      authDispatch({ type: "set_loading", payload: true });
       const { data, status } = await axios({
         method: "POST",
         data: signupData,
@@ -56,9 +61,12 @@ export const AuthProvider = ({ children }) => {
         authDispatch({ type: "set_login", payload: true });
         authDispatch({ type: "set_user", payload: data?.createdUser });
         authDispatch({ type: "set_token", payload: data?.encodedToken });
-        authDispatch({type: "set_loading", payload: false})
+        authDispatch({ type: "set_loading", payload: false });
         navigate("/products");
-        localStorage.setItem("token", data?.encodedToken);
+        localStorage.setItem(
+          "data",
+          JSON.stringify({ user: data?.createdUser, token: data?.encodedToken })
+        );
       }
     } catch (e) {
       console.log(e);
@@ -68,14 +76,33 @@ export const AuthProvider = ({ children }) => {
   const userLogout = () => {
     authDispatch({ type: "set_login", payload: false });
     authDispatch({ type: "set_user", payload: {} });
-    authDispatch({ type: "set_token", payload: "" });
-    localStorage.setItem("token", "");
+    authDispatch({ type: "set_token", payload: null });
+    localStorage.removeItem('data')
   };
+
+  useEffect(() => {
+    if (localStorageItem) {
+      console.log(localStorageItem.user)
+      authDispatch({ type: "set_login", payload: true });
+      authDispatch({ type: "set_user", payload: localStorageItem?.user });
+      authDispatch({ type: "set_token", payload: localStorageItem?.token });
+      authDispatch({ type: "set_loading", payload: false });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
 
   return (
     <>
       <AuthContext.Provider
-        value={{ authState, userLogin, userSignup, userLogout, userCredentials, setUserCredentials }}
+        value={{
+          authState,
+          userLogin,
+          userSignup,
+          userLogout,
+          userCredentials,
+          setUserCredentials,
+        }}
       >
         {children}
       </AuthContext.Provider>
