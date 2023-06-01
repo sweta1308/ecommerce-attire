@@ -7,6 +7,7 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const {authState} = useAuth();
+  const [isCartUpdate, setIsCardUpdate] = useState(false)
 
   const priceDetails = cart.reduce((acc, curr) => ({
     quantity: acc.quantity + Number(curr.qty),
@@ -16,6 +17,7 @@ export const CartProvider = ({ children }) => {
  
   const getCartData = async () => {
     try {
+      setIsCardUpdate(true)
       const { data, status } = await axios({
         method: "GET",
         url: "/api/user/cart",
@@ -23,6 +25,7 @@ export const CartProvider = ({ children }) => {
       });
       if (status === 200) {
         setCart(data?.cart);
+        setIsCardUpdate(false)
       }
     } catch (e) {
       console.log(e);
@@ -31,6 +34,7 @@ export const CartProvider = ({ children }) => {
 
   const addCartData = async (cartData) => {
     try {
+      setIsCardUpdate(true)
       const { data, status } = await axios({
         method: "POST",
         url: "/api/user/cart",
@@ -39,6 +43,7 @@ export const CartProvider = ({ children }) => {
       });
       if (status === 201) {
         setCart(data?.cart);
+        setIsCardUpdate(false)
       }
     } catch (e) {
       console.log(e);
@@ -46,6 +51,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeCartData = async (dataId) => {
+    setIsCardUpdate(true)
     try {
       const { data, status } = await axios({
         method: "DELETE",
@@ -54,6 +60,7 @@ export const CartProvider = ({ children }) => {
       });
       if (status === 200) {
         setCart(data?.cart);
+        setIsCardUpdate(false)
       }
     } catch (e) {
       console.log(e);
@@ -62,6 +69,7 @@ export const CartProvider = ({ children }) => {
 
   const changeCartQuantity = async (dataId, updateType) => {
     try {
+      setIsCardUpdate(true)
       const { data, status } = await axios({
         method: "POST",
         data: { action: { type: updateType } },
@@ -70,6 +78,7 @@ export const CartProvider = ({ children }) => {
       });
       if (status === 200) {
         setCart(data?.cart);
+        setIsCardUpdate(false)
       }
     } catch (e) {
       console.log(e);
@@ -94,7 +103,7 @@ export const CartProvider = ({ children }) => {
           getCartData,
           addCartData,
           removeCartData,
-          changeCartQuantity, priceDetails
+          changeCartQuantity, priceDetails, isCartUpdate
         }}
       >
         {children}
