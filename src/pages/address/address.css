@@ -94,6 +94,11 @@
     font-size: 14px;
 }
 
+.checkout-price {
+    width: 100%;
+    margin-left: -40px;
+}
+
 .checkout-price li {
     list-style: none;
     display: flex;
