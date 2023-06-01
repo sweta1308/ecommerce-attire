@@ -16,8 +16,8 @@ export const ProductDetails = () => {
   const [singleProduct, setSingleProduct] = useState({});
   const { productID } = useParams();
   const { authState } = useAuth();
-  const { cart, addCartData } = useCart();
-  const { wishlist, addWishlistData } = useWishlist();
+  const { cart, addCartData, isCartUpdate } = useCart();
+  const { wishlist, addWishlistData, isWishlistUpdate } = useWishlist();
   const { productState, productDispatch } = useProducts();
   const navigate = useNavigate();
 
@@ -84,6 +84,7 @@ export const ProductDetails = () => {
             <div className="wishlist-cart">
               <button
                 className="wishlist-btn"
+                disabled={isWishlistUpdate}
                 onClick={() => {
                   if (authState.isLoggedIn) {
                     if (isItemInWishlist(wishlist, _id)) {
@@ -105,13 +106,14 @@ export const ProductDetails = () => {
 
               <button
                 className="cart-btn"
+                disabled={outOfStock || isCartUpdate}
                 onClick={() => {
                   if (authState.isLoggedIn) {
                     if (isItemInCart(cart, _id)) {
                       navigate("/cart");
                     } else {
                       addCartData(singleProduct);
-                      toast.success("Added to wishlist!");
+                      toast.success("Added to cart!");
                     }
                   } else {
                     toast.warning("Please login to proceed");
