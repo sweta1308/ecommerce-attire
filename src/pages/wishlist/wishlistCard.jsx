@@ -8,7 +8,7 @@ import {toast} from 'react-toastify'
 export const WishlistCard = ({ data, handleRemoveWishlist }) => {
   const { authState } = useAuth();
   const navigate = useNavigate();
-  const { cart, addCartData } = useCart();
+  const { cart, addCartData, isCartUpdate } = useCart();
   const { _id, title, image, brand, price, originalPrice, ratings, outOfStock } = data;
   return (
     <>
@@ -25,7 +25,7 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
         </div>
         <div className="buttons">
           <button
-            disabled={outOfStock}
+            disabled={outOfStock || isCartUpdate}
             onClick={() => {
               if (authState.isLoggedIn) {
                 if (isItemInCart(cart, _id)) {
