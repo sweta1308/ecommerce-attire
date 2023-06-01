@@ -9,7 +9,6 @@ import { ProductDetails } from "./pages/productDetails/productDetails";
 import { Login } from "./pages/login/login";
 import { Signup } from "./pages/signup/signup";
 import { RequireAuth } from "./components/auth/requireAuth";
-// import { RestrictAuth } from "./components/auth/restrictAuth";
 import MockMan from "mockman-js";
 import { Address } from "./pages/address/address";
 import { OrderSummary } from "./pages/orderSummary/orderSummary";
@@ -38,9 +37,6 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/address-details' element={<AddressDetails />} />
         </Route>
-        {/* <Route element={<RestrictAuth />}>
-          
-        </Route> */}
         <Route path="/mockman" element={<MockMan />} />
       </Routes>
     </div>
