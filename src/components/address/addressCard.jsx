@@ -21,6 +21,7 @@ export const AddressCard = () => {
     );
     if (addressExist) {
       editAddress(checkout, addressExist._id);
+      setCheckout(addressExist)
     } else {
       if (
         checkout.name.trim() ||
