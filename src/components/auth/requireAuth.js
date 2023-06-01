@@ -4,7 +4,7 @@ import { useAuth } from "../../context/authContext";
 export const RequireAuth = () => {
   const { authState } = useAuth();
   const location = useLocation();
-  return authState.isLoggedIn ? (
+  return authState.token ? (
     <Outlet />
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />
