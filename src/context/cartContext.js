@@ -1,11 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { useAuth } from "./authContext";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const token = localStorage.getItem("token");
+  const {authState} = useAuth();
 
   const priceDetails = cart.reduce((acc, curr) => ({
     quantity: acc.quantity + Number(curr.qty),
@@ -18,7 +19,7 @@ export const CartProvider = ({ children }) => {
       const { data, status } = await axios({
         method: "GET",
         url: "/api/user/cart",
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 200) {
         setCart(data?.cart);
@@ -34,7 +35,7 @@ export const CartProvider = ({ children }) => {
         method: "POST",
         url: "/api/user/cart",
         data: { product: cartData },
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 201) {
         setCart(data?.cart);
@@ -49,7 +50,7 @@ export const CartProvider = ({ children }) => {
       const { data, status } = await axios({
         method: "DELETE",
         url: `/api/user/cart/${dataId}`,
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 200) {
         setCart(data?.cart);
@@ -65,7 +66,7 @@ export const CartProvider = ({ children }) => {
         method: "POST",
         data: { action: { type: updateType } },
         url: `/api/user/cart/${dataId}`,
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 200) {
         setCart(data?.cart);
@@ -75,10 +76,14 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  // console.log(token)
+
   useEffect(() => {
-    getCartData();
+    if (authState.token) {
+      getCartData();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [authState.token]);
 
   return (
     <>
