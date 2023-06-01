@@ -84,13 +84,13 @@ export const Home = () => {
 
             <div className="socials">
               <h3>CONTACTS: </h3>
-              <a href="https://github.com/sweta1308">
+              <a href="https://github.com/sweta1308" target="_blank" rel="noreferrer">
                 <i class="fa-brands fa-github fa-lg"></i> Github
               </a>
-              <a href="https://twitter.com/AgarwallaSweta">
+              <a href="https://twitter.com/AgarwallaSweta" target="_blank" rel="noreferrer">
                 <i class="fa-brands fa-twitter fa-lg"></i> Twitter
               </a>
-              <a href="https://www.linkedin.com/in/sweta-agarwalla-45aa2324a/">
+              <a href="https://www.linkedin.com/in/sweta-agarwalla-45aa2324a/" target="_blank" rel="noreferrer">
                 <i class="fa-brands fa-linkedin fa-lg"></i> LinkedIn
               </a>
             </div>
