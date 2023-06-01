@@ -5,7 +5,7 @@ import './profile.css'
 import { NavLink } from "react-router-dom";
 
 export const Profile = () => {
-  const { userCredentials, userLogout } = useAuth();
+  const {  userLogout, authState } = useAuth();
   const navigate = useNavigate();
   const getStyles = ({isActive}) => ({
     color: isActive ? 'var(--primary-color)' : 'black',
@@ -22,11 +22,11 @@ export const Profile = () => {
         <hr />
         <div>
           <strong>Name: </strong>
-          <span>{`${userCredentials.fName} ${userCredentials.lName}`}</span>
+          <span>{`${authState.user.firstName} ${authState.user.lastName}`}</span>
         </div>
         <div>
           <strong>Email: </strong>
-          <span>{userCredentials.email}</span>
+          <span>{authState.user.email}</span>
         </div>
         <button className="log-out"
           onClick={() => {
