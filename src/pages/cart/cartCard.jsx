@@ -8,9 +8,9 @@ import "./cart.css";
 
 export const CartCard = ({ data, handleRemoveCart }) => {
   const { _id, image, brand, title, qty, price, originalPrice } = data;
-  const { changeCartQuantity } = useCart();
+  const { changeCartQuantity, isCartUpdate } = useCart();
   const { authState } = useAuth();
-  const { wishlist, addWishlistData } = useWishlist();
+  const { wishlist, addWishlistData, isWishlistUpdate } = useWishlist();
   const navigate = useNavigate();
   return (
     <>
@@ -24,7 +24,7 @@ export const CartCard = ({ data, handleRemoveCart }) => {
         <div className="cart-quantity">
           <div className="quantity-select">
             <button
-              disabled={qty <= 1}
+              disabled={qty <= 1 || isCartUpdate}
               onClick={() => changeCartQuantity(_id, "decrement")}
             >
               <i class="fa-solid fa-minus fa-xs"></i>
@@ -43,6 +43,7 @@ export const CartCard = ({ data, handleRemoveCart }) => {
           <p>Rs. {originalPrice}</p>
           <button
             className="wishlist-btn"
+            disabled={isWishlistUpdate}
             onClick={() => {
               if (authState.isLoggedIn) {
                 if (isItemInWishlist(wishlist, _id)) {
