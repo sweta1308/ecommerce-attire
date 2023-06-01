@@ -7,8 +7,8 @@ export const AddressForm = () => {
     setIsAddressCardVisible,
     checkout,
     setCheckout,
-    removeAddressData, setIsEditBtn
   } = useAddress();
+
   return (
     <>
       <div className="address-form">
@@ -16,6 +16,7 @@ export const AddressForm = () => {
         {addressData.length === 0 && <h2>No addresses added.</h2>}
         {addressData.map((data) => {
           const { _id, name, street, city, state, pincode } = data;
+          console.log(checkout && checkout._id === _id);
           return (
             <div key={_id} className="address-list">
               <input
@@ -32,19 +33,6 @@ export const AddressForm = () => {
                     {city}, {state}
                   </p>
                   <p>{pincode}</p>
-                </div>
-
-                <div className="address-btn">
-                  <button
-                    onClick={() => {
-                      setIsAddressCardVisible(true);
-                      setCheckout(data);
-                      setIsEditBtn(true)
-                    }}
-                  >
-                    Edit
-                  </button>
-                  <button onClick={() => removeAddressData(_id)}>Delete</button>
                 </div>
               </div>
             </div>
