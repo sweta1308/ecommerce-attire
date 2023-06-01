@@ -15,6 +15,7 @@ export const Category = () => {
           productState?.categoriesData?.map((category) => (
             <div
               onClick={() => {
+                filterDispatch({ type: "clear_filters" });
                 filterDispatch({
                   type: "filter_by_category",
                   payload: category.categoryName,
