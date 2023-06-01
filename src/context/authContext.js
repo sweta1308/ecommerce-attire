@@ -82,7 +82,6 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (localStorageItem) {
-      console.log(localStorageItem.user)
       authDispatch({ type: "set_login", payload: true });
       authDispatch({ type: "set_user", payload: localStorageItem?.user });
       authDispatch({ type: "set_token", payload: localStorageItem?.token });
@@ -90,7 +89,7 @@ export const AuthProvider = ({ children }) => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
+console.log(authState.isLoggedIn)
 
   return (
     <>
