@@ -6,6 +6,7 @@ import { isItemInCart } from "../../utils/isItemPresentInCart";
 import { isItemInWishlist } from "../../utils/isItemPresentInWishlist";
 import { toast } from "react-toastify";
 import { useWishlist } from "../../context/wishlistContext";
+import { useThrottle } from "../../utils/useThrottle";
 
 export const ProductCard = ({ data }) => {
   const {
@@ -19,39 +20,44 @@ export const ProductCard = ({ data }) => {
     outOfStock,
   } = data;
   const navigate = useNavigate();
-  const { cart, addCartData } = useCart();
-  const { wishlist, addWishlistData, removeWishlistData } = useWishlist();
+  const { cart, addCartData, isCartUpdate } = useCart();
+  const { wishlist, addWishlistData, removeWishlistData, isWishlistUpdate } = useWishlist();
   const { authState } = useAuth();
+
+  const addToWishlist = () => {
+    if (authState.isLoggedIn) {
+      if (!isItemInWishlist(wishlist, _id)) {
+        addWishlistData(data);
+        toast.success("Added to wishlist!");
+      }
+    } else {
+      toast.warning("Please login to proceed");
+      navigate("/login");
+    }
+  }
+
+  const addWishlistHandler = useThrottle(addToWishlist, 400)
 
   return (
     <>
       <div className="product-card">
         {outOfStock && <span className="overlay">OUT OF STOCK</span>}
         {isItemInWishlist(wishlist, _id) ? (
-            <i
-              class="fa-solid fa-heart fa-lg add-wishlist"
-              style={{ color: "#ff0000" }}
-              onClick={() => {
-                removeWishlistData(_id);
-                toast.warning("Item removed from wishlist!");
-              }}
-            ></i>
-          ) : (
-            <i
-              class="fa-regular fa-heart fa-lg add-wishlist"
-              onClick={() => {
-                if (authState.isLoggedIn) {
-                  if (!isItemInWishlist(wishlist, _id)) {
-                    addWishlistData(data);
-                    toast.success("Added to wishlist!");
-                  }
-                } else {
-                  toast.warning("Please login to proceed");
-                  navigate("/login");
-                }
-              }}
-            ></i>
-          )}
+          <i
+            class="fa-solid fa-heart fa-lg add-wishlist"
+            style={{ color: "#ff0000" }}
+            onClick={() => {
+              removeWishlistData(_id);
+              toast.warning("Item removed from wishlist!");
+            }}
+          ></i>
+        ) : (
+          <i
+            class="fa-regular fa-heart fa-lg add-wishlist"
+            disabled={isWishlistUpdate}
+            onClick={addWishlistHandler}
+          ></i>
+        )}
         <div onClick={() => navigate(`/products/${_id}`)}>
           <img src={image} alt={title} />
           <h3>{brand}</h3>
@@ -68,7 +74,7 @@ export const ProductCard = ({ data }) => {
         </div>
 
         <button
-          disabled={outOfStock}
+          disabled={outOfStock || isCartUpdate}
           onClick={() => {
             if (authState.isLoggedIn) {
               if (isItemInCart(cart, _id)) {
