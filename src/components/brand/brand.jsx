@@ -23,6 +23,7 @@ export const Brand = () => {
           src={hm}
           alt="hm"
           onClick={() => {
+            filterDispatch({ type: "clear_filters" });
             filterDispatch({ type: "filter_by_brands", payload: "H&M" });
             navigate("/products");
           }}
@@ -31,6 +32,7 @@ export const Brand = () => {
           src={sassafras}
           alt="sassafras"
           onClick={() => {
+            filterDispatch({ type: "clear_filters" });
             filterDispatch({ type: "filter_by_brands", payload: "Sassafras" });
             navigate("/products");
           }}
@@ -39,6 +41,7 @@ export const Brand = () => {
           src={levis}
           alt="levis"
           onClick={() => {
+            filterDispatch({ type: "clear_filters" });
             filterDispatch({ type: "filter_by_brands", payload: "Levis" });
             navigate("/products");
           }}
@@ -47,6 +50,7 @@ export const Brand = () => {
           src={urbanic}
           alt="urbanic"
           onClick={() => {
+            filterDispatch({ type: "clear_filters" });
             filterDispatch({ type: "filter_by_brands", payload: "Urbanic" });
             navigate("/products");
           }}
@@ -55,6 +59,7 @@ export const Brand = () => {
           src={zara}
           alt="zara"
           onClick={() => {
+            filterDispatch({ type: "clear_filters" });
             filterDispatch({ type: "filter_by_brands", payload: "Zara" });
             navigate("/products");
           }}
@@ -63,6 +68,7 @@ export const Brand = () => {
           src={dolce}
           alt="dolce"
           onClick={() => {
+            filterDispatch({ type: "clear_filters" });
             filterDispatch({
               type: "filter_by_brands",
               payload: "Dolce & Gabbana",
@@ -74,6 +80,7 @@ export const Brand = () => {
           src={roadster}
           alt="roadster"
           onClick={() => {
+            filterDispatch({ type: "clear_filters" });
             filterDispatch({ type: "filter_by_brands", payload: "Roadster" });
             navigate("/products");
           }}
@@ -82,6 +89,7 @@ export const Brand = () => {
           src={tokyoTalkies}
           alt="tokyoTalkies"
           onClick={() => {
+            filterDispatch({ type: "clear_filters" });
             filterDispatch({
               type: "filter_by_brands",
               payload: "Tokyo Talkies",
