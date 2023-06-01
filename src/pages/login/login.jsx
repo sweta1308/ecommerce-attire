@@ -7,7 +7,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 export const Login = () => {
   const navigate = useNavigate();
-  const { userLogin, authState, setUserCredentials, userCredentials } = useAuth();
+  const { userLogin, authState } = useAuth();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [userData, setUserData] = useState({
     email: "",
@@ -35,7 +35,6 @@ export const Login = () => {
     userLogin(testUserData);
     toast.success("Logged In!")
     navigate("/products");
-    setUserCredentials({...userCredentials, fName: 'Adarsh', lName: "Balika", email: testUserData.email})
   };
 
   return (
