@@ -1,18 +1,19 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { useAuth } from "./authContext";
 
 const WishlistContext = createContext();
 
 export const Wishlistprovider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
-  const token = localStorage.getItem("token");
+  const {authState} = useAuth();
 
   const getWishlistData = async () => {
     try {
       const { data, status } = await axios({
         method: "GET",
         url: "/api/user/wishlist",
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 200) {
         setWishlist(data?.wishlist);
@@ -28,7 +29,7 @@ export const Wishlistprovider = ({ children }) => {
         method: "POST",
         url: "/api/user/wishlist",
         data: { product: wishlistData },
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 201) {
         setWishlist(data?.wishlist);
@@ -43,7 +44,7 @@ export const Wishlistprovider = ({ children }) => {
       const { status, data } = await axios({
         method: "DELETE",
         url: `/api/user/wishlist/${dataId}`,
-        headers: { authorization: token },
+        headers: { authorization: authState.token },
       });
       if (status === 200) {
         setWishlist(data?.wishlist);
@@ -54,9 +55,11 @@ export const Wishlistprovider = ({ children }) => {
   };
 
   useEffect(() => {
-    getWishlistData()
+    if (authState.token) {
+      getWishlistData()
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [authState.token])
 
   return (
     <>
