@@ -53,23 +53,26 @@
 .nav .nav-navigate div {
   border: 1px solid var(--gray);
   padding: 5px;
-  font-size: 12px;
   border-radius: 10px;
   background-color: var(--gray-light);
   width: 300px;
+  height: 23px;
+  display: flex;
+  align-items: center;
 }
 
 .nav .nav-navigate div input {
   border: none;
   outline: none;
-  margin-left: 10px;
-  font-size: 12px;
+  margin: 0 10px;
+  font-size: 14px;
   background-color: var(--gray-light);
 }
 
 .nav .nav-navigate i {
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .nav .nav-navigate i:hover {
@@ -85,23 +88,14 @@
   text-align: center;
   border-radius: 50%;
   position: relative;
-  top: -7px;
-  left: -9px;
+  top: -9px;
+  left: -6px;
 }
 
 .login-icon {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 75px;
-  justify-content: space-between;
-}
-
-.login-icon button {
-  font-size: 10px;
 }
 
 .search-bar {
@@ -145,6 +139,10 @@
 
   .nav .nav-navigate div {
     display: none;
+  }
+
+  .nav .nav-navigate i {
+    font-size: 13px;
   }
 
   .search-bar {
