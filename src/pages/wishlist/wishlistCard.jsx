@@ -3,21 +3,36 @@ import { useAuth } from "../../context/authContext";
 import { isItemInCart } from "../../utils/isItemPresentInCart";
 import "./wishlist.css";
 import { useCart } from "../../context/cartContext";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 
 export const WishlistCard = ({ data, handleRemoveWishlist }) => {
-  const { authState } = useAuth();
+  const { token } = useAuth();
   const navigate = useNavigate();
   const { cart, addCartData, isCartUpdate } = useCart();
-  const { _id, title, image, brand, price, originalPrice, ratings, outOfStock } = data;
+  const {
+    _id,
+    title,
+    image,
+    brand,
+    price,
+    originalPrice,
+    ratings,
+    outOfStock,
+  } = data;
   return (
     <>
       <div className="wishlist-card">
-        <img alt={title} src={image} onClick={() => navigate(`/products/${_id}`)} />
+        <img
+          alt={title}
+          src={image}
+          onClick={() => navigate(`/products/${_id}`)}
+        />
         <div className="wishlist-container">
           <h3>{brand}</h3>
           <p>{title}</p>
-          <p>{ratings.value} ⭐ ({ratings.count})</p>
+          <p>
+            {ratings.value} ⭐ ({ratings.count})
+          </p>
           <div className="price">
             <h3>{price}</h3>
             <p>{originalPrice}</p>
@@ -27,15 +42,15 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
           <button
             disabled={outOfStock || isCartUpdate}
             onClick={() => {
-              if (authState.isLoggedIn) {
+              if (token) {
                 if (isItemInCart(cart, _id)) {
                   navigate("/cart");
                 } else {
                   addCartData(data);
-                  toast.success("Added to cart!")
+                  toast.success("Added to cart!");
                 }
               } else {
-                toast.warning("Please login to proceed!")
+                toast.warning("Please login to proceed!");
               }
             }}
           >
