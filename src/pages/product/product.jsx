@@ -12,7 +12,6 @@ export const Product = () => {
   const [isFilterVisible, setIsFilterVisible] = useState(false);
   const { productState } = useProducts();
   const navigate = useNavigate();
- 
 
   return (
     <>
@@ -36,7 +35,9 @@ export const Product = () => {
             <SideBar isFilterVisible={isFilterVisible} />
           </div>
           {productState.isProductLoading ? (
-            <ClipLoader color={`var(--primary-color)`} size={60} />
+            <div className="loader">
+              <ClipLoader color={`var(--primary-color)`} size={120} />
+            </div>
           ) : (
             <div className="product-list">
               {filteredData.length === 0 ? (
