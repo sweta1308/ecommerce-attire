@@ -34,7 +34,7 @@ export const CartCard = ({ data, handleRemoveCart }) => {
               <i class="fa-solid fa-plus fa-xs"></i>
             </button>
           </div>
-          <button onClick={() => handleRemoveCart(_id)}>
+          <button disabled={isCartUpdate} onClick={() => handleRemoveCart(_id)}>
             <i class="fa-solid fa-trash-can"></i> Remove
           </button>
         </div>

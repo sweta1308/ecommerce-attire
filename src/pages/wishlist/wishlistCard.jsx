@@ -4,11 +4,13 @@ import { isItemInCart } from "../../utils/isItemPresentInCart";
 import "./wishlist.css";
 import { useCart } from "../../context/cartContext";
 import { toast } from "react-toastify";
+import { useWishlist } from "../../context/wishlistContext";
 
 export const WishlistCard = ({ data, handleRemoveWishlist }) => {
   const { token } = useAuth();
   const navigate = useNavigate();
   const { cart, addCartData, isCartUpdate } = useCart();
+  const {isWishlistUpdate} = useWishlist();
   const {
     _id,
     title,
@@ -56,7 +58,7 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
           >
             {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
           </button>
-          <button onClick={() => handleRemoveWishlist(_id)}>
+          <button disabled={isWishlistUpdate} onClick={() => handleRemoveWishlist(_id)}>
             Remove From Wishlist
           </button>
         </div>
