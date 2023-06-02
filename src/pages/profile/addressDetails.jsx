@@ -13,7 +13,8 @@ export const AddressDetails = () => {
     removeAddressData,
     setIsAddressCardVisible,
     isAddressCardVisible,
-    setCheckout, setIsEditBtn
+    setCheckout,
+    setIsEditBtn,
   } = useAddress();
   return (
     <div>
@@ -28,7 +29,8 @@ export const AddressDetails = () => {
               Address
             </NavLink>
           </div>
-          <button className="add-address"
+          <button
+            className="add-address"
             style={{ cursor: "pointer" }}
             onClick={() => {
               setIsAddressCardVisible(true);
@@ -58,12 +60,26 @@ export const AddressDetails = () => {
                   onClick={() => {
                     setIsAddressCardVisible(true);
                     setCheckout(data);
-                    setIsEditBtn(true)
+                    setIsEditBtn(true);
                   }}
                 >
                   Edit
                 </button>
-                <button onClick={() => removeAddressData(_id)}>Delete</button>
+                <button
+                  onClick={() => {
+                    removeAddressData(_id);
+                    setCheckout({
+                      _id: "",
+                      name: "",
+                      street: "",
+                      city: "",
+                      state: "",
+                      pincode: "",
+                    });
+                  }}
+                >
+                  Delete
+                </button>
               </div>
             );
           })}
