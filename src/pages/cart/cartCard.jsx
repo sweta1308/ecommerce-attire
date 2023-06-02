@@ -9,7 +9,7 @@ import "./cart.css";
 export const CartCard = ({ data, handleRemoveCart }) => {
   const { _id, image, brand, title, qty, price, originalPrice } = data;
   const { changeCartQuantity, isCartUpdate } = useCart();
-  const { authState } = useAuth();
+  const { token } = useAuth();
   const { wishlist, addWishlistData, isWishlistUpdate } = useWishlist();
   const navigate = useNavigate();
   return (
@@ -45,7 +45,7 @@ export const CartCard = ({ data, handleRemoveCart }) => {
             className="wishlist-btn"
             disabled={isWishlistUpdate}
             onClick={() => {
-              if (authState.isLoggedIn) {
+              if (token) {
                 if (isItemInWishlist(wishlist, _id)) {
                   navigate("/wishlist");
                 } else {
