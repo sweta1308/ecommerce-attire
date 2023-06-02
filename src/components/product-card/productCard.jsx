@@ -10,7 +10,7 @@ import { useThrottle } from "../../utils/useThrottle";
 
 export const ProductCard = ({ data }) => {
   const {
-    _id,
+    _id = 0,
     image,
     title,
     brand,
@@ -22,10 +22,10 @@ export const ProductCard = ({ data }) => {
   const navigate = useNavigate();
   const { cart, addCartData, isCartUpdate } = useCart();
   const { wishlist, addWishlistData, removeWishlistData, isWishlistUpdate } = useWishlist();
-  const { authState } = useAuth();
+  const { token } = useAuth();
 
   const addToWishlist = () => {
-    if (authState.isLoggedIn) {
+    if (token) {
       if (!isItemInWishlist(wishlist, _id)) {
         addWishlistData(data);
         toast.success("Added to wishlist!");
@@ -37,7 +37,6 @@ export const ProductCard = ({ data }) => {
   }
 
   const addWishlistHandler = useThrottle(addToWishlist, 400)
-
   return (
     <>
       <div className="product-card">
@@ -76,7 +75,7 @@ export const ProductCard = ({ data }) => {
         <button
           disabled={outOfStock || isCartUpdate}
           onClick={() => {
-            if (authState.isLoggedIn) {
+            if (token) {
               if (isItemInCart(cart, _id)) {
                 navigate("/cart");
               } else {
