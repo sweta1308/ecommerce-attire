@@ -26,14 +26,12 @@ export const Login = () => {
       toast.warning("Enter all credentials!")
     } else {
       userLogin(userData);
-      toast.success("Logged In!")
     }
   };
 
   const handleTestLogin = () => {
     setUserData(testUserData);
     userLogin(testUserData);
-    toast.success("Logged In!")
     navigate(location?.state?.from?.pathname || "/products");
   };
 
