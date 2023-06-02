@@ -16,13 +16,12 @@ export const AddressForm = () => {
         {addressData.length === 0 && <h2>No addresses added.</h2>}
         {addressData.map((data) => {
           const { _id, name, street, city, state, pincode } = data;
-          console.log(checkout && checkout._id === _id);
           return (
             <div key={_id} className="address-list">
               <input
                 type="radio"
                 name="address"
-                checked={checkout && checkout._id === _id}
+                checked={checkout._id === _id}
                 onChange={() => setCheckout(data)}
               />
               <div className="address-data">
