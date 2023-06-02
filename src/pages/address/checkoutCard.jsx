@@ -23,7 +23,7 @@ const loadScript = (url) => {
 
 export const CheckoutCard = () => {
   const { cart, removeCartData, priceDetails } = useCart();
-  const { checkout, addressData } = useAddress();
+  const { checkout } = useAddress();
   const navigate = useNavigate();
 
   const displayRazorpay = async () => {
@@ -108,7 +108,7 @@ export const CheckoutCard = () => {
         <hr />
         <h4>Deliver to</h4>
         <hr />
-        {Object.values(checkout)[0].length > 0 && addressData.includes(checkout) ? (
+        {Object.values(checkout)[0].length > 0 ? (
           <div className="final-address">
             <p>
               <strong>{checkout.name}</strong>
