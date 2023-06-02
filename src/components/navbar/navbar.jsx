@@ -8,14 +8,12 @@ import { useCart } from "../../context/cartContext";
 import { useWishlist } from "../../context/wishlistContext";
 
 export const NavBar = () => {
-  const { authState, token } = useAuth();
+  const { token } = useAuth();
   const { filterState, filterDispatch } = useFilters();
   const [isVisible, setIsVisible] = useState(true);
   const { cart } = useCart();
   const { wishlist } = useWishlist();
   const navigate = useNavigate();
-
-  
 
   const activeStyle = ({ isActive }) => ({
     color: isActive ? "var(--primary-color)" : "black",
@@ -27,7 +25,7 @@ export const NavBar = () => {
       <div
         className="top-bar"
         style={{
-          display: isVisible && token === '' ? "block" : "none",
+          display: isVisible && token === "" ? "block" : "none",
         }}
       >
         Sign up and get exclusive offers.
@@ -69,15 +67,18 @@ export const NavBar = () => {
               onClick={() => navigate("/cart")}
               class="fa-solid fa-cart-shopping"
             ></i>
-            <p className="badge">{token ? cart.length : '0'}</p>
+            <p className="badge">{token ? cart.length : "0"}</p>
             <i
               onClick={() => navigate("/wishlist")}
               class="fa-solid fa-heart"
             ></i>
-            <p className="badge">{token ? wishlist.length : '0'}</p>
+            <p className="badge">{token ? wishlist.length : "0"}</p>
 
             {token ? (
-              <button className="login-icon" onClick={() => navigate("/profile")}>
+              <button
+                className="login-icon"
+                onClick={() => navigate("/profile")}
+              >
                 <i class="fa-regular fa-user"></i>
               </button>
             ) : (
