@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router";
 import "./productDetails.css";
 import { useEffect, useState } from "react";
-import { Featured } from "../../components/featured/featured";
 import { getProduct } from "../../utils/getProduct";
 import { useAuth } from "../../context/authContext";
 import { useCart } from "../../context/cartContext";
@@ -15,7 +14,7 @@ import { useProducts } from "../../context/productContext";
 export const ProductDetails = () => {
   const [singleProduct, setSingleProduct] = useState({});
   const { productID } = useParams();
-  const { authState } = useAuth();
+  const { token } = useAuth();
   const { cart, addCartData, isCartUpdate } = useCart();
   const { wishlist, addWishlistData, isWishlistUpdate } = useWishlist();
   const { productState, productDispatch } = useProducts();
@@ -86,7 +85,7 @@ export const ProductDetails = () => {
                 className="wishlist-btn"
                 disabled={isWishlistUpdate}
                 onClick={() => {
-                  if (authState.isLoggedIn) {
+                  if (token) {
                     if (isItemInWishlist(wishlist, _id)) {
                       navigate("/wishlist");
                     } else {
@@ -108,7 +107,7 @@ export const ProductDetails = () => {
                 className="cart-btn"
                 disabled={outOfStock || isCartUpdate}
                 onClick={() => {
-                  if (authState.isLoggedIn) {
+                  if (token) {
                     if (isItemInCart(cart, _id)) {
                       navigate("/cart");
                     } else {
@@ -129,9 +128,6 @@ export const ProductDetails = () => {
       )}
 
       <hr className="mid-hr" />
-      <div className="like-product">
-        <Featured />
-      </div>
     </>
   );
 };
