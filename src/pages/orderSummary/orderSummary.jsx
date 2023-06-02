@@ -8,7 +8,7 @@ export const OrderSummary = () => {
           class="fa-regular fa-circle-check fa-2xl"
           style={{ color: "#24e916" }}
         ></i>
-        <h2>Orde Confirmed! Thanks for your order!</h2>
+        <h2>Order Confirmed! Thanks for your order!</h2>
         <small>
           The order confirmation has been sent to the respective company.
         </small>
