@@ -6,26 +6,30 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const {authState} = useAuth();
-  const [isCartUpdate, setIsCardUpdate] = useState(false)
+  const { token } = useAuth();
+  const [isCartUpdate, setIsCardUpdate] = useState(false);
 
-  const priceDetails = cart.reduce((acc, curr) => ({
-    quantity: acc.quantity + Number(curr.qty),
-    totalPrice: acc.totalPrice + Number(curr.price) * Number(curr.qty),
-    totalOriginalPrice: acc.totalOriginalPrice + Number(curr.qty) * Number(curr.originalPrice),
-  }), {quantity: 0, totalPrice:0, totalOriginalPrice:0})
- 
+  const priceDetails = cart.reduce(
+    (acc, curr) => ({
+      quantity: acc.quantity + Number(curr.qty),
+      totalPrice: acc.totalPrice + Number(curr.price) * Number(curr.qty),
+      totalOriginalPrice:
+        acc.totalOriginalPrice + Number(curr.qty) * Number(curr.originalPrice),
+    }),
+    { quantity: 0, totalPrice: 0, totalOriginalPrice: 0 }
+  );
+
   const getCartData = async () => {
     try {
-      setIsCardUpdate(true)
+      setIsCardUpdate(true);
       const { data, status } = await axios({
         method: "GET",
         url: "/api/user/cart",
-        headers: { authorization: authState.token },
+        headers: { authorization: token },
       });
       if (status === 200) {
         setCart(data?.cart);
-        setIsCardUpdate(false)
+        setIsCardUpdate(false);
       }
     } catch (e) {
       console.log(e);
@@ -34,16 +38,16 @@ export const CartProvider = ({ children }) => {
 
   const addCartData = async (cartData) => {
     try {
-      setIsCardUpdate(true)
+      setIsCardUpdate(true);
       const { data, status } = await axios({
         method: "POST",
         url: "/api/user/cart",
         data: { product: cartData },
-        headers: { authorization: authState.token },
+        headers: { authorization: token },
       });
       if (status === 201) {
         setCart(data?.cart);
-        setIsCardUpdate(false)
+        setIsCardUpdate(false);
       }
     } catch (e) {
       console.log(e);
@@ -51,16 +55,16 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeCartData = async (dataId) => {
-    setIsCardUpdate(true)
+    setIsCardUpdate(true);
     try {
       const { data, status } = await axios({
         method: "DELETE",
         url: `/api/user/cart/${dataId}`,
-        headers: { authorization: authState.token },
+        headers: { authorization: token },
       });
       if (status === 200) {
         setCart(data?.cart);
-        setIsCardUpdate(false)
+        setIsCardUpdate(false);
       }
     } catch (e) {
       console.log(e);
@@ -69,16 +73,16 @@ export const CartProvider = ({ children }) => {
 
   const changeCartQuantity = async (dataId, updateType) => {
     try {
-      setIsCardUpdate(true)
+      setIsCardUpdate(true);
       const { data, status } = await axios({
         method: "POST",
         data: { action: { type: updateType } },
         url: `/api/user/cart/${dataId}`,
-        headers: { authorization: authState.token },
+        headers: { authorization: token },
       });
       if (status === 200) {
         setCart(data?.cart);
-        setIsCardUpdate(false)
+        setIsCardUpdate(false);
       }
     } catch (e) {
       console.log(e);
@@ -88,11 +92,11 @@ export const CartProvider = ({ children }) => {
   // console.log(token)
 
   useEffect(() => {
-    if (authState.token) {
+    if (token) {
       getCartData();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authState.token]);
+  }, [token]);
 
   return (
     <>
@@ -103,7 +107,9 @@ export const CartProvider = ({ children }) => {
           getCartData,
           addCartData,
           removeCartData,
-          changeCartQuantity, priceDetails, isCartUpdate
+          changeCartQuantity,
+          priceDetails,
+          isCartUpdate,
         }}
       >
         {children}
