@@ -30,7 +30,6 @@ export const Signup = () => {
       toast.warning("Passwords donot match!")
     } else {
       userSignup(userCredentials);
-      toast.success("Logged In!")
     }
   };
 
