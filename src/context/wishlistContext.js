@@ -6,20 +6,20 @@ const WishlistContext = createContext();
 
 export const Wishlistprovider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
-  const {authState} = useAuth();
-  const [isWishlistUpdate, setIsWishlistUpdate] = useState(false)
+  const { token } = useAuth();
+  const [isWishlistUpdate, setIsWishlistUpdate] = useState(false);
 
   const getWishlistData = async () => {
     try {
-      setIsWishlistUpdate(true)
+      setIsWishlistUpdate(true);
       const { data, status } = await axios({
         method: "GET",
         url: "/api/user/wishlist",
-        headers: { authorization: authState.token },
+        headers: { authorization: token },
       });
       if (status === 200) {
         setWishlist(data?.wishlist);
-        setIsWishlistUpdate(false)
+        setIsWishlistUpdate(false);
       }
     } catch (e) {
       console.log(e);
@@ -28,16 +28,16 @@ export const Wishlistprovider = ({ children }) => {
 
   const addWishlistData = async (wishlistData) => {
     try {
-      setIsWishlistUpdate(true)
+      setIsWishlistUpdate(true);
       const { data, status } = await axios({
         method: "POST",
         url: "/api/user/wishlist",
         data: { product: wishlistData },
-        headers: { authorization: authState.token },
+        headers: { authorization: token },
       });
       if (status === 201) {
         setWishlist(data?.wishlist);
-        setIsWishlistUpdate(false)
+        setIsWishlistUpdate(false);
       }
     } catch (e) {
       console.log(e);
@@ -46,15 +46,15 @@ export const Wishlistprovider = ({ children }) => {
 
   const removeWishlistData = async (dataId) => {
     try {
-      setIsWishlistUpdate(true)
+      setIsWishlistUpdate(true);
       const { status, data } = await axios({
         method: "DELETE",
         url: `/api/user/wishlist/${dataId}`,
-        headers: { authorization: authState.token },
+        headers: { authorization: token },
       });
       if (status === 200) {
         setWishlist(data?.wishlist);
-        setIsWishlistUpdate(false)
+        setIsWishlistUpdate(false);
       }
     } catch (e) {
       console.log(e);
@@ -62,11 +62,11 @@ export const Wishlistprovider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (authState.token) {
-      getWishlistData()
+    if (token) {
+      getWishlistData();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authState.token])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token]);
 
   return (
     <>
@@ -75,7 +75,8 @@ export const Wishlistprovider = ({ children }) => {
           wishlist,
           getWishlistData,
           addWishlistData,
-          removeWishlistData, isWishlistUpdate
+          removeWishlistData,
+          isWishlistUpdate,
         }}
       >
         {children}
