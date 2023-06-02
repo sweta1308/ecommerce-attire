@@ -1,6 +1,7 @@
 import { useAddress } from "../../context/addressContext";
 import "./addressCard.css";
 import { toast } from "react-toastify";
+import {v4 as uuid} from 'uuid';
 
 export const AddressCard = () => {
   const {
@@ -21,7 +22,6 @@ export const AddressCard = () => {
     );
     if (addressExist) {
       editAddress(checkout, addressExist._id);
-      setCheckout(addressExist)
     } else {
       if (
         checkout.name.trim() ||
@@ -30,9 +30,10 @@ export const AddressCard = () => {
         checkout.state.trim() ||
         checkout.pincode.trim()
       ) {
-        addAddressData(checkout);
+        addAddressData({...checkout, _id: uuid()});
         setCheckout({
           ...checkout,
+          _id: "",
           name: "",
           street: "",
           city: "",
@@ -45,7 +46,6 @@ export const AddressCard = () => {
     }
     setIsAddressCardVisible(false);
     setIsEditBtn(false);
-    
   };
 
   return (
