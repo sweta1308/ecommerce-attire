@@ -16,6 +16,12 @@
   font-weight: 600;
 }
 
+.loader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .text-filter {
   display: flex;
   width: 100%;
