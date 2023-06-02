@@ -15,15 +15,5 @@ export const users = [
     password: "adarshbalika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    address: [
-      {
-        _id: uuid(),
-        name: "AAdarsh Balika",
-        street: "123, Adarsh Nagar",
-        city: "Delhi",
-        state: "Delhi",
-        pincode: '789654',
-    },
-    ]
   },
 ];
