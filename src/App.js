@@ -16,6 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Profile } from "./pages/profile/profile";
 import { AddressDetails } from "./pages/profile/addressDetails";
+import { PageNotFound } from "./pages/404/pageNotFound";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path='/address-details' element={<AddressDetails />} />
         </Route>
         <Route path="/mockman" element={<MockMan />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </div>
   );
