@@ -71,6 +71,7 @@ export const Signup = () => {
         <div>
           <label for="email">Email:</label>
           <input
+            type="email"
             id="email"
             placeholder="johndoe@example.com"
             value={userCredentials.email}

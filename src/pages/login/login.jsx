@@ -42,6 +42,7 @@ export const Login = () => {
         <div>
           <label for="email">Email:</label>
           <input
+            type='login'
             id="email"
             placeholder="johndoe@example.com"
             value={userData.email}
