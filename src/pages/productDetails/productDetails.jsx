@@ -120,7 +120,7 @@ export const ProductDetails = () => {
                   }
                 }}
               >
-                {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
+                <i class="fa-solid fa-cart-shopping"></i> {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
               </button>
             </div>
           </div>
