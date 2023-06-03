@@ -10,7 +10,7 @@ import { useThrottle } from "../../utils/useThrottle";
 
 export const ProductCard = ({ data }) => {
   const {
-    _id = 0,
+    _id,
     image,
     title,
     brand,
@@ -88,7 +88,7 @@ export const ProductCard = ({ data }) => {
             }
           }}
         >
-          {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
+          <i class="fa-solid fa-cart-shopping"></i> {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
         </button>
       </div>
     </>
