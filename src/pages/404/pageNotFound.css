@@ -1,0 +1,24 @@
+.container-error-page {
+    text-align: center;
+}
+
+.container-error-page img {
+    width: 500px;
+}
+
+.error-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.error-btn:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .container-error-page img {
+        width: 300px;
+    }
+}
