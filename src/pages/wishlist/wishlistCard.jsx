@@ -56,7 +56,7 @@ export const WishlistCard = ({ data, handleRemoveWishlist }) => {
               }
             }}
           >
-            {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
+            <i class="fa-solid fa-cart-shopping"></i> {isItemInCart(cart, _id) ? "Go to Cart" : "Add to Cart"}
           </button>
           <button disabled={isWishlistUpdate} onClick={() => handleRemoveWishlist(_id)}>
             Remove From Wishlist
