@@ -9,6 +9,7 @@ const dolce = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v16838873
 const urbanic = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684138991/mhpqbc8xgvffrkym2mdp.png';
 const tokyoTalkies = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684141513/rhdikkdt5vf3vear8alk.png';
 const cartEmpty = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684057227/free-empty-cart-4085814-3385483_c7dwif.webp';
+const error404 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1685788994/2696450_ac7i5x.jpg'
 
 const top1 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684087983/d7ae3065-98d4-42d0-b244-d2b18802ff101601959656577-SASSAFRAS-Women-Black-Solid-High-Neck-Cropped-Top-4441601959-1_vyybyh.jpg'
 const top2 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684088084/df0c1d8c-528d-4afd-9714-a40c19b105ec1531903512284-Pannkh-Women-Navy-Blue-Printed-Top-6761531903512079-1_mgfh4v.jpg';
@@ -41,5 +42,5 @@ const ethnic5 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v168413
 const ethnic6 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684137813/6dc3f75f-71be-4bcd-8d14-8b3017731fa81679147029413RedWineGlitterKurtaSet1_jblwyq.jpg';
 const ethnic7 = 'https://res.cloudinary.com/sweta-agarwalla/image/upload/v1684137976/7dddd277-47ab-4d81-8c17-a4bac0fa1db91679143305119BlackThreadWorkAnarkaliSet1_guuegf.jpg';
 
-export {logo, header, hm, sassafras, roadster, levis, zara, dolce, urbanic, tokyoTalkies, cartEmpty};
+export {logo, header, hm, sassafras, roadster, levis, zara, dolce, urbanic, tokyoTalkies, cartEmpty, error404};
 export {top1, top2, top3, top4, top5, top6, top7, top8, bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, bottom7, bottom8, dress1, dress2, dress3, dress4, dress5, dress6, dress7, ethnic1, ethnic2, ethnic3, ethnic4, ethnic5, ethnic6, ethnic7}
