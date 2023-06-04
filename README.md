@@ -39,7 +39,7 @@ https://github.com/sweta1308/ecommerce-attire/assets/105535990/64f60987-7060-491
 
 ## How to Install and Run Locally
 ```JavaScript
-gh repo clone sweta1308/ecommerce-attire
+git clone https://github.com/sweta1308/ecommerce-attire
 cd ecommerce-attire
 npm install
 npm start
