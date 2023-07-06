@@ -29,7 +29,7 @@ https://github.com/sweta1308/ecommerce-attire/assets/105535990/64f60987-7060-491
 * Toast And Loaders
 * Responsive
 
-## Teach Stack
+## Tech Stack
 * React JS
 * React Router v6
 * React useContext + useReducer
