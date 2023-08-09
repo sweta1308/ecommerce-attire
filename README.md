@@ -3,7 +3,7 @@
 [Attire](https://attire-store.netlify.app/) - An e-commerce website made with ReactJS.
 
 
-https://github.com/sweta1308/ecommerce-attire/assets/105535990/f84353b9-d789-4116-9ff8-cacc7f4ab55a
+https://github.com/sweta1308/ecommerce-attire/assets/105535990/64f60987-7060-491e-8219-234919ea375f
 
 
 ## Features
@@ -29,7 +29,7 @@ https://github.com/sweta1308/ecommerce-attire/assets/105535990/f84353b9-d789-411
 * Toast And Loaders
 * Responsive
 
-## Teach Stack
+## Tech Stack
 * React JS
 * React Router v6
 * React useContext + useReducer
@@ -39,7 +39,7 @@ https://github.com/sweta1308/ecommerce-attire/assets/105535990/f84353b9-d789-411
 
 ## How to Install and Run Locally
 ```JavaScript
-git clone https://github.com/sweta1308/ecommerce-attire.git
+git clone https://github.com/sweta1308/ecommerce-attire
 cd ecommerce-attire
 npm install
 npm start
