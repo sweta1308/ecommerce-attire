@@ -42,7 +42,8 @@ export const filterReducer = (state, action) => {
         brands: [],
         rating: 5,
         sort: "featured",
-        search: ''
+        search: '',
+        includeOutOfStock: false
       };
     default:
       return state;
