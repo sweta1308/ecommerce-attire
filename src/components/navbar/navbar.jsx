@@ -67,12 +67,15 @@ export const NavBar = () => {
               onClick={() => navigate("/cart")}
               class="fa-solid fa-cart-shopping"
             ></i>
-            <p className="badge">{token ? cart.length : "0"}</p>
+            {cart.length > 0 && <p className="badge">{token && cart.length}</p>}
+
             <i
               onClick={() => navigate("/wishlist")}
               class="fa-solid fa-heart"
             ></i>
-            <p className="badge">{token ? wishlist.length : "0"}</p>
+            {wishlist.length > 0 && (
+              <p className="badge">{token && wishlist.length}</p>
+            )}
 
             {token ? (
               <button
