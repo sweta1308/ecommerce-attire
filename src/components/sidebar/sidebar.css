@@ -2,6 +2,7 @@
   border: 1px solid var(--gray-lighter);
   border-radius: 10px;
   padding: 10px 20px 20px;
+  font-size: 18px;
 }
 
 .filters .filter {
