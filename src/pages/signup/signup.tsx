@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/authContext';
-import { toast } from 'react-toastify';
-import ClipLoader from 'react-spinners/ClipLoader';
 import './signup.css';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { toast } from 'react-toastify';
+import { useAuth } from '../../context/authContext';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Signup = () => {
   const navigate = useNavigate();

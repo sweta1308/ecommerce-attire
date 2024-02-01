@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useFilters } from '../../context/filterContext';
-import { useProducts } from '../../context/productContext';
+import './product.css';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { ProductCard } from '../../components/product-card/productCard';
 import { SideBar } from '../../components/sidebar/sidebar';
-import ClipLoader from 'react-spinners/ClipLoader';
-import './product.css';
+import { useFilters } from '../../context/filterContext';
+import { useNavigate } from 'react-router-dom';
+import { useProducts } from '../../context/productContext';
+import { useState } from 'react';
 
 const Product = () => {
   const { filteredData }: any = useFilters();

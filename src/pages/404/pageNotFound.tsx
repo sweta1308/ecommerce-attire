@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { error404 } from '../../assets/';
 import './pageNotFound.css';
+import React from 'react';
+import { error404 } from '../../assets/';
+import { Link } from 'react-router-dom';
 
 const PageNotFound: React.FC = () => {
   return (

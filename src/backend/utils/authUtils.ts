@@ -1,5 +1,5 @@
-import { Response } from "miragejs"
 import { jwtDecode } from "jwt-decode"
+import { Response } from "miragejs"
 
 export const requiresAuth = function (this: any, request: any) {
   const encodedToken = request.requestHeaders.authorization

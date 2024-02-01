@@ -1,7 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router';
-import { useFilters } from '../../context/filterContext';
 import './brand.css';
+import { useFilters } from '../../context/filterContext';
+import { useNavigate } from 'react-router';
 
 import {
   hm,

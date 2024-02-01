@@ -1,5 +1,5 @@
-import { v4 as uuid } from "uuid";
-import { formatDate } from "../utils/authUtils";
+import { formatDate } from "../utils/authUtils"
+import { v4 as uuid } from "uuid"
 
 /**
  * User Database can be added here.

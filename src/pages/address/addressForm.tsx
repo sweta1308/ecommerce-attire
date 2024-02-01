@@ -1,5 +1,5 @@
-import { useAddress } from '../../context/addressContext';
 import './address.css';
+import { useAddress } from '../../context/addressContext';
 
 export const AddressForm = () => {
   const { addressData, setIsAddressCardVisible, checkout, setCheckout }: any =

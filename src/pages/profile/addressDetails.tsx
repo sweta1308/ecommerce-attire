@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom';
-import { AddressCard } from '../../components/address/addressCard';
-import { useAddress } from '../../context/addressContext';
 import './profile.css';
+import { AddressCard } from '../../components/address/addressCard';
+import { NavLink } from 'react-router-dom';
+import { useAddress } from '../../context/addressContext';
 
 const AddressDetails = () => {
   const {

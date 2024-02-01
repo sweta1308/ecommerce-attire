@@ -1,10 +1,9 @@
 import { toast } from 'react-toastify';
-import React from 'react';
-import './cart.css';
 import { CartCard } from './cartCard';
 import EmptyCart from './emptyCart';
 import PriceCard from './priceCard';
 import { useCart } from '../../context/cartContext';
+import './cart.css';
 
 const Cart = () => {
   const { cart, removeCartData, priceDetails }: any = useCart();

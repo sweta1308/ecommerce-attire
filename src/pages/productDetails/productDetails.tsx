@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
 import './productDetails.css';
+import BarLoader from 'react-spinners/BarLoader';
 import { getProduct } from '../../utils/getProduct';
-import { useAuth } from '../../context/authContext';
-import { useCart } from '../../context/cartContext';
 import { isItemInCart } from '../../utils/isItemPresentInCart';
 import { isItemInWishlist } from '../../utils/isItemPresentInWishlist';
-import { useWishlist } from '../../context/wishlistContext';
 import { toast } from 'react-toastify';
-import BarLoader from 'react-spinners/BarLoader';
+import { useAuth } from '../../context/authContext';
+import { useCart } from '../../context/cartContext';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router';
 import { useProducts } from '../../context/productContext';
+import { useWishlist } from '../../context/wishlistContext';
 
 const ProductDetails = () => {
   const [singleProduct, setSingleProduct]: any = useState({});

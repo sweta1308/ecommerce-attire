@@ -1,5 +1,5 @@
-import { v4 as uuid } from "uuid"
 import { top1, bottom1, dress1, ethnic1 } from "../../assets"
+import { v4 as uuid } from "uuid"
 
 /**
  * Category Database can be added here.

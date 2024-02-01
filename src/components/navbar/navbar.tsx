@@ -1,10 +1,10 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { logo } from '../../assets';
 import './navbar.css';
+import { logo } from '../../assets';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/authContext';
-import { useFilters } from '../../context/filterContext';
 import { useCart } from '../../context/cartContext';
+import { useFilters } from '../../context/filterContext';
+import { useState } from 'react';
 import { useWishlist } from '../../context/wishlistContext';
 
 export const NavBar = () => {

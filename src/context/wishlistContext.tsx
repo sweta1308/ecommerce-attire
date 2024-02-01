@@ -1,5 +1,5 @@
-import { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { useAuth } from './authContext';
 
 // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.

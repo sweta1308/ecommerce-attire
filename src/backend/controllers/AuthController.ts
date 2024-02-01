@@ -1,7 +1,7 @@
-import { v4 as uuid } from "uuid"
-import { Response } from "miragejs"
-import { formatDate } from "../utils/authUtils"
 import jwtEncode from "jwt-encode"
+import { formatDate } from "../utils/authUtils"
+import { Response } from "miragejs"
+import { v4 as uuid } from "uuid"
 
 /**
  * All the routes related to Auth are present here.

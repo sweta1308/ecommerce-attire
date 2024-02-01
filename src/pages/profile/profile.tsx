@@ -1,9 +1,8 @@
-import React from 'react';
 import { useNavigate } from 'react-router';
 import { useAuth } from '../../context/authContext';
 import { toast } from 'react-toastify';
-import './profile.css';
 import { NavLink } from 'react-router-dom';
+import './profile.css';
 
 const getStyles = ({ isActive }: any) => ({
   color: isActive ? 'var(--primary-color)' : 'black',

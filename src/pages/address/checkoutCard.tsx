@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router';
-import { useAddress } from '../../context/addressContext';
-import { useCart } from '../../context/cartContext';
 import './address.css';
 import { toast } from 'react-toastify';
+import { useAddress } from '../../context/addressContext';
+import { useCart } from '../../context/cartContext';
+import { useNavigate } from 'react-router';
 
 const loadScript = (url: string) => {
   return new Promise<boolean>((resolve, reject) => {

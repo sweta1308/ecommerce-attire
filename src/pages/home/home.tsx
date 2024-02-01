@@ -5,9 +5,9 @@ import { Featured } from '../../components/featured/featured';
 import { Category } from '../../components/category/category';
 import { header } from '../../assets';
 import ClipLoader from 'react-spinners/ClipLoader';
-import './home.css';
 import { useProducts } from '../../context/productContext';
 import Footer from '../../components/footer/footer';
+import './home.css';
 
 const Home: React.FC = () => {
   const { productState }: any = useProducts();

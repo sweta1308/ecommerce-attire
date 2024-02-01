@@ -1,6 +1,6 @@
-import { useAddress } from '../../context/addressContext';
 import './addressCard.css';
 import { toast } from 'react-toastify';
+import { useAddress } from '../../context/addressContext';
 import { v4 as uuid } from 'uuid';
 
 export const AddressCard = () => {

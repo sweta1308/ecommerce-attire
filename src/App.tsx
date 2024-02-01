@@ -1,21 +1,21 @@
-import { Route, Routes } from 'react-router';
 import './App.css';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Address from './pages/address/address';
+import AddressDetails from './pages/profile/addressDetails';
+import Cart from './pages/cart/cart';
 import Home from './pages/home/home';
+import Login from './pages/login/login';
+import OrderSummary from './pages/orderSummary/orderSummary';
+import PageNotFound from './pages/404/pageNotFound';
 import Product from './pages/product/product';
 import ProductDetails from './pages/productDetails/productDetails';
-import Login from './pages/login/login';
-import Signup from './pages/signup/signup';
-import Cart from './pages/cart/cart';
-import { NavBar } from './components/navbar/navbar';
-import Wishlist from './pages/wishlist/wishlist';
-import Address from './pages/address/address';
-import OrderSummary from './pages/orderSummary/orderSummary';
 import Profile from './pages/profile/profile';
-import AddressDetails from './pages/profile/addressDetails';
-import PageNotFound from './pages/404/pageNotFound';
 import RequireAuth from './components/auth/requireAuth';
+import Signup from './pages/signup/signup';
+import Wishlist from './pages/wishlist/wishlist';
+import { NavBar } from './components/navbar/navbar';
+import { Route, Routes } from 'react-router';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (

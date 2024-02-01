@@ -1,9 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
 import { AddressCard } from '../../components/address/addressCard';
-import { useAddress } from '../../context/addressContext';
 import { AddressForm } from './addressForm';
 import { CheckoutCard } from './checkoutCard';
+import { useAddress } from '../../context/addressContext';
+import { useNavigate } from 'react-router';
 
 const Address: React.FC = () => {
   const { isAddressCardVisible }: any = useAddress();

@@ -1,9 +1,8 @@
-import React from 'react';
 import './wishlist.css';
-import { useWishlist } from '../../context/wishlistContext';
 import { EmptyWishlist } from './emptyWishlist';
-import { WishlistCard } from './wishlistCard';
 import { toast } from 'react-toastify';
+import { useWishlist } from '../../context/wishlistContext';
+import { WishlistCard } from './wishlistCard';
 
 const Wishlist = () => {
   const { wishlist, removeWishlistData }: any = useWishlist();

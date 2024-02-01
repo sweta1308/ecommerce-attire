@@ -1,5 +1,5 @@
-import { ProductCard } from '../product-card/productCard';
 import './featured.css';
+import { ProductCard } from '../product-card/productCard';
 import { useProducts } from '../../context/productContext';
 
 export const Featured = () => {

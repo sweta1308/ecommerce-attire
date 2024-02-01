@@ -5,8 +5,8 @@ import { useAuth } from '../../context/authContext';
 import { isItemInCart } from '../../utils/isItemPresentInCart';
 import { isItemInWishlist } from '../../utils/isItemPresentInWishlist';
 import { toast } from 'react-toastify';
-import { useWishlist } from '../../context/wishlistContext';
 import { useThrottle } from '../../utils/useThrottle';
+import { useWishlist } from '../../context/wishlistContext';
 
 interface ProductCardProps {
   data: {

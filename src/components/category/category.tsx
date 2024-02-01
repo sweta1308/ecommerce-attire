@@ -1,7 +1,7 @@
 import './category.css';
-import { useProducts } from '../../context/productContext';
 import { useFilters } from '../../context/filterContext';
 import { useNavigate } from 'react-router';
+import { useProducts } from '../../context/productContext';
 
 export const Category = () => {
   const { productState }: any = useProducts();

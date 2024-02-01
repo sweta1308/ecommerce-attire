@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router';
 import './wishlist.css';
+import { useNavigate } from 'react-router';
 
 export const EmptyWishlist = () => {
   const navigate = useNavigate();

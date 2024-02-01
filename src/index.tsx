@@ -1,16 +1,16 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import { ProductProvider } from './context/productContext';
-import { FilterProvider } from './context/filterContext';
-import { AuthProvider } from './context/authContext';
-import { CartProvider } from './context/cartContext';
-import { WishlistProvider } from './context/wishlistContext';
-import { AddressProvider } from './context/addressContext';
-import { makeServer } from './server';
+import React from 'react';
 import ScrollToTop from './components/scrollToTop';
+import { AddressProvider } from './context/addressContext';
+import { AuthProvider } from './context/authContext';
+import { BrowserRouter } from 'react-router-dom';
+import { CartProvider } from './context/cartContext';
+import { createRoot } from 'react-dom/client';
+import { FilterProvider } from './context/filterContext';
+import { makeServer } from './server';
+import { ProductProvider } from './context/productContext';
+import { WishlistProvider } from './context/wishlistContext';
 
 // Call make Server
 makeServer();

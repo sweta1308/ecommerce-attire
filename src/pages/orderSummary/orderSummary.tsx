@@ -1,5 +1,5 @@
-import React from 'react';
 import './orderSummary.css';
+import React from 'react';
 
 const OrderSummary: React.FC = () => {
   return (
