@@ -46,11 +46,21 @@ This is a front-end React application that is specifically designed for integrat
 
 <br/>
 
+## Generate JWT
+
+```bash
+brew install mike-engel/jwt-cli/jwt-cli
+jwt encode --secret "this is just a test token example"
+```
+
+<br/>
+
 ## How to Install and Run Locally
 
 ```js
 git clone git@github.com:cpeoples/ecommerce.git
 cd ecommerce-attire
+export REACT_APP_JWT_SECRET="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDcxNjcwNDd9.Ey7ekSna0a2Gc5AsnOizmxaM71ktgs3mUzzox3pixSk"
 npm install
 npm start
 ```
